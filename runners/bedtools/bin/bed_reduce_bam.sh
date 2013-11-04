@@ -4,5 +4,6 @@
 
 design=$1
 bam=$2
+base1=`basename $design`
 
-~/opt/bedtools/bin/intersectBed -abam $bam -b $bed > ${bam%.*}_bed.bam
+~/opt/bedtools/bin/intersectBed -abam $bam -b $design > ${bam%.*}_${base1%.*}.bam
