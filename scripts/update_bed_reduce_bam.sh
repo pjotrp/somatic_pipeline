@@ -8,10 +8,9 @@ while read ref tumor ; do
   echo "tumor=$tumor ref=$ref"
   for x in $tumor $ref ; do 
     echo Reducing $x...
-    echo "$BASEDIR/../runners/bedtools/bin/bed_reduce_bam.sh $HOME/full_kinome_CoDeCZ_chr17.bed $x"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --ignore-lock -d . 
-  # --pbs "-P SAP42" 
+    echo "$BASEDIR/../runners/bedtools/bin/bed_reduce_bam.sh $HOME/full_kinome_CoDeCZ_chr17.bed $x"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --ignore-lock --ignore-queue -d . 
+# --pbs "-P SAP42" 
   done
-  exit 1
 done < somatic_bams.txt
 
 
