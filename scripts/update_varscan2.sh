@@ -30,7 +30,7 @@ while read ref tumor ; do
   ref2="${ref%.*}_full_kinome_CoDeCZ_chr17"
   tumor2="${tumor%.*}_full_kinome_CoDeCZ_chr17"
   echo "==== Running varscan2 on $ref (ref $ref2)"
-  echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar somatic $ref2.mpileup $tumor2.mpileup $ref2-varscan --min-coverage 10 --somatic-p-value 0.001" | ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v --debug
+  echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar somatic $ref2.mpileup $tumor2.mpileup $ref2-varscan --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.001 --strand-filter --min-var-freq 0.20" | ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v --debug
 
   echo "==== Index with Samtools $tumor2.bam ..."
   echo "samtools index $tumor2.bam"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d . -v
