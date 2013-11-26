@@ -25,7 +25,7 @@ while read ref tumor ; do
   for x in $tumor $ref ; do 
     name="${x%.*}_full_kinome_CoDeCZ_chr17"
     echo "==== Create samtools mpileup of $x (name $name)"
-    echo "~/opt/bin/samtools mpileup -B -f /data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta ../$x > $name.mpileup"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -v -d varscan2
+    echo "~/opt/bin/samtools mpileup -B -q 10 -f /data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta ../$x > $name.mpileup"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -v -d varscan2
   done
   ref2="${ref%.*}_full_kinome_CoDeCZ_chr17"
   tumor2="${tumor%.*}_full_kinome_CoDeCZ_chr17"
