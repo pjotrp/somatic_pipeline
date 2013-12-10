@@ -27,6 +27,8 @@ while read normal tumor ; do
   echo "tumor=$tumor normal=$normal"
   ref=$normal
   for x in $tumor $ref ; do 
+    echo "==== Index with Samtools $x ..."
+    echo "samtools index $x"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d . -v
     name="${x%.*}_full_kinome_CoDeCZ_chr17"
     echo "==== Create samtools mpileup of $x (name $name)"
     # check -E option
@@ -40,12 +42,10 @@ while read normal tumor ; do
 
   # The following runs the alternative readcount tools (older?)
   #
-  # echo "==== Index with Samtools $tumor2.bam ..."
-  # echo "samtools index $tumor2.bam"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d . -v
-  # echo "==== Readcount on tumor $tumor2..."
-  # echo "~/opt/bin/bam-readcount -w 5 -f /data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta  ../$tumor2.bam 17 > $tumor2.readcount"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v
-  # echo "Running fpfilter using ref $ref2..."
-  # echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor2 $ref2-varscan.snp $tumor2.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v 
+  echo "==== Readcount on tumor $tumor (chr17)..."
+  echo "~/opt/bin/bam-readcount -w 5 -f $refgenome  ../$tumor 17 > $tumor.readcount"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v
+  echo "Running fpfilter using ref $ref..."
+  echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor $normal-$tumor.varScan.output.snp $tumor.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v 
 
 done < $listfn
 
