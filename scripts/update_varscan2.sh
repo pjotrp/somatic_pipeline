@@ -36,16 +36,16 @@ while read normal tumor ; do
   # --mpileup 1 option
   echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar somatic $normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.001 --strand-filter --min-var-freq 0.20"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -v -d varscan2
 
-  java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varScan.output.snp
+  echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varScan.output.snp"|~/izip/git/opensource/ruby/once-only/bin/once-only -v -d varscan2
 
-  echo "==== Index with Samtools $tumor2.bam ..."
-  echo "samtools index $tumor2.bam"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d . -v
-  echo "==== Readcount on tumor $tumor2..."
-  echo "~/opt/bin/bam-readcount -w 5 -f /data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta  ../$tumor2.bam 17 > $tumor2.readcount"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v
-  echo "Running fpfilter using ref $ref2..."
-  echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor2 $ref2-varscan.snp $tumor2.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v 
-
- exit 
+  # The following runs the alternative readcount tools (older?)
+  #
+  # echo "==== Index with Samtools $tumor2.bam ..."
+  # echo "samtools index $tumor2.bam"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d . -v
+  # echo "==== Readcount on tumor $tumor2..."
+  # echo "~/opt/bin/bam-readcount -w 5 -f /data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta  ../$tumor2.bam 17 > $tumor2.readcount"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v
+  # echo "Running fpfilter using ref $ref2..."
+  # echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor2 $ref2-varscan.snp $tumor2.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v 
 
 done < $listfn
 
