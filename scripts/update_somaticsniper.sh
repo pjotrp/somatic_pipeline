@@ -1,6 +1,8 @@
 #! /bin/sh
 #
 # Follows the recommendations on http://gmt.genome.wustl.edu/somatic-sniper/1.0.2/documentation.html
+#
+# Note: the indel check is not yet added
 
 phred=30  # 1:1000
 
@@ -35,8 +37,7 @@ while read normal tumor ; do
   echo "Running fpfilter using ref $ref..."
   echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumor --snp-file $name.snp --readcount-file $tumor.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
 
-  perl $HOME/opt/somatic-sniper/src/scripts/highconfidence.pl --min-mapping-quality $phred --snp-file $tumor.fp_pass 
+  echo "perl $HOME/opt/somatic-sniper/src/scripts/highconfidence.pl --min-mapping-quality $phred --snp-file $tumor.fp_pass"|$onceonly -d somaticsniper -v
 
-  exit 1
 done < $listfn
 
