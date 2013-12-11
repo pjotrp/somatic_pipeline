@@ -1,4 +1,8 @@
 #! /bin/sh
+#
+# Follows the recommendations on http://gmt.genome.wustl.edu/somatic-sniper/1.0.2/documentation.html
+
+phred=30  # 1:1000
 
 listfn=$1
 if [ -z $listfn ] ; then 
@@ -21,15 +25,17 @@ while read normal tumor ; do
   ref=$normal
   name="${tumor%.*}"
 
-  echo "bam-somaticsniper -f $refgenome ../$tumor ../$ref $name.snp"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
+  echo "bam-somaticsniper -q $phred -f $refgenome ../$tumor ../$ref $name.snp"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v --skip $name.snp
 
   echo "==== Index with Samtools $tumor ..."
   echo "samtools index $tumor"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d . -v
 
   echo "==== Readcount on tumor $tumor..."
-  echo "~/opt/bin/bam-readcount -b 15 -w 5 -f /data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta  ../$tumor 17 > $tumor.readcount"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v --skip $tumor.readcount
+  echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor 17 > $tumor.readcount"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v --skip $tumor.readcount
   echo "Running fpfilter using ref $ref..."
-  echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumor $name.snp --readcount-file $tumor.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
+  echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumor --snp-file $name.snp --readcount-file $tumor.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
+
+  perl $HOME/opt/somatic-sniper/src/scripts/highconfidence.pl --min-mapping-quality $phred --snp-file $tumor.fp_pass 
 
   exit 1
 done < $listfn

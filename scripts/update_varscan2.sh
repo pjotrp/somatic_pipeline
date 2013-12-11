@@ -7,6 +7,8 @@
 # where listfile contains a list of tab delimited ref-tumor samples
 #
 
+phred=30  # 1:1000
+
 listfn=$1
 if [ -z $listfn ] ; then 
   echo "Provide a tab delimited file with bamfile names" 
@@ -32,7 +34,7 @@ while read normal tumor ; do
     name="${x%.*}_full_kinome_CoDeCZ_chr17"
     echo "==== Create samtools mpileup of $x (name $name)"
     # check -E option
-    echo "~/opt/bin/samtools mpileup -B -q 10 -f $refgenome -l $bed ../$x > $x.mpileup"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -v -d varscan2 --skip $x.mpileup
+    echo "~/opt/bin/samtools mpileup -B -q $phred -f $refgenome -l $bed ../$x > $x.mpileup"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -v -d varscan2 --skip $x.mpileup
   done
 
   # --mpileup 1 option
@@ -43,7 +45,7 @@ while read normal tumor ; do
   # The following runs the alternative readcount tools (older?)
   #
   echo "==== Readcount on tumor $tumor (chr17)..."
-  echo "~/opt/bin/bam-readcount -w 5 -f $refgenome  ../$tumor 17 > $tumor.readcount"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v --skip $tumor.readcount
+  echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor 17 > $tumor.readcount"| ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v --skip $tumor.readcount
   echo "Running fpfilter using ref $ref..."
   echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor $normal-$tumor.varScan.output.snp $tumor.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d varscan2 -v
 
