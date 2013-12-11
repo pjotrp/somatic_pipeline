@@ -31,3 +31,6 @@ while read normal tumor ; do
   echo "Running fpfilter using ref $ref..."
   echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumor $name.snp --readcount-file $tumor.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
 
+  exit 1
+done < $listfn
+
