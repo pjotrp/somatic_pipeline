@@ -39,6 +39,5 @@ while read ref tumor ; do
   echo "*** $refout ***"
   echo "$bamannotate -out $tumorout -snv $refbase*.snvs.snv1 -snv $tumorbase*.snvs.snv1 -ref /data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta -bam $refbam -bam $tumorbam"|  ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d $dir -v 
   echo "$inheritance -d -in $tumorout.bamAnn -out $tumorout -uaf_ids 3 -aff_ids 4 -min_cov 8"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d $dir -v 
-  exit
 done < $listfn
 
