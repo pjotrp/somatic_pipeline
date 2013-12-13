@@ -17,7 +17,19 @@
 # }
 #   
 
+require 'fileutils'
 require 'json'
+
+if ARGV.size == 0
+  print USAGE
+  exit 1
+end
+
+def exit_error errval = 1, msg = nil
+  $stderr.print msg if msg
+  $stderr.print "\n**ERROR** once-only returned error #{errval}\n"
+  exit errval
+end
 
 def parse_args(args)
   options = { }
@@ -28,6 +40,9 @@ def parse_args(args)
       when '--config', '-c'
         options[:config] = File.expand_path(args[1])
         consume.call(args[2..-1])
+      when '--first','-1'
+        options[:first] = true
+        consume.call(args[1..-1])
       else
         $stderr.print "**ERROR** Can not parse arguments",args
         exit_error(1)
@@ -65,7 +80,8 @@ File.read(listfn).each_line do | line |
   find = lambda { |bam|
     res ||= `find #{config[:dataroot]} -name #{bam}`.strip
     raise "Too many candidates for #{bam}" if res.split(/\n/).size > 1
-    res
+    FileUtils.copy(res,bam,preserve: true, verbose: true)
+    bam
   }
   normal = find.call(normal) if not File.exist?(normal)
   tumor = find.call(tumor) if not File.exist?(tumor)
@@ -74,5 +90,9 @@ File.read(listfn).each_line do | line |
   tumorname=File.basename(tumor,'.bam')
   p [normalname,tumorname]
   Kernel.system(["/bin/bash",script,(config ? '--config env.sh' : ''),normalname,tumorname,normal,tumor].join(" "))
+
+  if options[:first]
+    exit_error(1)
+  end
 end
 
