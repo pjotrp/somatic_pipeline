@@ -3,6 +3,10 @@
 # This runner takes a file of normal-tumor BAM files and executes the script
 #
 # Configuration happens in a JSON file
+#
+# E.g.
+#
+#   ./scripts/run.rb --config run.json ./scripts/varscan2.sh somatic_list.txt
 
 require 'json'
 
@@ -40,6 +44,7 @@ if config
   # Write 'env.sh'
   File.open('env.sh','w') do | f |
     config.each do |k,v|
+      print "config: ",k.to_s.upcase,"=\"",v,"\"\n"
       f.print k.to_s.upcase,"=\"",v,"\"\n"
     end
   end
