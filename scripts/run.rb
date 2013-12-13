@@ -7,6 +7,15 @@
 # E.g.
 #
 #   ./scripts/run.rb --config run.json ./scripts/varscan2.sh somatic_list.txt
+#
+# Example of run.json
+#
+# {
+#   "refseq" : "/export/data/MBC/test/GRCh37_gatk.fasta",
+#   "samtools": "/home/wrk/opt/bin/samtools",
+#   "dataroot": "/export/data/MBC"
+# }
+#   
 
 require 'json'
 
@@ -53,9 +62,17 @@ end
 File.read(listfn).each_line do | line |
   next if line =~ /^#/
   normal,tumor = line.strip.split(/\s+/)
+  find = lambda { |bam|
+    res ||= `find #{config[:dataroot]} -name #{bam}`.strip
+    raise "Too many candidates for #{bam}" if res.split(/\n/).size > 1
+    res
+  }
+  normal = find.call(normal) if not File.exist?(normal)
+  tumor = find.call(tumor) if not File.exist?(tumor)
   print "Normal=",normal,"\tTumor=",tumor
   normalname=File.basename(normal,'.bam')
-  tumorname=File.basename(normal,'.bam')
+  tumorname=File.basename(tumor,'.bam')
+  p [normalname,tumorname]
   Kernel.system(["/bin/bash",script,(config ? '--config env.sh' : ''),normalname,tumorname,normal,tumor].join(" "))
 end
 
