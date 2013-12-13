@@ -57,5 +57,5 @@ echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varSc
 echo "==== Readcount on tumor $tumor..."
 echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor 17 > $tumor.readcount"|$onceonly --pfff -d varscan2 -v --skip $tumor.readcount
 echo "Running fpfilter using ref $ref..."
-echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor $normal-$tumor.varScan.output.snp $tumor.readcount"|$onceonly --pfff -d varscan2 -v
+echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor $normal-$tumor.varScan.output.snp $tumor.readcount" | $onceonly --pfff -d varscan2 -v
 
