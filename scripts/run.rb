@@ -100,15 +100,22 @@ File.read(listfn).each_line do | line |
   normalname=File.basename(normal,'.bam')
   tumorname=File.basename(tumor,'.bam')
   p [normalname,tumorname]
+  cmd = [script,(config ? '--config '+abs_env_sh : ''),normalname,tumorname,normal,tumor].join(" ")
   if options[:pbs]
     # ---- Submit to PBS
+    #   echo "/home/cog/pprins/opt/somatic_pipeline/scripts/submit.sh" | qsub -P SAP42 -cwd
+    print `echo ` 
   else
     # ---- Run standalone
-    cmd = ["/bin/bash",script,(config ? '--config '+abs_env_sh : ''),normalname,tumorname,normal,tumor].join(" ")
     p cmd
-    Kernel.system(cmd)
+    Kernel.system("/bin/bash "+cmd)
+    if $?.exitstatus 
+      $stderr.print "Command <"+cmd+"> did not complete!"
+      exit_error(1)
+    end
   end
   if options[:first]
+    $stderr.print "Stopped after --first"
     exit_error(1)
   end
 end
