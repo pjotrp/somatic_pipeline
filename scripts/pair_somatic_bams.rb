@@ -19,11 +19,17 @@ bamlist.each do |fn|
     second = fn
     # p [first,second] # we test a pair
     if first.size == second.size
+      b1 = File.basename(first)
+      b2 = File.basename(second)
       # count 'T'
-      c1 = File.basename(first).scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
-      c2 = File.basename(second).scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
+      c1 = b1.scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
+      c2 = b2.scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
       count_t = c2['T']-c1['T'] 
-      if count_t == 1
+      if count_t > 0
+        # Final comparison
+        if b1.sub(/R/,'T') != b2 and b1.sub(/N/,'T') != b2
+          raise "Failed match of #{b1} with #{b2}"
+        end
         list << [first,second]
         first = nil
         next
