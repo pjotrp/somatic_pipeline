@@ -9,6 +9,10 @@
 #
 #   ./scripts/run.rb --config run.json ./scripts/varscan2.sh somatic_list.txt
 #
+# or a full on with --pbs
+#
+#   wgs01:~/data/trials/chr17$ ~/opt/somatic_pipeline/scripts/run.rb --pbs --config run.json ~/opt/somatic_pipeline/scripts/varscan2.sh somatic2_bams.txt
+#
 # Example of run.json
 #
 # {
