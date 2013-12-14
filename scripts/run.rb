@@ -118,7 +118,9 @@ File.read(listfn).each_line do | line |
   if options[:pbs]
     # ---- Submit to PBS
     p cmd
-    print `echo \"#{cmd}\" | qsub -P SAP42 -N #{tumorname} -cwd`
+    jobname=tumorname
+    jobname='mbc'+tumorname if jobname =~ /^\d/
+    print `echo \"#{cmd}\" | qsub -P SAP42 -N #{jobname} -cwd`
   else
     # ---- Run standalone
     p cmd
