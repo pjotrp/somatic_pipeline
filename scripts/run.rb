@@ -48,6 +48,9 @@ def parse_args(args)
       when '--pbs'
         options[:pbs] = args[1]
         consume.call(args[1..-1])
+      when '--dry-run'
+        options[:dry_run] = true
+        consume.call(args[1..-1])
       when '--first','-1'
         options[:first] = true
         consume.call(args[1..-1])
@@ -99,8 +102,7 @@ File.read(listfn).each_line do | line |
       rescue Errno::EPERM
       end
       if File.writable?(fullbampath)
-        $stderr.print "ERROR: File is not read-only #{fullbampath}!"
-        next
+        $stderr.print "WARNING: File is not read-only #{fullbampath}!\n"
       end
     end
     # ---- From now on use a symlink to the file
@@ -121,14 +123,16 @@ File.read(listfn).each_line do | line |
     p cmd
     jobname=tumorname
     jobname='mbc'+tumorname if jobname =~ /^\d/
-    print `echo \"#{cmd}\" | qsub -P SAP42 -N #{jobname} -cwd`
+    print `echo \"#{cmd}\" | qsub -P SAP42 -N #{jobname} -cwd` if !options[:dry_run]
   else
     # ---- Run standalone
     p cmd
-    Kernel.system("/bin/bash "+cmd)
-    if $?.exitstatus 
-      $stderr.print "Command <"+cmd+"> did not complete!"
-      exit_error(1)
+    if !options[:dry_run]
+      Kernel.system("/bin/bash "+cmd) 
+      if $?.exitstatus 
+        $stderr.print "Command <"+cmd+"> did not complete!"
+        exit_error(1)
+      end
     end
   end
   if options[:first]
