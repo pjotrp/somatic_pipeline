@@ -72,6 +72,8 @@ config = if options[:config]
            JSON.parse(json,:symbolize_names => true)
          end
 
+bamlist = []
+
 if config
   # ---- Use the JSON options and write 'env.sh'
   env_sh = 'env_'+File.basename(script)
@@ -81,6 +83,10 @@ if config
       f.print k.to_s.upcase,"=\"",v,"\"\n"
     end
   end
+  print "Fetching all BAM names in #{config[:dataroot]}\n"
+  if config[:dataroot]
+    bamlist = `find #{config[:dataroot]} -name *.bam`.strip.split("\n")
+  end
 end
 
 abs_env_sh = File.absolute_path(env_sh)
@@ -88,18 +94,22 @@ abs_env_sh = File.absolute_path(env_sh)
 File.read(listfn).each_line do | line |
   next if line =~ /^#/
   normal,tumor = line.strip.split(/\s+/)
+  list = nil
   find = lambda { |bam|
-    # ---- Find the full path of the file name in the list
-    res ||= `find #{config[:dataroot]} -name #{bam}`.strip
-    raise "Too many candidates for #{bam}" if res.split(/\n/).size > 1
-    # ---- Make the file read-only if we can write to it
-    File.chmod(0444,res)
+    # ---- Find the full path of the file name in the list and create symlink
+    res = bamlist.collect { |item| item =~ /#{bam}/ }
+    raise "Too many candidates for #{bam}" if res.size > 1
+    raise "No candidate for #{bam}" if res.size == 0
+    # ---- Make sure the file is read-only!
+    raise "FAIL: File is not read-only #{res}!" if not File.readonly?(res)
     # ---- From now on use a symlink to the file
     FileUtils.ln_s(res,bam,verbose: true)
+    raise "Will not use a non-symlink for #{bam}!" if not File.symlink?(bam) 
     bam
   }
-  normal = find.call(normal) if not File.exist?(normal)
-  tumor = find.call(tumor) if not File.exist?(tumor)
+  # ---- We only accept symlinks for input!
+  normal = find.call(normal) if not File.symlink?(normal)
+  tumor = find.call(tumor) if not File.symlink?(tumor)
   print "Normal=",normal,"\tTumor=",tumor
   normalname=File.basename(normal,'.bam')
   tumorname=File.basename(tumor,'.bam')
