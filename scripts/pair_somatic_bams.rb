@@ -28,7 +28,7 @@ bamlist.each do |fn|
       if count_t > 0
         # Final comparison
         if b1.sub(/R/,'T') != b2 and b1.sub(/N/,'T') != b2
-          $stderr.print "WARNING: check match of #{b1} with #{b2}"
+          $stderr.print "WARNING: check match of #{b1} with #{b2}!\n"
         end
         list << [first,second]
         first = nil
