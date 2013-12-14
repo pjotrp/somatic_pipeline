@@ -7,9 +7,16 @@
 # This script is normally run from a controller which creates env.sh. It can also 
 # be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
 
+# Uncomment for testing:
+# CHR=17
+
 # ---- Default settings
 REFSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
-BED="$HOME/full_kinome_CoDeCZ_chr17.bed"
+if [ ! -z $CHR ]; then
+  BED="$HOME/full_kinome_CoDeCZ_chr$CHR.bed"
+else
+  BED="$HOME/full_kinome_CoDeCZ.bed"
+fi
 SAMTOOLS=$HOME/opt/bin/samtools
 SAMBAMBA=$HOME/opt/bin/sambamba
 ONCEONLY="$HOME/izip/git/opensource/ruby/once-only/bin/once-only"
@@ -67,7 +74,7 @@ echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varSc
 # The following runs the alternative readcount tools (older scoring)
 #
 echo "==== Readcount on tumor $tumor..."
-echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor 17 > $tumor.readcount"|$onceonly --pfff -d varscan2 -v --skip $tumor.readcount
+echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor $CHR > $tumor.readcount"|$onceonly --pfff -d varscan2 -v --skip $tumor.readcount
 [ $? -ne 0 ] && exit 1
 echo "Running fpfilter using $tumor..."
 echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor $normal-$tumor.varScan.output.snp $tumor.readcount" | $onceonly --pfff -d varscan2 -v
