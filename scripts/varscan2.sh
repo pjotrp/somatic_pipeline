@@ -18,7 +18,6 @@ ONCEONLY="$HOME/izip/git/opensource/ruby/once-only/bin/once-only"
 #$ -S /bin/bash
 #$ -o stdout
 PATH=$SGE_O_PATH:$PATH
-set
 
 # ---- Fetch command line and environment
 if [ $1 == "--config" ]; then
@@ -37,6 +36,8 @@ refgenome=$REFSEQ
 samtools=$SAMTOOLS
 sambamba=$SAMBAMBA
 bed=$BED
+
+set
 
 mkdir -p varscan2
 
