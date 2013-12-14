@@ -38,7 +38,7 @@ echo "tumor=$tumor normal=$normal"
 ref=$normal
 for x in $normal $tumor ; do 
   echo "==== Index with Samtools $x ..."
-  echo "$samtools index $x"| $onceonly --pfff -d . -v
+  echo "$sambamba index $x"| $onceonly --pfff -d . -v
   echo "==== Index fasta with samtools ..."
   echo "$samtools faidx $refgenome"|$onceonly --pfff -d . -v
   echo "==== Create samtools mpileup of $x"

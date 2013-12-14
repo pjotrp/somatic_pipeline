@@ -65,7 +65,7 @@ config = if options[:config]
          end
 
 if config
-  # Write 'env.sh'
+  # ---- Use the JSON options and write 'env.sh'
   File.open('env.sh','w') do | f |
     config.each do |k,v|
       print "config: ",k.to_s.upcase,"=\"",v,"\"\n"
@@ -78,9 +78,13 @@ File.read(listfn).each_line do | line |
   next if line =~ /^#/
   normal,tumor = line.strip.split(/\s+/)
   find = lambda { |bam|
+    # ---- Find the full path of the file name in the list
     res ||= `find #{config[:dataroot]} -name #{bam}`.strip
     raise "Too many candidates for #{bam}" if res.split(/\n/).size > 1
-    FileUtils.copy(res,bam,preserve: true, verbose: true)
+    # ---- Make the file read-only if we can write to it
+    File.chmod(0444,res)
+    # ---- From now on use a symlink to the file
+    FileUtils.ln_s(res,bam,verbose: true)
     bam
   }
   normal = find.call(normal) if not File.exist?(normal)
