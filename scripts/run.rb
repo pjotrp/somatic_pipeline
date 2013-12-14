@@ -89,21 +89,16 @@ File.read(listfn).each_line do | line |
   next if line =~ /^#/
   normal,tumor = line.strip.split(/\s+/)
   list = nil
-  find = lambda { |bam|
-    # ---- Find the full path of the file name in the list and create symlink
-    res = bamlist.collect { |item| ( item =~ /#{bam}/ ? item : nil ) }.compact
-    raise "Too many candidates for #{bam} in #{config[:dataroot]}" if res.size > 1
-    fullbampath = res[0]
-    raise "No candidate for #{bam}" if res.size == 0
+  find = lambda { |fullbampath|
+    bam = File.basename(fullbampath)
     # ---- Make sure the file is read-only!
-
     if File.writable?(fullbampath)
       # Try to make it read-only
       File.chmod(0444,fullbampath)
       raise "FAIL: File is not read-only #{fullbampath}!" if File.writable?(fullbampath)
     end
     # ---- From now on use a symlink to the file
-    FileUtils.ln_s(fullbampath,bam,verbose: true)
+    FileUtils.ln_s(fullbampath,bam,verbose: true) if not File.symlink?(bam)
     raise "Will not use a non-symlink for #{bam}!" if not File.symlink?(bam) 
     bam
   }
