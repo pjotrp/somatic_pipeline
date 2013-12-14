@@ -83,10 +83,6 @@ if config
       f.print k.to_s.upcase,"=\"",v,"\"\n"
     end
   end
-  print "Fetching all BAM names in #{config[:dataroot]}\n"
-  if config[:dataroot]
-    bamlist = `find #{config[:dataroot]} -type f -name '*.bam'`.strip.split("\n").uniq
-  end
 end
 
 print bamlist.join("\n")
