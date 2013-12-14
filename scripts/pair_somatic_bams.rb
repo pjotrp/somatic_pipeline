@@ -15,14 +15,13 @@ bamlist = `find #{dir} -type f -name '*.bam'`.strip.split("\n").sort.uniq
 list=[]
 first = nil
 bamlist.each do |fn|
-  name = File.basename(fn)
   if first
-    second = name
+    second = fn
     # p [first,second] # we test a pair
     if first.size == second.size
       # count 'T'
-      c1 = first.scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
-      c2 = second.scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
+      c1 = File.basename(first).scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
+      c2 = File.basename(second).scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
       count_t = c2['T']-c1['T'] 
       if count_t == 1
         list << [first,second]
@@ -31,11 +30,11 @@ bamlist.each do |fn|
       end
     end
   end
-  first = name
+  first = fn
 end
 
 list.each do |row|
-  puts row.join("\t")
+  puts row.join(" ")
 end
 
 

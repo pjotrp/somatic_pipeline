@@ -72,8 +72,6 @@ config = if options[:config]
            JSON.parse(json,:symbolize_names => true)
          end
 
-bamlist = []
-
 if config
   # ---- Use the JSON options and write 'env.sh'
   env_sh = 'env_'+File.basename(script)
@@ -84,8 +82,6 @@ if config
     end
   end
 end
-
-print bamlist.join("\n")
 
 abs_env_sh = File.absolute_path(env_sh)
 
