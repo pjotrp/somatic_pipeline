@@ -17,7 +17,7 @@ BED="$HOME/full_kinome_CoDeCZ_chr17.bed"
 if [ $1 == "--config" ]; then
   config=$2
   shift ; shift
-  . ./$config
+  . $config
 fi
 normalname=$1
 tumorname=$2
