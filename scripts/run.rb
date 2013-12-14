@@ -103,8 +103,8 @@ File.read(listfn).each_line do | line |
   cmd = [script,(config ? '--config '+abs_env_sh : ''),normalname,tumorname,normal,tumor].join(" ")
   if options[:pbs]
     # ---- Submit to PBS
-    #   echo "/home/cog/pprins/opt/somatic_pipeline/scripts/submit.sh" | qsub -P SAP42 -cwd
-    print `echo ` 
+    p cmd
+    print `echo \"#{cmd}\" | qsub -P SAP42 -cwd`
   else
     # ---- Run standalone
     p cmd

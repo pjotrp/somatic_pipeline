@@ -4,6 +4,8 @@
 #
 #   varscan2.sh [--config env.sh] normaldescr tumordescr normal.bam tumor.bam
 #
+# This script is normally run from a controller which creates env.sh. It can also 
+# be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
 
 # ---- Default settings
 REFSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
@@ -11,6 +13,12 @@ BED="$HOME/full_kinome_CoDeCZ_chr17.bed"
 SAMTOOLS=$HOME/opt/bin/samtools
 SAMBAMBA=$HOME/opt/bin/sambamba
 ONCEONLY="$HOME/izip/git/opensource/ruby/once-only/bin/once-only"
+
+# ---- PBS settings
+#$ -S /bin/bash
+#$ -o stdout
+PATH=$SGE_O_PATH:$PATH
+set
 
 # ---- Fetch command line and environment
 if [ $1 == "--config" ]; then
