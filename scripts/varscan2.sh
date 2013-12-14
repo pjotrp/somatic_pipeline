@@ -2,18 +2,17 @@
 #
 # Usage
 #
-#   update_varscan2.sh listfile
-#
-# where listfile contains a list of tab delimited ref-tumor samples
+#   varscan2.sh [--config env.sh] normaldescr tumordescr normal.bam tumor.bam
 #
 
-# Default settings
+# ---- Default settings
 REFSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
+BED="$HOME/full_kinome_CoDeCZ_chr17.bed"
 SAMTOOLS=$HOME/opt/bin/samtools
 SAMBAMBA=$HOME/opt/bin/sambamba
 ONCEONLY="$HOME/izip/git/opensource/ruby/once-only/bin/once-only"
-BED="$HOME/full_kinome_CoDeCZ_chr17.bed"
 
+# ---- Fetch command line and environment
 if [ $1 == "--config" ]; then
   config=$2
   shift ; shift
@@ -35,7 +34,6 @@ mkdir -p varscan2
 
 echo "tumor=$tumor normal=$normal"
 
-ref=$normal
 for x in $normal $tumor ; do 
   echo "==== Index with Samtools $x ..."
   echo "$sambamba index $x"| $onceonly --pfff -d . -v
@@ -62,7 +60,7 @@ echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varSc
 echo "==== Readcount on tumor $tumor..."
 echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor 17 > $tumor.readcount"|$onceonly --pfff -d varscan2 -v --skip $tumor.readcount
 [ $? -ne 0 ] && exit 1
-echo "Running fpfilter using ref $ref..."
+echo "Running fpfilter using $tumor..."
 echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor $normal-$tumor.varScan.output.snp $tumor.readcount" | $onceonly --pfff -d varscan2 -v
 [ $? -ne 0 ] && exit 1
 
