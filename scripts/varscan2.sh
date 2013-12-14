@@ -47,12 +47,12 @@ for x in $normal $tumor ; do
 done
 
 
-# --mpileup 1 option
+# --mpileup 1 option (newer undocumented scoring)
 echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.001 --strand-filter --min-var-freq 0.20"|$onceonly --pfff -v -d varscan2
 
 echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varScan.output.snp"|$onceonly -v -d varscan2 --skip $normal-$tumor.varScan.output.snp
 
-# The following runs the alternative readcount tools (older?)
+# The following runs the alternative readcount tools (older scoring)
 #
 echo "==== Readcount on tumor $tumor..."
 echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor 17 > $tumor.readcount"|$onceonly --pfff -d varscan2 -v --skip $tumor.readcount

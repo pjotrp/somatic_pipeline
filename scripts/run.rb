@@ -1,6 +1,7 @@
 #! /usr/bin/env ruby
 #
-# This runner takes a file of normal-tumor BAM files and executes the script
+# This runner takes a file of normal-tumor BAM files and executes the script standalone
+# or on PBS with the --pbs switch.
 #
 # Configuration happens in a JSON file
 #
@@ -40,6 +41,9 @@ def parse_args(args)
       when '--config', '-c'
         options[:config] = File.expand_path(args[1])
         consume.call(args[2..-1])
+      when '--pbs'
+        options[:pbs] = args[1]
+        consume.call(args[1..-1])
       when '--first','-1'
         options[:first] = true
         consume.call(args[1..-1])
@@ -66,13 +70,16 @@ config = if options[:config]
 
 if config
   # ---- Use the JSON options and write 'env.sh'
-  File.open('env.sh','w') do | f |
+  env_sh = 'env_'+File.basename(script)
+  File.open(env_sh,'w') do | f |
     config.each do |k,v|
       print "config: ",k.to_s.upcase,"=\"",v,"\"\n"
       f.print k.to_s.upcase,"=\"",v,"\"\n"
     end
   end
 end
+
+abs_env_sh = File.absolute_path(env_sh)
 
 File.read(listfn).each_line do | line |
   next if line =~ /^#/
@@ -93,8 +100,14 @@ File.read(listfn).each_line do | line |
   normalname=File.basename(normal,'.bam')
   tumorname=File.basename(tumor,'.bam')
   p [normalname,tumorname]
-  Kernel.system(["/bin/bash",script,(config ? '--config env.sh' : ''),normalname,tumorname,normal,tumor].join(" "))
-
+  if options[:pbs]
+    # ---- Submit to PBS
+  else
+    # ---- Run standalone
+    cmd = ["/bin/bash",script,(config ? '--config '+abs_env_sh : ''),normalname,tumorname,normal,tumor].join(" ")
+    p cmd
+    Kernel.system(cmd)
+  end
   if options[:first]
     exit_error(1)
   end
