@@ -94,8 +94,14 @@ File.read(listfn).each_line do | line |
     # ---- Make sure the file is read-only!
     if File.writable?(fullbampath)
       # Try to make it read-only
-      File.chmod(0444,fullbampath)
-      raise "FAIL: File is not read-only #{fullbampath}!" if File.writable?(fullbampath)
+      begin
+        File.chmod(0444,fullbampath)
+      rescue Errno::EPERM
+      end
+      if File.writable?(fullbampath)
+        $stderr.print "ERROR: File is not read-only #{fullbampath}!"
+        next
+      end
     end
     # ---- From now on use a symlink to the file
     FileUtils.ln_s(fullbampath,bam,verbose: true) if not File.symlink?(bam)
