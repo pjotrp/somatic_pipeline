@@ -2,7 +2,7 @@
 #
 # Create a list of paired somatic files taking the base path as input. The
 # assumption is that base file names are almost the same, with one different
-# character R or N for normal and T for tumor.
+# character R or N for normal and T for tumor. Here only T is checked.
 
 dir=ARGV.shift
 
