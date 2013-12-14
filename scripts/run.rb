@@ -85,9 +85,11 @@ if config
   end
   print "Fetching all BAM names in #{config[:dataroot]}\n"
   if config[:dataroot]
-    bamlist = `find #{config[:dataroot]} -name *.bam`.strip.split("\n")
+    bamlist = `find #{config[:dataroot]} -type f -name '*.bam'`.strip.split("\n").uniq
   end
 end
+
+print bamlist.join("\n")
 
 abs_env_sh = File.absolute_path(env_sh)
 
@@ -97,13 +99,19 @@ File.read(listfn).each_line do | line |
   list = nil
   find = lambda { |bam|
     # ---- Find the full path of the file name in the list and create symlink
-    res = bamlist.collect { |item| item =~ /#{bam}/ }
-    raise "Too many candidates for #{bam}" if res.size > 1
+    res = bamlist.collect { |item| ( item =~ /#{bam}/ ? item : nil ) }.compact
+    raise "Too many candidates for #{bam} in #{config[:dataroot]}" if res.size > 1
+    fullbampath = res[0]
     raise "No candidate for #{bam}" if res.size == 0
     # ---- Make sure the file is read-only!
-    raise "FAIL: File is not read-only #{res}!" if not File.readonly?(res)
+
+    if File.writable?(fullbampath)
+      # Try to make it read-only
+      File.chmod(0444,fullbampath)
+      raise "FAIL: File is not read-only #{fullbampath}!" if File.writable?(fullbampath)
+    end
     # ---- From now on use a symlink to the file
-    FileUtils.ln_s(res,bam,verbose: true)
+    FileUtils.ln_s(fullbampath,bam,verbose: true)
     raise "Will not use a non-symlink for #{bam}!" if not File.symlink?(bam) 
     bam
   }
