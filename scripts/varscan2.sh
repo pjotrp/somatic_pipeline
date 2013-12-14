@@ -20,6 +20,7 @@ fi
 SAMTOOLS=$HOME/opt/bin/samtools
 SAMBAMBA=$HOME/opt/bin/sambamba
 ONCEONLY="$HOME/izip/git/opensource/ruby/once-only/bin/once-only"
+CHROMOSOMES="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X Y"
 
 # ---- PBS settings
 #$ -S /bin/bash
@@ -74,9 +75,12 @@ echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varSc
 # The following runs the alternative readcount tools (older scoring)
 #
 echo "==== Readcount on tumor $tumor..."
-echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor $CHR > $tumor.readcount"|$onceonly --pfff -d varscan2 -v --skip $tumor.readcount
-[ $? -ne 0 ] && exit 1
-echo "Running fpfilter using $tumor..."
-echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor $normal-$tumor.varScan.output.snp $tumor.readcount" | $onceonly --pfff -d varscan2 -v
-[ $? -ne 0 ] && exit 1
-
+for chr in $CHROMOSOMES ; do
+  echo "!!!! chromosome $chr"
+  # By chromosome to avoid readcount segfault!
+  echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor $chr > $tumor.$chr.readcount"|$onceonly --pfff -d varscan2 -v --skip $tumor.readcount
+  [ $? -ne 0 ] && exit 1
+  echo "Running fpfilter using $tumor..."
+  echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor $normal-$tumor.varScan.output.$chr.snp $tumor.$chr.readcount" | $onceonly --pfff -d varscan2 -v
+  [ $? -ne 0 ] && exit 1
+done
