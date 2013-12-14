@@ -78,9 +78,9 @@ echo "==== Readcount on tumor $tumor..."
 for chr in $CHROMOSOMES ; do
   echo "!!!! chromosome $chr"
   # By chromosome to avoid readcount segfault!
-  echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor $chr > $tumor.$chr.readcount"|$onceonly --pfff -d varscan2 -v --skip $tumor.readcount
+  echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor $chr > $tumor.$chr.readcount"|$onceonly --pfff -d varscan2 -v --skip $tumor.$chr.readcount
   [ $? -ne 0 ] && exit 1
   echo "Running fpfilter using $tumor..."
-  echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor $normal-$tumor.varScan.output.$chr.snp $tumor.$chr.readcount" | $onceonly --pfff -d varscan2 -v
+  echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor.$chr $normal-$tumor.varScan.output.snp $tumor.$chr.readcount" | $onceonly --pfff -d varscan2 -v
   [ $? -ne 0 ] && exit 1
 done
