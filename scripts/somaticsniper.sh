@@ -79,7 +79,7 @@ for x in $normal $tumor ; do
 done
 
   echo "==== Somatic sniper"
-  echo "$somaticsniper -q $phred -f $refgenome ../$tumor ../$normal $normal-$tumor.snp"| $onceonly --pfff -d somaticsniper -v --skip $normal-$tumor.snp
+  echo "$somaticsniper -q $phred -Q $phred -J -N 8 -f $refgenome ../$tumor ../$normal $normal-$tumor.snp"| $onceonly --pfff -d somaticsniper -v --skip $normal-$tumor.snp
   [ $? -ne 0 ] && exit 1
 
 # The following runs readcount 
@@ -92,8 +92,7 @@ for chr in $CHROMOSOMES ; do
   echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor $chr > $tumor.$chr.readcount"|$onceonly --pfff -d somaticsniper -v --skip $tumor.$chr.readcount
   [ $? -ne 0 ] && exit 1
   echo "Running fpfilter using $tumor..."
-  # echo "perl $HOME/opt/bin/fpfilter.pl --output-basename $tumor.$chr $normal-$tumor.varScan.output.snp $tumor.$chr.readcount" | $onceonly --pfff -d somaticsniper -v
-  echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumor --snp-file $tumor.$chr.snp --readcount-file $tumor.$chr.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
+  echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumor.$chr --snp-file $normal-$tumor.snp --readcount-file $tumor.$chr.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
   [ $? -ne 0 ] && exit 1
   echo "perl $HOME/opt/somatic-sniper/src/scripts/highconfidence.pl --min-mapping-quality $phred --snp-file $tumor.$chr.fp_pass"|$onceonly -d somaticsniper -v
   [ $? -ne 0 ] && exit 1
