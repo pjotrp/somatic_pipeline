@@ -49,7 +49,18 @@ set
 
 mkdir -p varscan2
 
-echo "tumor=$tumor normal=$normal"
+echo "normal=$normal tumor=$tumor"
+
+for x in $normal $tumor ; do 
+  echo "==== Remove duplicates of $x"
+  name="${x%.*}"
+  x2=${name}_rmdup.bam
+  echo "$sambamba markdup -r $x $x2"| $onceonly --pfff -d . -v --skip $x2
+  [ $? -ne 0 ] && exit 1
+done
+normal=${normal%.*}_rmdup.bam
+tumor=${tumor%.*}_rmdup.bam
+echo "normal=$normal tumor=$tumor"
 
 for x in $normal $tumor ; do 
   echo "==== Index with Samtools $x ..."
@@ -71,6 +82,8 @@ echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $normal.mpileup $tumor.
 
 echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varScan.output.snp"|$onceonly -v -d varscan2 --skip $normal-$tumor.varScan.output.snp
 [ $? -ne 0 ] && exit 1
+
+exit 0
 
 # The following runs the alternative readcount tools (older scoring)
 #
