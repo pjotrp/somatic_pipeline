@@ -108,16 +108,16 @@ File.read(listfn).each_line do | line |
     # ---- From now on use a symlink to the file
     FileUtils.ln_s(fullbampath,bam,verbose: true) if not File.symlink?(bam)
     raise "Will not use a non-symlink for #{bam}!" if not File.symlink?(bam) 
-    bam
+    return bam,fullbampath
   }
   # ---- We only accept symlinks for input!
-  normal = find.call(normal) if not File.symlink?(normal)
-  tumor = find.call(tumor) if not File.symlink?(tumor)
+  normal,normal_fullpath = find.call(normal) if not File.symlink?(normal)
+  tumor,tumor_fullpath = find.call(tumor) if not File.symlink?(tumor)
   print "Normal=",normal,"\tTumor=",tumor
   normalname=File.basename(normal,'.bam')
   tumorname=File.basename(tumor,'.bam')
   p [normalname,tumorname]
-  cmd = [script,(config ? '--config '+abs_env_sh : ''),normalname,tumorname,normal,tumor].join(" ")
+  cmd = [script,(config ? '--config '+abs_env_sh : ''),normalname,tumorname,normal,tumor,normal_fullpath,tumor_fullpath].join(" ")
   if options[:pbs]
     # ---- Submit to PBS
     p cmd
