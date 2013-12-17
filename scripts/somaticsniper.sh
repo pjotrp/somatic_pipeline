@@ -45,23 +45,26 @@ samtools=$SAMTOOLS
 sambamba=$SAMBAMBA
 bed=$BED
 somaticsniper=bam-somaticsniper
+cachedir=/tmp  # otherwise set to `pwd`
 
 set
 
 mkdir -p somaticsniper
 
 echo "normal=$normal tumor=$tumor"
+normalname="${normal%.*}"
+tumorname="${tumor%.*}"
 
-if false ; then 
+if true ; then 
   for x in $normal $tumor ; do 
     echo "==== Remove duplicates of $x"
     name="${x%.*}"
-    x2=${name}_rmdup.bam
+    x2=$cachedir/${name}_rmdup.bam
     echo "$sambamba markdup -r $x $x2"| $onceonly --pfff -d . -v --skip $x2
     [ $? -ne 0 ] && exit 1
   done
-  normal=${normal%.*}_rmdup.bam
-  tumor=${tumor%.*}_rmdup.bam
+  normal=$cachedir/${normal%.*}_rmdup.bam
+  tumor=$cachedir/${tumor%.*}_rmdup.bam
   echo "normal=$normal tumor=$tumor"
 fi
 
@@ -72,28 +75,24 @@ for x in $normal $tumor ; do
   echo "==== Index fasta with samtools ..."
   echo "$samtools faidx $refgenome"|$onceonly --pfff -d . -v
   [ $? -ne 0 ] && exit 1
-  # echo "==== Create samtools mpileup of $x"
-  # check -E option
-  # echo "$samtools mpileup -B -q $phred -f $refgenome -l $bed ../$x > $x.mpileup"|$onceonly --pfff -v -d somaticsniper --skip $x.mpileup
-  # [ $? -ne 0 ] && exit 1
 done
 
   echo "==== Somatic sniper"
-  echo "$somaticsniper -q $phred -Q $phred -J -N 8 -f $refgenome ../$tumor ../$normal $normal-$tumor.snp"| $onceonly --pfff -d somaticsniper -v --skip $normal-$tumor.snp
+  echo "$somaticsniper -q $phred -Q $phred -J -N 8 -f $refgenome $tumor $normal $normalname-$tumorname.snp"| $onceonly --pfff -d somaticsniper -v --skip $normalname-$tumorname.snp
   [ $? -ne 0 ] && exit 1
 
 # The following runs readcount 
 #
 echo "==== Readcount on tumor $tumor..."
-CHROMOSOMES="17"
+CHROMOSOMES="17 18 19 20"
 for chr in $CHROMOSOMES ; do
   echo "!!!! chromosome $chr"
   # By chromosome to avoid readcount segfault!
-  echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  ../$tumor $chr > $tumor.$chr.readcount"|$onceonly --pfff -d somaticsniper -v --skip $tumor.$chr.readcount
+  echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  $tumor $chr > $tumorname.$chr.readcount"|$onceonly --pfff -d somaticsniper -v --skip $tumorname.$chr.readcount
   [ $? -ne 0 ] && exit 1
   echo "Running fpfilter using $tumor..."
-  echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumor.$chr --snp-file $normal-$tumor.snp --readcount-file $tumor.$chr.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
+  echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumorname.$chr --snp-file $normalname-$tumorname.snp --readcount-file $tumorname.$chr.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
   [ $? -ne 0 ] && exit 1
-  echo "perl $HOME/opt/somatic-sniper/src/scripts/highconfidence.pl --min-mapping-quality $phred --snp-file $tumor.$chr.fp_pass"|$onceonly -d somaticsniper -v
+  echo "perl $HOME/opt/somatic-sniper/src/scripts/highconfidence.pl --min-mapping-quality $phred --snp-file $tumorname.$chr.fp_pass"|$onceonly -d somaticsniper -v
   [ $? -ne 0 ] && exit 1
 done
