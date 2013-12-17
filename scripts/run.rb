@@ -129,9 +129,10 @@ File.read(listfn).each_line do | line |
     p cmd
     if !options[:dry_run]
       Kernel.system("/bin/bash "+cmd) 
-      if $?.exitstatus 
+      exit_status = $?.exitstatus
+      if exit_status != 0
         $stderr.print "Command <"+cmd+"> did not complete!"
-        exit_error(1)
+        exit_error(exit_status)
       end
     end
   end

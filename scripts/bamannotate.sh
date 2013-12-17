@@ -66,7 +66,11 @@ normalout=${normalname##*/}
 echo "*** normal out $normalout ***"
 echo "*** tumor out $tumorout ***"
   
-echo "$bamannotate -out $tumorout -snv $normalbase/*.snvs.snv1 -snv $tumorbase/*.snvs.snv1 -normal /data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta -bam $cachedir/$normal -bam $cachedir/$tumor"|  ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d $dir -v 
+echo "$bamannotate -out $tumorout -snv $normalbase/*.snvs.snv1 -snv $tumorbase/*.snvs.snv1 -ref /data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta -bam $cachedir/$normal -bam $cachedir/$tumor"|  ~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d $dir -v 
+[ $? -ne 0 ] && exit 1
+
 echo "$inheritance -d -in $tumorout.bamAnn -out $tumorout -uaf_ids 3 -aff_ids 4 -min_cov 8"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d $dir -v 
+echo $?
+[ $? -ne 0 ] && exit 1
 
-
+exit 0
