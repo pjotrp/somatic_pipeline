@@ -73,7 +73,9 @@ if true ; then
     echo "==== Select design $x"
     name="${x%.*}"
     x2=$cachedir/${name}_bed.bam
-    echo "$HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2"| $onceonly --pfff -d . -v --skip $x2
+    # echo "$HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2"| $onceonly --pfff -d . -v --skip $x2
+    # Don't use once-only here
+    $HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2
     [ $? -ne 0 ] && exit 1
   done
   normal=$cachedir/${normal%.*}_bed.bam
@@ -110,3 +112,4 @@ for chr in $CHROMOSOMES ; do
   echo "perl $HOME/opt/somatic-sniper/src/scripts/highconfidence.pl --min-mapping-quality $phred --snp-file $tumorname.$chr.fp_pass"|$onceonly -d somaticsniper -v
   [ $? -ne 0 ] && exit 1
 done
+
