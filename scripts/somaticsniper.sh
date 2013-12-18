@@ -55,7 +55,7 @@ echo "normal=$normal tumor=$tumor"
 normalname="${normal%.*}"
 tumorname="${tumor%.*}"
 
-if true ; then 
+if false ; then 
   for x in $normal $tumor ; do 
     echo "==== Remove duplicates of $x"
     name="${x%.*}"
@@ -65,6 +65,19 @@ if true ; then
   done
   normal=$cachedir/${normal%.*}_rmdup.bam
   tumor=$cachedir/${tumor%.*}_rmdup.bam
+  echo "normal=$normal tumor=$tumor"
+fi
+
+if true ; then 
+  for x in $normal $tumor ; do 
+    echo "==== Select design $x"
+    name="${x%.*}"
+    x2=$cachedir/${name}_bed.bam
+    echo "$HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2"| $onceonly --pfff -d . -v --skip $x2
+    [ $? -ne 0 ] && exit 1
+  done
+  normal=$cachedir/${normal%.*}_bed.bam
+  tumor=$cachedir/${tumor%.*}_bed.bam
   echo "normal=$normal tumor=$tumor"
 fi
 
@@ -84,11 +97,12 @@ done
 # The following runs readcount 
 #
 echo "==== Readcount on tumor $tumor..."
-CHROMOSOMES="17 18 19 20"
+# CHROMOSOMES="17 18 19 20"
+# CHROMOSOMES="17 18"
 for chr in $CHROMOSOMES ; do
   echo "!!!! chromosome $chr"
   # By chromosome to avoid readcount segfault!
-  echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  $tumor $chr > $tumorname.$chr.readcount"|$onceonly --pfff -d somaticsniper -v --skip $tumorname.$chr.readcount
+  echo "~/opt/bin/bam-readcount -b $phred -w 5 -f $refgenome  $tumor $chr > $tumorname.$chr.readcount"|$onceonly --pfff -d somaticsniper -v --skip $tumorname.$chr.readcount --force
   [ $? -ne 0 ] && exit 1
   echo "Running fpfilter using $tumor..."
   echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumorname.$chr --snp-file $normalname-$tumorname.snp --readcount-file $tumorname.$chr.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
