@@ -55,12 +55,16 @@ echo "normal=$normal tumor=$tumor"
 normalname="${normal%.*}"
 tumorname="${tumor%.*}"
 
-if false ; then 
+df -h
+
+if true ; then 
   for x in $normal $tumor ; do 
     echo "==== Remove duplicates of $x"
     name="${x%.*}"
     x2=$cachedir/${name}_rmdup.bam
-    echo "$sambamba markdup -r $x $x2"| $onceonly --pfff -d . -v --skip $x2
+    $sambamba markdup -r $x $x2
+    # Don't use once-only here with cache
+    # echo "$sambamba markdup -r $x $x2"| $onceonly --pfff -d . -v --skip $x2
     [ $? -ne 0 ] && exit 1
   done
   normal=$cachedir/${normal%.*}_rmdup.bam
@@ -72,14 +76,14 @@ if true ; then
   for x in $normal $tumor ; do 
     echo "==== Select design $x"
     name="${x%.*}"
-    x2=$cachedir/${name}_bed.bam
+    x2=${name}_bed.bam
     echo "$HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2"| $onceonly --pfff -d . -v --skip $x2
-    # Don't use once-only here
+    # Don't use once-only here with cache
     # $HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2
     [ $? -ne 0 ] && exit 1
   done
-  normal=$cachedir/${normal%.*}_bed.bam
-  tumor=$cachedir/${tumor%.*}_bed.bam
+  normal=${normal%.*}_bed.bam
+  tumor=${tumor%.*}_bed.bam
   echo "normal=$normal tumor=$tumor"
 fi
 
@@ -110,6 +114,6 @@ for chr in $CHROMOSOMES ; do
   echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumorname.$chr --snp-file $normalname-$tumorname.snp --readcount-file $tumorname.$chr.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
   [ $? -ne 0 ] && exit 1
   echo "perl $HOME/opt/somatic-sniper/src/scripts/highconfidence.pl --min-mapping-quality $phred --snp-file $tumorname.$chr.fp_pass"|$onceonly -d somaticsniper -v
-  [ $? -ne 0 ] && exit 1
+  # [ $? -ne 0 ] && exit 1  -- throws error on empty fp_pass!
 done
 
