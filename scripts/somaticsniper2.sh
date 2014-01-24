@@ -117,9 +117,10 @@ done
   echo "==== Somatic sniper"
   outputsnp=$tumor.snp
   outputvcf=$tumor.vcf
-  echo "$somaticsniper -q $phred -Q $phred -J -s 0.01 -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
+  # echo "$somaticsniper -q $phred -Q $phred -J -s 0.01 -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
+  echo "$somaticsniper -J -s 0.01 -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
   [ $? -ne 0 ] && exit 1
-  echo "$somaticsniper -q $phred -Q $phred -J -s 0.01 -f $refgenome -F vcf $tumor $normal $outputvcf"| $onceonly --pfff -d somaticsniper -v --skip $outputvcf
+  echo "$somaticsniper -J -s 0.01 -f $refgenome -F vcf $tumor $normal $outputvcf"| $onceonly --pfff -d somaticsniper -v --skip $outputvcf
   [ $? -ne 0 ] && exit 1
 
 echo "DONE FOR NOW"
