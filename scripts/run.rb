@@ -3,7 +3,7 @@
 # This runner takes a file of normal-tumor BAM files and executes the script standalone
 # or on PBS with the --pbs switch.
 #
-# Configuration happens in a JSON file
+# Configuration through JSON file
 #
 # E.g.
 #
