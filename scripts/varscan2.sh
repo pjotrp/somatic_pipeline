@@ -6,7 +6,11 @@
 #
 # This script is normally run from a controller which creates env.sh. It can also 
 # be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
-
+#
+# E.g.
+#
+#   ~/opt/somatic_pipeline/scripts/run.rb --pbs --config run.json ~/opt/somatic_pipeline/scripts/varscan2.sh all_mbc.txt
+#
 # Uncomment for testing:
 # CHR=17
 
