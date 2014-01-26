@@ -78,13 +78,13 @@ done
 
 # --mpileup 1 option (newer undocumented scoring)
 # options=$normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.001 --strand-filter --min-var-freq 0.20
-options=$normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.01 --strand-filter --min-var-freq 0.20
-# First the VCF
-echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $options --output-vcf"|$onceonly --pfff -v -d varscan2
-# Then the native format
+options="$normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.01 --min-var-freq 0.20"
 echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $options"|$onceonly --pfff -v -d varscan2
 [ $? -ne 0 ] && exit 1
 
+#   --min-tumor-freq - Minimum variant allele frequency in tumor [0.10]
+#   --max-normal-freq - Maximum variant allele frequency in normal [0.05]
+#   --p-value - P-value for high-confidence calling [0.07]
 echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varScan.output.snp"|$onceonly -v -d varscan2 --skip $normal-$tumor.varScan.output.snp
 [ $? -ne 0 ] && exit 1
 
