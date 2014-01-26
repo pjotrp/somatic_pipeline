@@ -76,7 +76,7 @@ if true ; then
     if [ $use_cache == "true" ]; then
       $sambamba markdup -r $x $x2
     else
-      echo "$sambamba markdup -r $x $x2"| $onceonly --pfff -d . -v --skip $x2
+      echo "$sambamba markdup -r $x $x2"| $onceonly --pfff --force -d . -v --skip $x2
     fi
     [ $? -ne 0 ] && exit 1
   done
@@ -93,13 +93,13 @@ if true ; then
     if [ $use_cache == "true" ]; then
       $HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2
     else
-      echo "$HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2"| $onceonly --pfff -d . -v --skip $x2
+      echo "$HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2"| $onceonly --pfff --force -d . -v --skip $x2
     fi
     [ $? -ne 0 ] && exit 1
   done
   # Only keep the reduced files
-  rm $normal
-  rm $tumor
+  # rm $normal
+  # rm $tumor
   normal=${normal%.*}_bed.bam
   tumor=${tumor%.*}_bed.bam
   echo "normal=$normal tumor=$tumor"
