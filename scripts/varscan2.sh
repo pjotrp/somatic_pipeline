@@ -42,7 +42,7 @@ tumorname=$2
 normal=$3
 tumor=$4
 
-phred=30  # 1:1000
+phred=10  # 1:1000
 onceonly=$ONCEONLY
 refgenome=$REFSEQ
 samtools=$SAMTOOLS
@@ -75,14 +75,14 @@ for x in $normal $tumor ; do
   [ $? -ne 0 ] && exit 1
   echo "==== Create samtools mpileup of $x"
   # check -E option
+  # echo "$samtools mpileup -B -q $phred -f $refgenome -l $bed ../$x > $x.mpileup"|$onceonly --pfff -v -d varscan2 --skip $x.mpileup
   echo "$samtools mpileup -B -q $phred -f $refgenome -l $bed ../$x > $x.mpileup"|$onceonly --pfff -v -d varscan2 --skip $x.mpileup
   [ $? -ne 0 ] && exit 1
 done
 
-
 # --mpileup 1 option (newer undocumented scoring)
 # options=$normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.001 --strand-filter --min-var-freq 0.20
-options="$normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.01 --min-var-freq 0.20"
+options="$normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 6 --somatic-p-value 0.01 --min-var-freq 0.15"
 echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $options"|$onceonly --pfff -v -d varscan2
 [ $? -ne 0 ] && exit 1
 
