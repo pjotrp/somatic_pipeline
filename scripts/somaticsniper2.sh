@@ -1,5 +1,9 @@
 #! /bin/bash
 #
+# Run the somatic sniper on pairs of BAM files. Currently somatic sniper is
+# called twice to output both .vcf and .snp, which call the same variants, but
+# each contains sligthly different information.
+#
 # Usage
 #
 #   somaticsniper2.sh [--config env.sh] normal_descr tumor_descr normal.bam tumor.bam
