@@ -7,13 +7,16 @@ Various controller scripts for the SOLiD based somatic pipeline.
 The scripts/update_xxxx are designed to run on their own, accepting
 a name, normal and tumor BAM files, and perhaps some other arguments.
 
-There are two control scripts which take a list of normal and tumor
-BAM file pairs and a few other options. One control script is for
-standalone running (run.rb) and the other is for PBS (submit.rb).
+There is one control scripts which take a list of normal and tumor BAM
+file pairs and a few other options. The control script can be used for
+standalone running and for PBS.
 
 For more information, see
 
     ./scripts/run.rb
+
+One of the features of this pipeline is that is makes extensive use of 
+[once-only](https://github.com/pjotrp/once-only).
 
 ## Copyright
 
