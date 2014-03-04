@@ -1,0 +1,61 @@
+# Template for generating RDF triples from SNV1 output (in-house annotation
+# pipeline). For more information see bamannotate.md file in doc_central.
+#
+# Create RDF with for example 
+#
+#   env INFILE=variants.snv1 erb annotate_snv1.rdf
+#
+# or full
+#
+#   env INFILE=test/data/input/snv/example-varscan.snp.snv1 erb ./templates/rdf/annotate_snv1.rdf
+#
+# Example output: 
+#
+#  :annotated_snv_1_22924337  :chr     "1" .
+#  :annotated_snv_1_22924337  :pos     22924337 .
+#  :annotated_snv_1_22924337  :snv     true .
+#  :annotated_snv_1_22924337  :ref     "A" .
+#  :annotated_snv_1_22924337  :var     "T" .
+#  :annotated_snv_1_22924337  :aa_ref  "gAg" .
+#  :annotated_snv_1_22924337  :aa_var  "gTg" .
+#  :annotated_snv_1_22924337  :strand  1 .
+#  :annotated_snv_1_22924337  :gene_name  "EPHA8" .
+#  :annotated_snv_1_22924337  :snp_id  "novel" .
+#  :annotated_snv_1_22924337  :effect  :missense_variant .
+#  :annotated_snv_1_22924337  :gene_id        :ENSG00000070886 .
+#  :annotated_snv_1_22924337  :transcript_id  :ENST00000166244 .
+#  :annotated_snv_1_22924337  :protein_id     :ENSP00000166244 .
+# 
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rdf')  %>
+
+<%
+   File.open(ENV["INFILE"]).each_line do |line|
+     next if line =~ /^#/
+     fields = line.split(/\t/)
+     chr = fields[0]
+     pos = fields[1]
+     (ref,var) = fields[2].split(/\//)
+     (aaref,aavar) = fields[11].split(/\//)
+     high_pop_freq = fields[23] if fields[23] != 'NA'
+     #  id = BioRdf::Turtle.mangle_identifier(gene)
+     id = ':'+['annotated_snv',chr,pos].join('_')
+%>
+  <%= id %>  :chr     "<%= chr %>" .
+  <%= id %>  :pos     <%= pos %> .
+  <%= id %>  :snv     true .
+  <%= id %>  :ref     "<%= ref %>" .
+  <%= id %>  :var     "<%= var %>" .
+  <%= id %>  :aa_ref  "<%= aaref %>" .
+  <%= id %>  :aa_var  "<%= aavar %>" .
+  <%= id %>  :strand  <%= fields[3] %> .
+  <%= id %>  :gene_name  "<%= fields[9] %>" .
+  <%= id %>  :snp_id  "<%= fields[12] %>" .
+  <%= id %>  :effect  :<%= fields[13] %> .
+  <%= id %>  :gene_id        :<%= fields[25] %> .
+  <%= id %>  :transcript_id  :<%= fields[26] %> .
+  <% if fields[27] != 'NA' %><%= id %>  :protein_id     :<%= fields[27] %> .<% end %>
+  <% if high_pop_freq %><%= id %>  :high_pop_freq  <%= high_pop_freq %> .
+  <%= id %>  :high_pop  "<%= fields[24] %>" .
+  <% end %>
+<% end %>
