@@ -46,15 +46,18 @@
   <%= id %>  :snv     true .
   <%= id %>  :ref     "<%= ref %>" .
   <%= id %>  :var     "<%= var %>" .
-  <%= id %>  :aa_ref  "<%= aaref %>" .
-  <%= id %>  :aa_var  "<%= aavar %>" .
   <%= id %>  :strand  <%= fields[3] %> .
   <%= id %>  :gene_name  "<%= fields[9] %>" .
   <%= id %>  :snp_id  "<%= fields[12] %>" .
   <%= id %>  :effect  :<%= fields[13] %> .
   <%= id %>  :gene_id        :<%= fields[25] %> .
   <%= id %>  :transcript_id  :<%= fields[26] %> .
-  <% if fields[27] != 'NA' %><%= id %>  :protein_id     :<%= fields[27] %> .<% end %>
+  <% if fields[27] != 'NA' and aaref != 'NA' and fields[16] != 'NA' %><%= id %>  :protein_id     :<%= fields[27] %> .
+  <%= id %>  :polyphen  <%= fields[16] %> .
+  <%= id %>  :sift      <%= fields[18] %> .
+  <%= id %>  :aa_ref  "<%= aaref %>" .
+  <%= id %>  :aa_var  "<%= aavar %>" .
+  <% end %>
   <% if high_pop_freq %><%= id %>  :high_pop_freq  <%= high_pop_freq %> .
   <%= id %>  :high_pop  "<%= fields[24] %>" .
   <% end %>
