@@ -4,12 +4,13 @@
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
-SELECT ?member WHERE {
+SELECT ?tid ?chr ?pos ?polyphen ?sift WHERE {
   ?id :chr ?chr .
-  ?id :pos 10338145 .
   ?id :pos ?pos .
-  ?id :sift ?sift .
-  ?id :polyphen ?polyphen .
-
+  ?tid :snv_id ?id .
+  ?tid :polyphen ?polyphen .
+  ?tid :sift ?sift .
   # ?id :transcript_id ?transcript .
+  #?id :sift ?sift .
+  #?id :polyphen ?polyphen .
 }

@@ -44,18 +44,18 @@
      tid = id+'_'+fields[26]
 %>
     <% if id != prev_id %>
-    <%= id %>  :chr     "<%= chr %>" .
-    <%= id %>  :pos     <%= pos %> .
-    <%= id %>  :snv     true .
-    <%= id %>  :ref     "<%= ref %>" .
-    <%= id %>  :var     "<%= var %>" .
-    <%= id %>  :aa_ref  "<%= aaref %>" .
-    <%= id %>  :aa_var  "<%= aavar %>" .
-    <%= id %>  :strand  <%= fields[3] %> .
-    <%= id %>  :gene_name  "<%= fields[9] %>" .
-    <%= id %>  :snp_id  "<%= fields[12] %>" .
-    <%= id %>  :effect  :<%= fields[13] %> .
-    <%= id %>  :gene_id        :<%= fields[25] %> .
+    <%= id %>  :chr     "<%= chr %>" ;
+        :pos     <%= pos %> ;
+        :snv     true ;
+        :ref     "<%= ref %>" ;
+        :var     "<%= var %>" ;
+        :aa_ref  "<%= aaref %>" ;
+        :aa_var  "<%= aavar %>" ;
+        :strand  <%= fields[3] %> ;
+        :gene_name  "<%= fields[9] %>" ;
+        :snp_id  "<%= fields[12] %>" ;
+        :effect  :<%= fields[13] %> ;
+        :gene_id        :<%= fields[25] %> .
     <% if high_pop_freq %><%= id %>  :high_pop_freq  <%= high_pop_freq %> .
     <%= id %>  :high_pop  "<%= fields[24] %>" .
     <% end %>
