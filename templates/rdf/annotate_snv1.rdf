@@ -11,21 +11,20 @@
 #
 # Example output: 
 #
-#  :annotated_snv_1_22924337  :chr     "1" .
-#  :annotated_snv_1_22924337  :pos     22924337 .
-#  :annotated_snv_1_22924337  :snv     true .
-#  :annotated_snv_1_22924337  :ref     "A" .
-#  :annotated_snv_1_22924337  :var     "T" .
-#  :annotated_snv_1_22924337  :aa_ref  "gAg" .
-#  :annotated_snv_1_22924337  :aa_var  "gTg" .
-#  :annotated_snv_1_22924337  :strand  1 .
-#  :annotated_snv_1_22924337  :gene_name  "EPHA8" .
-#  :annotated_snv_1_22924337  :snp_id  "novel" .
-#  :annotated_snv_1_22924337  :effect  :missense_variant .
-#  :annotated_snv_1_22924337  :gene_id        :ENSG00000070886 .
-#  :annotated_snv_1_22924337  :transcript_id  :ENST00000166244 .
-#  :annotated_snv_1_22924337  :protein_id     :ENSP00000166244 .
-# 
+#  :annotated_snv_1_10338145_G  :chr     "1" .
+#  :annotated_snv_1_10338145_G  :pos     10338145 .
+#  :annotated_snv_1_10338145_G  :snv     true .
+#  :annotated_snv_1_10338145_G  :ref     "A" .
+#  :annotated_snv_1_10338145_G  :var     "G" .
+#  :annotated_snv_1_10338145_G  :strand  1 .
+#  :annotated_snv_1_10338145_G  :gene_name  "KIF1B" .
+#  :annotated_snv_1_10338145_G  :snp_id  "novel" .
+#  :annotated_snv_1_10338145_G  :effect  :missense_variant .
+#  :annotated_snv_1_10338145_G  :gene_id        :ENSG00000054523 .
+#  :annotated_snv_1_10338145_G  :transcript_id  :ENST00000377081 .
+#  :annotated_snv_1_10338145_G  :protein_id     :ENSP00000366284 .
+#  :annotated_snv_1_10338145_G  :polyphen  0.007 .
+#   :annotated_snv_1_10338145_G  :sift      1 .
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rdf')  %>
 

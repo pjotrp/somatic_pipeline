@@ -1,0 +1,13 @@
+<%
+   filter=ENV['FILTER']
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+
+SELECT ?id ?chr ?pos ?sift ?polyphen ?transcript WHERE {
+  ?id :chr ?chr .
+  ?id :pos ?pos .
+  ?id :sift ?sift .
+  ?id :polyphen ?polyphen .
+  ?id :transcript_id ?transcript .
+}
