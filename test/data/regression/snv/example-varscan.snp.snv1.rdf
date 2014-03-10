@@ -1,0 +1,1337 @@
+# Template for generating RDF triples from SNV1 output (in-house annotation
+# pipeline). For more information see bamannotate.md file in doc_central.
+#
+# Create RDF with for example 
+#
+#   env INFILE=variants.snv1 erb annotate_snv1.rdf
+#
+# or full
+#
+#   env INFILE=test/data/input/snv/example-varscan.snp.snv1 erb ./templates/rdf/annotate_snv1.rdf
+#
+# Example output: 
+#
+#  :annotated_snv_1_10338145_G  :chr     "1" .
+#  :annotated_snv_1_10338145_G  :pos     10338145 .
+#  :annotated_snv_1_10338145_G  :snv     true .
+#  :annotated_snv_1_10338145_G  :ref     "A" .
+#  :annotated_snv_1_10338145_G  :var     "G" .
+#  :annotated_snv_1_10338145_G  :strand  1 .
+#  :annotated_snv_1_10338145_G  :gene_name  "KIF1B" .
+#  :annotated_snv_1_10338145_G  :snp_id  "novel" .
+#  :annotated_snv_1_10338145_G  :effect  :missense_variant .
+#  :annotated_snv_1_10338145_G  :gene_id        :ENSG00000054523 .
+#  :annotated_snv_1_10338145_G  :tid  :ENST00000377081 .
+#  :annotated_snv_1_10338145_G  :protein_id     :ENSP00000366284 .
+#  :annotated_snv_1_10338145_G  :polyphen  0.007 .
+#   :annotated_snv_1_10338145_G  :sift      1 .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hgnc: <http://identifiers.org/hgnc.symbol/> .
+@prefix doi: <http://dx.doi.org/> .
+@prefix : <http://biobeat.org/rdf/annotated-snv#> .
+
+
+
+
+    
+    :annotated_snv_1_1650787_C  :chr     "1" ;
+        :pos     1650787 ;
+        :snv     true ;
+        :ref     "T" ;
+        :var     "C" ;
+        :aa_ref  "cAt" ;
+        :aa_var  "cGt" ;
+        :strand  -1 ;
+        :gene_name  "CDK11A" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000008128 .
+    
+    
+    :annotated_snv_1_1650787_C_ENST00000509982  :snv_id  :annotated_snv_1_1650787_C .
+    :annotated_snv_1_1650787_C_ENST00000509982  :tid  :ENST00000509982 .
+  
+    :annotated_snv_1_1650787_C_ENST00000509982  :protein_id     :ENSP00000422149 .
+    :annotated_snv_1_1650787_C_ENST00000509982  :polyphen  0.003 .
+    :annotated_snv_1_1650787_C_ENST00000509982  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650787_C_ENST00000356200  :snv_id  :annotated_snv_1_1650787_C .
+    :annotated_snv_1_1650787_C_ENST00000356200  :tid  :ENST00000356200 .
+  
+    :annotated_snv_1_1650787_C_ENST00000356200  :protein_id     :ENSP00000348529 .
+    :annotated_snv_1_1650787_C_ENST00000356200  :polyphen  0 .
+    :annotated_snv_1_1650787_C_ENST00000356200  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650787_C_ENST00000460465  :snv_id  :annotated_snv_1_1650787_C .
+    :annotated_snv_1_1650787_C_ENST00000460465  :tid  :ENST00000460465 .
+  
+    :annotated_snv_1_1650787_C_ENST00000460465  :protein_id     :ENSP00000462289 .
+    :annotated_snv_1_1650787_C_ENST00000460465  :polyphen  0 .
+    :annotated_snv_1_1650787_C_ENST00000460465  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650787_C_ENST00000404249  :snv_id  :annotated_snv_1_1650787_C .
+    :annotated_snv_1_1650787_C_ENST00000404249  :tid  :ENST00000404249 .
+  
+    :annotated_snv_1_1650787_C_ENST00000404249  :protein_id     :ENSP00000384442 .
+    :annotated_snv_1_1650787_C_ENST00000404249  :polyphen  0 .
+    :annotated_snv_1_1650787_C_ENST00000404249  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650787_C_ENST00000378638  :snv_id  :annotated_snv_1_1650787_C .
+    :annotated_snv_1_1650787_C_ENST00000378638  :tid  :ENST00000378638 .
+  
+    :annotated_snv_1_1650787_C_ENST00000378638  :protein_id     :ENSP00000367905 .
+    :annotated_snv_1_1650787_C_ENST00000378638  :polyphen  0 .
+    :annotated_snv_1_1650787_C_ENST00000378638  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G  :chr     "1" ;
+        :pos     1650797 ;
+        :snv     true ;
+        :ref     "A" ;
+        :var     "G" ;
+        :aa_ref  "Tgt" ;
+        :aa_var  "Cgt" ;
+        :strand  -1 ;
+        :gene_name  "CDK11A" ;
+        :snp_id  "COSM119024" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000008128 .
+    :annotated_snv_1_1650797_G  :high_pop_freq  1 .
+    :annotated_snv_1_1650797_G  :high_pop  "COSMIC:gene:CDC2L2:tumour_site:ovary" .
+    
+    
+    :annotated_snv_1_1650797_G_ENST00000509982  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000509982  :tid  :ENST00000509982 .
+  
+    :annotated_snv_1_1650797_G_ENST00000509982  :protein_id     :ENSP00000422149 .
+    :annotated_snv_1_1650797_G_ENST00000509982  :polyphen  0.003 .
+    :annotated_snv_1_1650797_G_ENST00000509982  :sift      0.92 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000356200  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000356200  :tid  :ENST00000356200 .
+  
+    :annotated_snv_1_1650797_G_ENST00000356200  :protein_id     :ENSP00000348529 .
+    :annotated_snv_1_1650797_G_ENST00000356200  :polyphen  0 .
+    :annotated_snv_1_1650797_G_ENST00000356200  :sift      0.88 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000598846  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000598846  :tid  :ENST00000598846 .
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000378635  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000378635  :tid  :ENST00000378635 .
+  
+    :annotated_snv_1_1650797_G_ENST00000378635  :protein_id     :ENSP00000367902 .
+    :annotated_snv_1_1650797_G_ENST00000378635  :polyphen  0 .
+    :annotated_snv_1_1650797_G_ENST00000378635  :sift      0.42 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000357760  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000357760  :tid  :ENST00000357760 .
+  
+    :annotated_snv_1_1650797_G_ENST00000357760  :protein_id     :ENSP00000350403 .
+    :annotated_snv_1_1650797_G_ENST00000357760  :polyphen  0.003 .
+    :annotated_snv_1_1650797_G_ENST00000357760  :sift      0.75 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000356937  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000356937  :tid  :ENST00000356937 .
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000460465  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000460465  :tid  :ENST00000460465 .
+  
+    :annotated_snv_1_1650797_G_ENST00000460465  :protein_id     :ENSP00000462289 .
+    :annotated_snv_1_1650797_G_ENST00000460465  :polyphen  0 .
+    :annotated_snv_1_1650797_G_ENST00000460465  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000479362  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000479362  :tid  :ENST00000479362 .
+  
+    :annotated_snv_1_1650797_G_ENST00000479362  :protein_id     :ENSP00000423900 .
+    :annotated_snv_1_1650797_G_ENST00000479362  :polyphen  0.007 .
+    :annotated_snv_1_1650797_G_ENST00000479362  :sift      0.45 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000404249  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000404249  :tid  :ENST00000404249 .
+  
+    :annotated_snv_1_1650797_G_ENST00000404249  :protein_id     :ENSP00000384442 .
+    :annotated_snv_1_1650797_G_ENST00000404249  :polyphen  0 .
+    :annotated_snv_1_1650797_G_ENST00000404249  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000358779  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000358779  :tid  :ENST00000358779 .
+  
+    :annotated_snv_1_1650797_G_ENST00000358779  :protein_id     :ENSP00000351629 .
+    :annotated_snv_1_1650797_G_ENST00000358779  :polyphen  0 .
+    :annotated_snv_1_1650797_G_ENST00000358779  :sift      0.71 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000378638  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000378638  :tid  :ENST00000378638 .
+  
+    :annotated_snv_1_1650797_G_ENST00000378638  :protein_id     :ENSP00000367905 .
+    :annotated_snv_1_1650797_G_ENST00000378638  :polyphen  0 .
+    :annotated_snv_1_1650797_G_ENST00000378638  :sift      0.88 .
+    
+  
+
+    
+    :annotated_snv_1_1650797_G_ENST00000378633  :snv_id  :annotated_snv_1_1650797_G .
+    :annotated_snv_1_1650797_G_ENST00000378633  :tid  :ENST00000378633 .
+  
+    :annotated_snv_1_1650797_G_ENST00000378633  :protein_id     :ENSP00000367900 .
+    :annotated_snv_1_1650797_G_ENST00000378633  :polyphen  0.007 .
+    :annotated_snv_1_1650797_G_ENST00000378633  :sift      0.41 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G  :chr     "1" ;
+        :pos     1650832 ;
+        :snv     true ;
+        :ref     "A" ;
+        :var     "G" ;
+        :aa_ref  "gTt" ;
+        :aa_var  "gCt" ;
+        :strand  -1 ;
+        :gene_name  "CDK11A" ;
+        :snp_id  "rs72909030" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000008128 .
+    :annotated_snv_1_1650832_G  :high_pop_freq  0.5 .
+    :annotated_snv_1_1650832_G  :high_pop  "BUSHMAN:BANTU" .
+    
+    
+    :annotated_snv_1_1650832_G_ENST00000509982  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000509982  :tid  :ENST00000509982 .
+  
+    :annotated_snv_1_1650832_G_ENST00000509982  :protein_id     :ENSP00000422149 .
+    :annotated_snv_1_1650832_G_ENST00000509982  :polyphen  0.017 .
+    :annotated_snv_1_1650832_G_ENST00000509982  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G_ENST00000356200  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000356200  :tid  :ENST00000356200 .
+  
+    :annotated_snv_1_1650832_G_ENST00000356200  :protein_id     :ENSP00000348529 .
+    :annotated_snv_1_1650832_G_ENST00000356200  :polyphen  0.01 .
+    :annotated_snv_1_1650832_G_ENST00000356200  :sift      0.88 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G_ENST00000378635  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000378635  :tid  :ENST00000378635 .
+  
+    :annotated_snv_1_1650832_G_ENST00000378635  :protein_id     :ENSP00000367902 .
+    :annotated_snv_1_1650832_G_ENST00000378635  :polyphen  0 .
+    :annotated_snv_1_1650832_G_ENST00000378635  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G_ENST00000357760  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000357760  :tid  :ENST00000357760 .
+  
+    :annotated_snv_1_1650832_G_ENST00000357760  :protein_id     :ENSP00000350403 .
+    :annotated_snv_1_1650832_G_ENST00000357760  :polyphen  0.006 .
+    :annotated_snv_1_1650832_G_ENST00000357760  :sift      0.85 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G_ENST00000460465  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000460465  :tid  :ENST00000460465 .
+  
+    :annotated_snv_1_1650832_G_ENST00000460465  :protein_id     :ENSP00000462289 .
+    :annotated_snv_1_1650832_G_ENST00000460465  :polyphen  0.004 .
+    :annotated_snv_1_1650832_G_ENST00000460465  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G_ENST00000479362  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000479362  :tid  :ENST00000479362 .
+  
+    :annotated_snv_1_1650832_G_ENST00000479362  :protein_id     :ENSP00000423900 .
+    :annotated_snv_1_1650832_G_ENST00000479362  :polyphen  0.012 .
+    :annotated_snv_1_1650832_G_ENST00000479362  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G_ENST00000404249  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000404249  :tid  :ENST00000404249 .
+  
+    :annotated_snv_1_1650832_G_ENST00000404249  :protein_id     :ENSP00000384442 .
+    :annotated_snv_1_1650832_G_ENST00000404249  :polyphen  0.013 .
+    :annotated_snv_1_1650832_G_ENST00000404249  :sift      0.8 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G_ENST00000358779  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000358779  :tid  :ENST00000358779 .
+  
+    :annotated_snv_1_1650832_G_ENST00000358779  :protein_id     :ENSP00000351629 .
+    :annotated_snv_1_1650832_G_ENST00000358779  :polyphen  0 .
+    :annotated_snv_1_1650832_G_ENST00000358779  :sift      0.85 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G_ENST00000378638  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000378638  :tid  :ENST00000378638 .
+  
+    :annotated_snv_1_1650832_G_ENST00000378638  :protein_id     :ENSP00000367905 .
+    :annotated_snv_1_1650832_G_ENST00000378638  :polyphen  0.01 .
+    :annotated_snv_1_1650832_G_ENST00000378638  :sift      0.88 .
+    
+  
+
+    
+    :annotated_snv_1_1650832_G_ENST00000378633  :snv_id  :annotated_snv_1_1650832_G .
+    :annotated_snv_1_1650832_G_ENST00000378633  :tid  :ENST00000378633 .
+  
+    :annotated_snv_1_1650832_G_ENST00000378633  :protein_id     :ENSP00000367900 .
+    :annotated_snv_1_1650832_G_ENST00000378633  :polyphen  0.012 .
+    :annotated_snv_1_1650832_G_ENST00000378633  :sift      0.94 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A  :chr     "1" ;
+        :pos     1650845 ;
+        :snv     true ;
+        :ref     "G" ;
+        :var     "A" ;
+        :aa_ref  "Cgg" ;
+        :aa_var  "Tgg" ;
+        :strand  -1 ;
+        :gene_name  "CDK11A" ;
+        :snp_id  "rs1059831" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000008128 .
+    :annotated_snv_1_1650845_A  :high_pop_freq  1 .
+    :annotated_snv_1_1650845_A  :high_pop  "HUMANGENOME_JCVI:J. Craig Venter" .
+    
+    
+    :annotated_snv_1_1650845_A_ENST00000509982  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000509982  :tid  :ENST00000509982 .
+  
+    :annotated_snv_1_1650845_A_ENST00000509982  :protein_id     :ENSP00000422149 .
+    :annotated_snv_1_1650845_A_ENST00000509982  :polyphen  0.031 .
+    :annotated_snv_1_1650845_A_ENST00000509982  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A_ENST00000356200  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000356200  :tid  :ENST00000356200 .
+  
+    :annotated_snv_1_1650845_A_ENST00000356200  :protein_id     :ENSP00000348529 .
+    :annotated_snv_1_1650845_A_ENST00000356200  :polyphen  0.996 .
+    :annotated_snv_1_1650845_A_ENST00000356200  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A_ENST00000378635  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000378635  :tid  :ENST00000378635 .
+  
+    :annotated_snv_1_1650845_A_ENST00000378635  :protein_id     :ENSP00000367902 .
+    :annotated_snv_1_1650845_A_ENST00000378635  :polyphen  0.715 .
+    :annotated_snv_1_1650845_A_ENST00000378635  :sift      0.01 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A_ENST00000357760  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000357760  :tid  :ENST00000357760 .
+  
+    :annotated_snv_1_1650845_A_ENST00000357760  :protein_id     :ENSP00000350403 .
+    :annotated_snv_1_1650845_A_ENST00000357760  :polyphen  0.998 .
+    :annotated_snv_1_1650845_A_ENST00000357760  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A_ENST00000460465  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000460465  :tid  :ENST00000460465 .
+  
+    :annotated_snv_1_1650845_A_ENST00000460465  :protein_id     :ENSP00000462289 .
+    :annotated_snv_1_1650845_A_ENST00000460465  :polyphen  0.049 .
+    :annotated_snv_1_1650845_A_ENST00000460465  :sift      0.01 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A_ENST00000479362  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000479362  :tid  :ENST00000479362 .
+  
+    :annotated_snv_1_1650845_A_ENST00000479362  :protein_id     :ENSP00000423900 .
+    :annotated_snv_1_1650845_A_ENST00000479362  :polyphen  0.991 .
+    :annotated_snv_1_1650845_A_ENST00000479362  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A_ENST00000404249  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000404249  :tid  :ENST00000404249 .
+  
+    :annotated_snv_1_1650845_A_ENST00000404249  :protein_id     :ENSP00000384442 .
+    :annotated_snv_1_1650845_A_ENST00000404249  :polyphen  0.999 .
+    :annotated_snv_1_1650845_A_ENST00000404249  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A_ENST00000358779  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000358779  :tid  :ENST00000358779 .
+  
+    :annotated_snv_1_1650845_A_ENST00000358779  :protein_id     :ENSP00000351629 .
+    :annotated_snv_1_1650845_A_ENST00000358779  :polyphen  0.996 .
+    :annotated_snv_1_1650845_A_ENST00000358779  :sift      0.02 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A_ENST00000378638  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000378638  :tid  :ENST00000378638 .
+  
+    :annotated_snv_1_1650845_A_ENST00000378638  :protein_id     :ENSP00000367905 .
+    :annotated_snv_1_1650845_A_ENST00000378638  :polyphen  0.996 .
+    :annotated_snv_1_1650845_A_ENST00000378638  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_1650845_A_ENST00000378633  :snv_id  :annotated_snv_1_1650845_A .
+    :annotated_snv_1_1650845_A_ENST00000378633  :tid  :ENST00000378633 .
+  
+    :annotated_snv_1_1650845_A_ENST00000378633  :protein_id     :ENSP00000367900 .
+    :annotated_snv_1_1650845_A_ENST00000378633  :polyphen  0.991 .
+    :annotated_snv_1_1650845_A_ENST00000378633  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_5924014_T  :chr     "1" ;
+        :pos     5924014 ;
+        :snv     true ;
+        :ref     "C" ;
+        :var     "T" ;
+        :aa_ref  "cGg" ;
+        :aa_var  "cAg" ;
+        :strand  -1 ;
+        :gene_name  "NPHP4" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000131697 .
+    
+    
+    :annotated_snv_1_5924014_T_ENST00000378156  :snv_id  :annotated_snv_1_5924014_T .
+    :annotated_snv_1_5924014_T_ENST00000378156  :tid  :ENST00000378156 .
+  
+    :annotated_snv_1_5924014_T_ENST00000378156  :protein_id     :ENSP00000367398 .
+    :annotated_snv_1_5924014_T_ENST00000378156  :polyphen  0.017 .
+    :annotated_snv_1_5924014_T_ENST00000378156  :sift      0.35 .
+    
+  
+
+    
+    :annotated_snv_1_5927929_A  :chr     "1" ;
+        :pos     5927929 ;
+        :snv     true ;
+        :ref     "G" ;
+        :var     "A" ;
+        :aa_ref  "Ccc" ;
+        :aa_var  "Tcc" ;
+        :strand  -1 ;
+        :gene_name  "NPHP4" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000131697 .
+    
+    
+    :annotated_snv_1_5927929_A_ENST00000378156  :snv_id  :annotated_snv_1_5927929_A .
+    :annotated_snv_1_5927929_A_ENST00000378156  :tid  :ENST00000378156 .
+  
+    :annotated_snv_1_5927929_A_ENST00000378156  :protein_id     :ENSP00000367398 .
+    :annotated_snv_1_5927929_A_ENST00000378156  :polyphen  0.679 .
+    :annotated_snv_1_5927929_A_ENST00000378156  :sift      0.01 .
+    
+  
+
+    
+    :annotated_snv_1_6184092_G  :chr     "1" ;
+        :pos     6184092 ;
+        :snv     true ;
+        :ref     "A" ;
+        :var     "G" ;
+        :aa_ref  "Tcg" ;
+        :aa_var  "Ccg" ;
+        :strand  -1 ;
+        :gene_name  "CHD5" ;
+        :snp_id  "rs2843493" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000116254 .
+    :annotated_snv_1_6184092_G  :high_pop_freq  1 .
+    :annotated_snv_1_6184092_G  :high_pop  "CSHL-HAPMAP:HapMap-HCB" .
+    
+    
+    :annotated_snv_1_6184092_G_ENST00000378021  :snv_id  :annotated_snv_1_6184092_G .
+    :annotated_snv_1_6184092_G_ENST00000378021  :tid  :ENST00000378021 .
+  
+    :annotated_snv_1_6184092_G_ENST00000378021  :protein_id     :ENSP00000367260 .
+    :annotated_snv_1_6184092_G_ENST00000378021  :polyphen  0 .
+    :annotated_snv_1_6184092_G_ENST00000378021  :sift      0.27 .
+    
+  
+
+    
+    :annotated_snv_1_6184092_G_ENST00000262450  :snv_id  :annotated_snv_1_6184092_G .
+    :annotated_snv_1_6184092_G_ENST00000262450  :tid  :ENST00000262450 .
+  
+    :annotated_snv_1_6184092_G_ENST00000262450  :protein_id     :ENSP00000262450 .
+    :annotated_snv_1_6184092_G_ENST00000262450  :polyphen  0.001 .
+    :annotated_snv_1_6184092_G_ENST00000262450  :sift      0.27 .
+    
+  
+
+    
+    :annotated_snv_1_6184092_G_ENST00000462991  :snv_id  :annotated_snv_1_6184092_G .
+    :annotated_snv_1_6184092_G_ENST00000462991  :tid  :ENST00000462991 .
+  
+    :annotated_snv_1_6184092_G_ENST00000462991  :protein_id     :ENSP00000466706 .
+    :annotated_snv_1_6184092_G_ENST00000462991  :polyphen  0.006 .
+    :annotated_snv_1_6184092_G_ENST00000462991  :sift      0.33 .
+    
+  
+
+    
+    :annotated_snv_1_6188149_A  :chr     "1" ;
+        :pos     6188149 ;
+        :snv     true ;
+        :ref     "G" ;
+        :var     "A" ;
+        :aa_ref  "tCc" ;
+        :aa_var  "tTc" ;
+        :strand  -1 ;
+        :gene_name  "CHD5" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000116254 .
+    
+    
+    :annotated_snv_1_6188149_A_ENST00000378021  :snv_id  :annotated_snv_1_6188149_A .
+    :annotated_snv_1_6188149_A_ENST00000378021  :tid  :ENST00000378021 .
+  
+    :annotated_snv_1_6188149_A_ENST00000378021  :protein_id     :ENSP00000367260 .
+    :annotated_snv_1_6188149_A_ENST00000378021  :polyphen  0.999 .
+    :annotated_snv_1_6188149_A_ENST00000378021  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_6188149_A_ENST00000262450  :snv_id  :annotated_snv_1_6188149_A .
+    :annotated_snv_1_6188149_A_ENST00000262450  :tid  :ENST00000262450 .
+  
+    :annotated_snv_1_6188149_A_ENST00000262450  :protein_id     :ENSP00000262450 .
+    :annotated_snv_1_6188149_A_ENST00000262450  :polyphen  0.96 .
+    :annotated_snv_1_6188149_A_ENST00000262450  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_6188149_A_ENST00000491020  :snv_id  :annotated_snv_1_6188149_A .
+    :annotated_snv_1_6188149_A_ENST00000491020  :tid  :ENST00000491020 .
+  
+    :annotated_snv_1_6188149_A_ENST00000491020  :protein_id     :ENSP00000468624 .
+    :annotated_snv_1_6188149_A_ENST00000491020  :polyphen  1 .
+    :annotated_snv_1_6188149_A_ENST00000491020  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_6188149_A_ENST00000462991  :snv_id  :annotated_snv_1_6188149_A .
+    :annotated_snv_1_6188149_A_ENST00000462991  :tid  :ENST00000462991 .
+  
+    :annotated_snv_1_6188149_A_ENST00000462991  :protein_id     :ENSP00000466706 .
+    :annotated_snv_1_6188149_A_ENST00000462991  :polyphen  0.994 .
+    :annotated_snv_1_6188149_A_ENST00000462991  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_10396718_G  :chr     "1" ;
+        :pos     10396718 ;
+        :snv     true ;
+        :ref     "A" ;
+        :var     "G" ;
+        :aa_ref  "gAt" ;
+        :aa_var  "gGt" ;
+        :strand  1 ;
+        :gene_name  "KIF1B" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000054523 .
+    
+    
+    :annotated_snv_1_10396718_G_ENST00000377081  :snv_id  :annotated_snv_1_10396718_G .
+    :annotated_snv_1_10396718_G_ENST00000377081  :tid  :ENST00000377081 .
+  
+    :annotated_snv_1_10396718_G_ENST00000377081  :protein_id     :ENSP00000366284 .
+    :annotated_snv_1_10396718_G_ENST00000377081  :polyphen  0.055 .
+    :annotated_snv_1_10396718_G_ENST00000377081  :sift      0.1 .
+    
+  
+
+    
+    :annotated_snv_1_10396718_G_ENST00000377086  :snv_id  :annotated_snv_1_10396718_G .
+    :annotated_snv_1_10396718_G_ENST00000377086  :tid  :ENST00000377086 .
+  
+    :annotated_snv_1_10396718_G_ENST00000377086  :protein_id     :ENSP00000366290 .
+    :annotated_snv_1_10396718_G_ENST00000377086  :polyphen  0.59 .
+    :annotated_snv_1_10396718_G_ENST00000377086  :sift      0.1 .
+    
+  
+
+    
+    :annotated_snv_1_10396718_G_ENST00000263934  :snv_id  :annotated_snv_1_10396718_G .
+    :annotated_snv_1_10396718_G_ENST00000263934  :tid  :ENST00000263934 .
+  
+    :annotated_snv_1_10396718_G_ENST00000263934  :protein_id     :ENSP00000263934 .
+    :annotated_snv_1_10396718_G_ENST00000263934  :polyphen  0.99 .
+    :annotated_snv_1_10396718_G_ENST00000263934  :sift      0.12 .
+    
+  
+
+    
+    :annotated_snv_1_10434517_A  :chr     "1" ;
+        :pos     10434517 ;
+        :snv     true ;
+        :ref     "G" ;
+        :var     "A" ;
+        :aa_ref  "aGa" ;
+        :aa_var  "aAa" ;
+        :strand  1 ;
+        :gene_name  "KIF1B" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000054523 .
+    
+    
+    :annotated_snv_1_10434517_A_ENST00000377081  :snv_id  :annotated_snv_1_10434517_A .
+    :annotated_snv_1_10434517_A_ENST00000377081  :tid  :ENST00000377081 .
+  
+    :annotated_snv_1_10434517_A_ENST00000377081  :protein_id     :ENSP00000366284 .
+    :annotated_snv_1_10434517_A_ENST00000377081  :polyphen  0.984 .
+    :annotated_snv_1_10434517_A_ENST00000377081  :sift      0.01 .
+    
+  
+
+    
+    :annotated_snv_1_10434517_A_ENST00000377086  :snv_id  :annotated_snv_1_10434517_A .
+    :annotated_snv_1_10434517_A_ENST00000377086  :tid  :ENST00000377086 .
+  
+    :annotated_snv_1_10434517_A_ENST00000377086  :protein_id     :ENSP00000366290 .
+    :annotated_snv_1_10434517_A_ENST00000377086  :polyphen  0.768 .
+    :annotated_snv_1_10434517_A_ENST00000377086  :sift      0.01 .
+    
+  
+
+    
+    :annotated_snv_1_10434517_A_ENST00000263934  :snv_id  :annotated_snv_1_10434517_A .
+    :annotated_snv_1_10434517_A_ENST00000263934  :tid  :ENST00000263934 .
+  
+    :annotated_snv_1_10434517_A_ENST00000263934  :protein_id     :ENSP00000263934 .
+    :annotated_snv_1_10434517_A_ENST00000263934  :polyphen  0.883 .
+    :annotated_snv_1_10434517_A_ENST00000263934  :sift      0.01 .
+    
+  
+
+    
+    :annotated_snv_1_11193170_C  :chr     "1" ;
+        :pos     11193170 ;
+        :snv     true ;
+        :ref     "G" ;
+        :var     "C" ;
+        :aa_ref  "agC" ;
+        :aa_var  "agG" ;
+        :strand  -1 ;
+        :gene_name  "MTOR" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000198793 .
+    
+    
+    :annotated_snv_1_11193170_C_ENST00000361445  :snv_id  :annotated_snv_1_11193170_C .
+    :annotated_snv_1_11193170_C_ENST00000361445  :tid  :ENST00000361445 .
+  
+    :annotated_snv_1_11193170_C_ENST00000361445  :protein_id     :ENSP00000354558 .
+    :annotated_snv_1_11193170_C_ENST00000361445  :polyphen  0.189 .
+    :annotated_snv_1_11193170_C_ENST00000361445  :sift      0.59 .
+    
+  
+
+    
+    :annotated_snv_1_11740630_G  :chr     "1" ;
+        :pos     11740630 ;
+        :snv     true ;
+        :ref     "T" ;
+        :var     "G" ;
+        :aa_ref  "aAc" ;
+        :aa_var  "aCc" ;
+        :strand  -1 ;
+        :gene_name  "MAD2L2" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000116670 .
+    
+    
+    :annotated_snv_1_11740630_G_ENST00000445656  :snv_id  :annotated_snv_1_11740630_G .
+    :annotated_snv_1_11740630_G_ENST00000445656  :tid  :ENST00000445656 .
+  
+    :annotated_snv_1_11740630_G_ENST00000445656  :protein_id     :ENSP00000411807 .
+    :annotated_snv_1_11740630_G_ENST00000445656  :polyphen  0.97 .
+    :annotated_snv_1_11740630_G_ENST00000445656  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_11740630_G_ENST00000376669  :snv_id  :annotated_snv_1_11740630_G .
+    :annotated_snv_1_11740630_G_ENST00000376669  :tid  :ENST00000376669 .
+  
+    :annotated_snv_1_11740630_G_ENST00000376669  :protein_id     :ENSP00000365857 .
+    :annotated_snv_1_11740630_G_ENST00000376669  :polyphen  0.846 .
+    :annotated_snv_1_11740630_G_ENST00000376669  :sift      0.02 .
+    
+  
+
+    
+    :annotated_snv_1_11740630_G_ENST00000376692  :snv_id  :annotated_snv_1_11740630_G .
+    :annotated_snv_1_11740630_G_ENST00000376692  :tid  :ENST00000376692 .
+  
+    :annotated_snv_1_11740630_G_ENST00000376692  :protein_id     :ENSP00000365882 .
+    :annotated_snv_1_11740630_G_ENST00000376692  :polyphen  0.314 .
+    :annotated_snv_1_11740630_G_ENST00000376692  :sift      0.03 .
+    
+  
+
+    
+    :annotated_snv_1_11740630_G_ENST00000235310  :snv_id  :annotated_snv_1_11740630_G .
+    :annotated_snv_1_11740630_G_ENST00000235310  :tid  :ENST00000235310 .
+  
+    :annotated_snv_1_11740630_G_ENST00000235310  :protein_id     :ENSP00000235310 .
+    :annotated_snv_1_11740630_G_ENST00000235310  :polyphen  0.314 .
+    :annotated_snv_1_11740630_G_ENST00000235310  :sift      0.03 .
+    
+  
+
+    
+    :annotated_snv_1_11740630_G_ENST00000456915  :snv_id  :annotated_snv_1_11740630_G .
+    :annotated_snv_1_11740630_G_ENST00000456915  :tid  :ENST00000456915 .
+  
+    :annotated_snv_1_11740630_G_ENST00000456915  :protein_id     :ENSP00000400982 .
+    :annotated_snv_1_11740630_G_ENST00000456915  :polyphen  0.314 .
+    :annotated_snv_1_11740630_G_ENST00000456915  :sift      0.02 .
+    
+  
+
+    
+    :annotated_snv_1_11740630_G_ENST00000376667  :snv_id  :annotated_snv_1_11740630_G .
+    :annotated_snv_1_11740630_G_ENST00000376667  :tid  :ENST00000376667 .
+  
+    :annotated_snv_1_11740630_G_ENST00000376667  :protein_id     :ENSP00000365855 .
+    :annotated_snv_1_11740630_G_ENST00000376667  :polyphen  0.314 .
+    :annotated_snv_1_11740630_G_ENST00000376667  :sift      0.03 .
+    
+  
+
+    
+    :annotated_snv_1_11740630_G_ENST00000376672  :snv_id  :annotated_snv_1_11740630_G .
+    :annotated_snv_1_11740630_G_ENST00000376672  :tid  :ENST00000376672 .
+  
+    :annotated_snv_1_11740630_G_ENST00000376672  :protein_id     :ENSP00000365860 .
+    :annotated_snv_1_11740630_G_ENST00000376672  :polyphen  0.846 .
+    :annotated_snv_1_11740630_G_ENST00000376672  :sift      0.02 .
+    
+  
+
+    
+    :annotated_snv_1_12164437_T  :chr     "1" ;
+        :pos     12164437 ;
+        :snv     true ;
+        :ref     "C" ;
+        :var     "T" ;
+        
+        
+        :strand  1 ;
+        :gene_name  "TNFRSF8" ;
+        :snp_id  "rs2230622" ;
+        :effect  :splice_region_variant ;
+        :gene_id        :ENSG00000120949 .
+    :annotated_snv_1_12164437_T  :high_pop_freq  1 .
+    :annotated_snv_1_12164437_T  :high_pop  "HUMANGENOME_JCVI:J. Craig Venter" .
+    
+    
+    :annotated_snv_1_12164437_T_ENST00000417814  :snv_id  :annotated_snv_1_12164437_T .
+    :annotated_snv_1_12164437_T_ENST00000417814  :tid  :ENST00000417814 .
+  
+
+    
+    :annotated_snv_1_12164437_T_ENST00000514649  :snv_id  :annotated_snv_1_12164437_T .
+    :annotated_snv_1_12164437_T_ENST00000514649  :tid  :ENST00000514649 .
+  
+
+    
+    :annotated_snv_1_12164437_T_ENST00000263932  :snv_id  :annotated_snv_1_12164437_T .
+    :annotated_snv_1_12164437_T_ENST00000263932  :tid  :ENST00000263932 .
+  
+
+    
+    :annotated_snv_1_12175729_T  :chr     "1" ;
+        :pos     12175729 ;
+        :snv     true ;
+        :ref     "C" ;
+        :var     "T" ;
+        :aa_ref  "Cgt" ;
+        :aa_var  "Tgt" ;
+        :strand  1 ;
+        :gene_name  "TNFRSF8" ;
+        :snp_id  "rs1763642" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000120949 .
+    :annotated_snv_1_12175729_T  :high_pop_freq  1 .
+    :annotated_snv_1_12175729_T  :high_pop  "SEQUENOM:CEPH" .
+    
+    
+    :annotated_snv_1_12175729_T_ENST00000417814  :snv_id  :annotated_snv_1_12175729_T .
+    :annotated_snv_1_12175729_T_ENST00000417814  :tid  :ENST00000417814 .
+  
+    :annotated_snv_1_12175729_T_ENST00000417814  :protein_id     :ENSP00000390650 .
+    :annotated_snv_1_12175729_T_ENST00000417814  :polyphen  0 .
+    :annotated_snv_1_12175729_T_ENST00000417814  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_12175729_T_ENST00000263932  :snv_id  :annotated_snv_1_12175729_T .
+    :annotated_snv_1_12175729_T_ENST00000263932  :tid  :ENST00000263932 .
+  
+    :annotated_snv_1_12175729_T_ENST00000263932  :protein_id     :ENSP00000263932 .
+    :annotated_snv_1_12175729_T_ENST00000263932  :polyphen  0 .
+    :annotated_snv_1_12175729_T_ENST00000263932  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_14143003_G  :chr     "1" ;
+        :pos     14143003 ;
+        :snv     true ;
+        :ref     "A" ;
+        :var     "G" ;
+        :aa_ref  "cAg" ;
+        :aa_var  "cGg" ;
+        :strand  1 ;
+        :gene_name  "PRDM2" ;
+        :snp_id  "rs1046331" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000116731 .
+    :annotated_snv_1_14143003_G  :high_pop_freq  1 .
+    :annotated_snv_1_14143003_G  :high_pop  "HUMANGENOME_JCVI:J. Craig Venter" .
+    
+    
+    :annotated_snv_1_14143003_G_ENST00000505823  :snv_id  :annotated_snv_1_14143003_G .
+    :annotated_snv_1_14143003_G_ENST00000505823  :tid  :ENST00000505823 .
+  
+    :annotated_snv_1_14143003_G_ENST00000505823  :protein_id     :ENSP00000426737 .
+    :annotated_snv_1_14143003_G_ENST00000505823  :polyphen  0 .
+    
+  
+
+    
+    :annotated_snv_1_14143003_G_ENST00000376048  :snv_id  :annotated_snv_1_14143003_G .
+    :annotated_snv_1_14143003_G_ENST00000376048  :tid  :ENST00000376048 .
+  
+    :annotated_snv_1_14143003_G_ENST00000376048  :protein_id     :ENSP00000365216 .
+    :annotated_snv_1_14143003_G_ENST00000376048  :polyphen  0 .
+    :annotated_snv_1_14143003_G_ENST00000376048  :sift      0.24 .
+    
+  
+
+    
+    :annotated_snv_1_14143003_G_ENST00000503842  :snv_id  :annotated_snv_1_14143003_G .
+    :annotated_snv_1_14143003_G_ENST00000503842  :tid  :ENST00000503842 .
+  
+    :annotated_snv_1_14143003_G_ENST00000503842  :protein_id     :ENSP00000425028 .
+    :annotated_snv_1_14143003_G_ENST00000503842  :polyphen  0 .
+    
+  
+
+    
+    :annotated_snv_1_15832543_C  :chr     "1" ;
+        :pos     15832543 ;
+        :snv     true ;
+        :ref     "T" ;
+        :var     "C" ;
+        :aa_ref  "cAg" ;
+        :aa_var  "cGg" ;
+        :strand  -1 ;
+        :gene_name  "CASP9" ;
+        :snp_id  "rs1052576" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000132906 .
+    :annotated_snv_1_15832543_C  :high_pop_freq  1 .
+    :annotated_snv_1_15832543_C  :high_pop  "ILLUMINA-UK:YRI" .
+    
+    
+    :annotated_snv_1_15832543_C_ENST00000333868  :snv_id  :annotated_snv_1_15832543_C .
+    :annotated_snv_1_15832543_C_ENST00000333868  :tid  :ENST00000333868 .
+  
+    :annotated_snv_1_15832543_C_ENST00000333868  :protein_id     :ENSP00000330237 .
+    :annotated_snv_1_15832543_C_ENST00000333868  :polyphen  0.001 .
+    :annotated_snv_1_15832543_C_ENST00000333868  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_15832543_C_ENST00000447522  :snv_id  :annotated_snv_1_15832543_C .
+    :annotated_snv_1_15832543_C_ENST00000447522  :tid  :ENST00000447522 .
+  
+    :annotated_snv_1_15832543_C_ENST00000447522  :protein_id     :ENSP00000396540 .
+    :annotated_snv_1_15832543_C_ENST00000447522  :polyphen  0.001 .
+    :annotated_snv_1_15832543_C_ENST00000447522  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_15832543_C_ENST00000546424  :snv_id  :annotated_snv_1_15832543_C .
+    :annotated_snv_1_15832543_C_ENST00000546424  :tid  :ENST00000546424 .
+  
+    :annotated_snv_1_15832543_C_ENST00000546424  :protein_id     :ENSP00000449584 .
+    :annotated_snv_1_15832543_C_ENST00000546424  :polyphen  0.001 .
+    :annotated_snv_1_15832543_C_ENST00000546424  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_15832543_C_ENST00000375890  :snv_id  :annotated_snv_1_15832543_C .
+    :annotated_snv_1_15832543_C_ENST00000375890  :tid  :ENST00000375890 .
+  
+    :annotated_snv_1_15832543_C_ENST00000375890  :protein_id     :ENSP00000365051 .
+    :annotated_snv_1_15832543_C_ENST00000375890  :polyphen  0.001 .
+    :annotated_snv_1_15832543_C_ENST00000375890  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_15832543_C_ENST00000424908  :snv_id  :annotated_snv_1_15832543_C .
+    :annotated_snv_1_15832543_C_ENST00000424908  :tid  :ENST00000424908 .
+  
+    :annotated_snv_1_15832543_C_ENST00000424908  :protein_id     :ENSP00000408691 .
+    :annotated_snv_1_15832543_C_ENST00000424908  :polyphen  0.001 .
+    :annotated_snv_1_15832543_C_ENST00000424908  :sift      1 .
+    
+  
+
+    
+    :annotated_snv_1_15833506_T  :chr     "1" ;
+        :pos     15833506 ;
+        :snv     true ;
+        :ref     "C" ;
+        :var     "T" ;
+        :aa_ref  "cGt" ;
+        :aa_var  "cAt" ;
+        :strand  -1 ;
+        :gene_name  "CASP9" ;
+        :snp_id  "rs2308950" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000132906 .
+    :annotated_snv_1_15833506_T  :high_pop_freq  0.0401786 .
+    :annotated_snv_1_15833506_T  :high_pop  "CSHL-HAPMAP:HapMap-CEU" .
+    
+    
+    :annotated_snv_1_15833506_T_ENST00000333868  :snv_id  :annotated_snv_1_15833506_T .
+    :annotated_snv_1_15833506_T_ENST00000333868  :tid  :ENST00000333868 .
+  
+    :annotated_snv_1_15833506_T_ENST00000333868  :protein_id     :ENSP00000330237 .
+    :annotated_snv_1_15833506_T_ENST00000333868  :polyphen  0.017 .
+    :annotated_snv_1_15833506_T_ENST00000333868  :sift      0.16 .
+    
+  
+
+    
+    :annotated_snv_1_15833506_T_ENST00000447522  :snv_id  :annotated_snv_1_15833506_T .
+    :annotated_snv_1_15833506_T_ENST00000447522  :tid  :ENST00000447522 .
+  
+    :annotated_snv_1_15833506_T_ENST00000447522  :protein_id     :ENSP00000396540 .
+    :annotated_snv_1_15833506_T_ENST00000447522  :polyphen  0.017 .
+    :annotated_snv_1_15833506_T_ENST00000447522  :sift      0.18 .
+    
+  
+
+    
+    :annotated_snv_1_15833506_T_ENST00000440484  :snv_id  :annotated_snv_1_15833506_T .
+    :annotated_snv_1_15833506_T_ENST00000440484  :tid  :ENST00000440484 .
+  
+    :annotated_snv_1_15833506_T_ENST00000440484  :protein_id     :ENSP00000411304 .
+    :annotated_snv_1_15833506_T_ENST00000440484  :polyphen  0.006 .
+    :annotated_snv_1_15833506_T_ENST00000440484  :sift      0.16 .
+    
+  
+
+    
+    :annotated_snv_1_15833506_T_ENST00000546424  :snv_id  :annotated_snv_1_15833506_T .
+    :annotated_snv_1_15833506_T_ENST00000546424  :tid  :ENST00000546424 .
+  
+    :annotated_snv_1_15833506_T_ENST00000546424  :protein_id     :ENSP00000449584 .
+    :annotated_snv_1_15833506_T_ENST00000546424  :polyphen  0.021 .
+    :annotated_snv_1_15833506_T_ENST00000546424  :sift      0.17 .
+    
+  
+
+    
+    :annotated_snv_1_15833506_T_ENST00000375890  :snv_id  :annotated_snv_1_15833506_T .
+    :annotated_snv_1_15833506_T_ENST00000375890  :tid  :ENST00000375890 .
+  
+    :annotated_snv_1_15833506_T_ENST00000375890  :protein_id     :ENSP00000365051 .
+    :annotated_snv_1_15833506_T_ENST00000375890  :polyphen  0.017 .
+    :annotated_snv_1_15833506_T_ENST00000375890  :sift      0.18 .
+    
+  
+
+    
+    :annotated_snv_1_15833506_T_ENST00000424908  :snv_id  :annotated_snv_1_15833506_T .
+    :annotated_snv_1_15833506_T_ENST00000424908  :tid  :ENST00000424908 .
+  
+    :annotated_snv_1_15833506_T_ENST00000424908  :protein_id     :ENSP00000408691 .
+    :annotated_snv_1_15833506_T_ENST00000424908  :polyphen  0.002 .
+    :annotated_snv_1_15833506_T_ENST00000424908  :sift      0.12 .
+    
+  
+
+    
+    :annotated_snv_1_20977000_C  :chr     "1" ;
+        :pos     20977000 ;
+        :snv     true ;
+        :ref     "A" ;
+        :var     "C" ;
+        :aa_ref  "aAt" ;
+        :aa_var  "aCt" ;
+        :strand  1 ;
+        :gene_name  "PINK1" ;
+        :snp_id  "rs1043424" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000158828 .
+    :annotated_snv_1_20977000_C  :high_pop_freq  1 .
+    :annotated_snv_1_20977000_C  :high_pop  "ENSEMBL:ENSEMBL_Watson" .
+    
+    
+    :annotated_snv_1_20977000_C_ENST00000321556  :snv_id  :annotated_snv_1_20977000_C .
+    :annotated_snv_1_20977000_C_ENST00000321556  :tid  :ENST00000321556 .
+  
+    :annotated_snv_1_20977000_C_ENST00000321556  :protein_id     :ENSP00000364204 .
+    :annotated_snv_1_20977000_C_ENST00000321556  :polyphen  0.007 .
+    :annotated_snv_1_20977000_C_ENST00000321556  :sift      0.26 .
+    
+  
+
+    
+    :annotated_snv_1_21940555_T  :chr     "1" ;
+        :pos     21940555 ;
+        :snv     true ;
+        :ref     "C" ;
+        :var     "T" ;
+        :aa_ref  "Gct" ;
+        :aa_var  "Act" ;
+        :strand  -1 ;
+        :gene_name  "RAP1GAP" ;
+        :snp_id  "rs2275363" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000076864 .
+    :annotated_snv_1_21940555_T  :high_pop_freq  1 .
+    :annotated_snv_1_21940555_T  :high_pop  "ENSEMBL:ENSEMBL_Watson" .
+    
+    
+    :annotated_snv_1_21940555_T_ENST00000542643  :snv_id  :annotated_snv_1_21940555_T .
+    :annotated_snv_1_21940555_T_ENST00000542643  :tid  :ENST00000542643 .
+  
+    :annotated_snv_1_21940555_T_ENST00000542643  :protein_id     :ENSP00000441661 .
+    :annotated_snv_1_21940555_T_ENST00000542643  :polyphen  0.001 .
+    :annotated_snv_1_21940555_T_ENST00000542643  :sift      0.33 .
+    
+  
+
+    
+    :annotated_snv_1_21940555_T_ENST00000374761  :snv_id  :annotated_snv_1_21940555_T .
+    :annotated_snv_1_21940555_T_ENST00000374761  :tid  :ENST00000374761 .
+  
+    :annotated_snv_1_21940555_T_ENST00000374761  :protein_id     :ENSP00000363893 .
+    :annotated_snv_1_21940555_T_ENST00000374761  :polyphen  0.002 .
+    :annotated_snv_1_21940555_T_ENST00000374761  :sift      0.35 .
+    
+  
+
+    
+    :annotated_snv_1_21940555_T_ENST00000374765  :snv_id  :annotated_snv_1_21940555_T .
+    :annotated_snv_1_21940555_T_ENST00000374765  :tid  :ENST00000374765 .
+  
+    :annotated_snv_1_21940555_T_ENST00000374765  :protein_id     :ENSP00000363897 .
+    :annotated_snv_1_21940555_T_ENST00000374765  :polyphen  0.001 .
+    :annotated_snv_1_21940555_T_ENST00000374765  :sift      0.36 .
+    
+  
+
+    
+    :annotated_snv_1_21940555_T_ENST00000471600  :snv_id  :annotated_snv_1_21940555_T .
+    :annotated_snv_1_21940555_T_ENST00000471600  :tid  :ENST00000471600 .
+  
+    :annotated_snv_1_21940555_T_ENST00000471600  :protein_id     :ENSP00000431364 .
+    :annotated_snv_1_21940555_T_ENST00000471600  :polyphen  0.001 .
+    :annotated_snv_1_21940555_T_ENST00000471600  :sift      0.37 .
+    
+  
+
+    
+    :annotated_snv_1_21940555_T_ENST00000359708  :snv_id  :annotated_snv_1_21940555_T .
+    :annotated_snv_1_21940555_T_ENST00000359708  :tid  :ENST00000359708 .
+  
+    :annotated_snv_1_21940555_T_ENST00000359708  :protein_id     :ENSP00000352739 .
+    :annotated_snv_1_21940555_T_ENST00000359708  :polyphen  0.001 .
+    :annotated_snv_1_21940555_T_ENST00000359708  :sift      0.28 .
+    
+  
+
+    
+    :annotated_snv_1_21940555_T_ENST00000495204  :snv_id  :annotated_snv_1_21940555_T .
+    :annotated_snv_1_21940555_T_ENST00000495204  :tid  :ENST00000495204 .
+  
+    :annotated_snv_1_21940555_T_ENST00000495204  :protein_id     :ENSP00000434033 .
+    :annotated_snv_1_21940555_T_ENST00000495204  :polyphen  0.004 .
+    :annotated_snv_1_21940555_T_ENST00000495204  :sift      0.54 .
+    
+  
+
+    
+    :annotated_snv_1_21940555_T_ENST00000290101  :snv_id  :annotated_snv_1_21940555_T .
+    :annotated_snv_1_21940555_T_ENST00000290101  :tid  :ENST00000290101 .
+  
+    :annotated_snv_1_21940555_T_ENST00000290101  :protein_id     :ENSP00000290101 .
+    :annotated_snv_1_21940555_T_ENST00000290101  :polyphen  0.001 .
+    :annotated_snv_1_21940555_T_ENST00000290101  :sift      0.37 .
+    
+  
+
+    
+    :annotated_snv_1_21940555_T_ENST00000374763  :snv_id  :annotated_snv_1_21940555_T .
+    :annotated_snv_1_21940555_T_ENST00000374763  :tid  :ENST00000374763 .
+  
+    :annotated_snv_1_21940555_T_ENST00000374763  :protein_id     :ENSP00000363895 .
+    :annotated_snv_1_21940555_T_ENST00000374763  :polyphen  0.005 .
+    :annotated_snv_1_21940555_T_ENST00000374763  :sift      0.47 .
+    
+  
+
+    
+    :annotated_snv_1_22405049_A  :chr     "1" ;
+        :pos     22405049 ;
+        :snv     true ;
+        :ref     "C" ;
+        :var     "A" ;
+        :aa_ref  "aaC" ;
+        :aa_var  "aaA" ;
+        :strand  1 ;
+        :gene_name  "CDC42" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000070831 .
+    
+    
+    :annotated_snv_1_22405049_A_ENST00000400259  :snv_id  :annotated_snv_1_22405049_A .
+    :annotated_snv_1_22405049_A_ENST00000400259  :tid  :ENST00000400259 .
+  
+    :annotated_snv_1_22405049_A_ENST00000400259  :protein_id     :ENSP00000383118 .
+    :annotated_snv_1_22405049_A_ENST00000400259  :polyphen  0.242 .
+    :annotated_snv_1_22405049_A_ENST00000400259  :sift      0.03 .
+    
+  
+
+    
+    :annotated_snv_1_22405049_A_ENST00000344548  :snv_id  :annotated_snv_1_22405049_A .
+    :annotated_snv_1_22405049_A_ENST00000344548  :tid  :ENST00000344548 .
+  
+    :annotated_snv_1_22405049_A_ENST00000344548  :protein_id     :ENSP00000341072 .
+    :annotated_snv_1_22405049_A_ENST00000344548  :polyphen  0.242 .
+    :annotated_snv_1_22405049_A_ENST00000344548  :sift      0.03 .
+    
+  
+
+    
+    :annotated_snv_1_22405049_A_ENST00000315554  :snv_id  :annotated_snv_1_22405049_A .
+    :annotated_snv_1_22405049_A_ENST00000315554  :tid  :ENST00000315554 .
+  
+    :annotated_snv_1_22405049_A_ENST00000315554  :protein_id     :ENSP00000314458 .
+    :annotated_snv_1_22405049_A_ENST00000315554  :polyphen  0.33 .
+    :annotated_snv_1_22405049_A_ENST00000315554  :sift      0.03 .
+    
+  
+
+    
+    :annotated_snv_1_22405049_A_ENST00000411827  :snv_id  :annotated_snv_1_22405049_A .
+    :annotated_snv_1_22405049_A_ENST00000411827  :tid  :ENST00000411827 .
+  
+    :annotated_snv_1_22405049_A_ENST00000411827  :protein_id     :ENSP00000398327 .
+    :annotated_snv_1_22405049_A_ENST00000411827  :polyphen  0.242 .
+    :annotated_snv_1_22405049_A_ENST00000411827  :sift      0.02 .
+    
+  
+
+    
+    :annotated_snv_1_22405049_A_ENST00000421089  :snv_id  :annotated_snv_1_22405049_A .
+    :annotated_snv_1_22405049_A_ENST00000421089  :tid  :ENST00000421089 .
+  
+    :annotated_snv_1_22405049_A_ENST00000421089  :protein_id     :ENSP00000398592 .
+    :annotated_snv_1_22405049_A_ENST00000421089  :polyphen  0.05 .
+    :annotated_snv_1_22405049_A_ENST00000421089  :sift      0 .
+    
+  
+
+    
+    :annotated_snv_1_22915753_C  :chr     "1" ;
+        :pos     22915753 ;
+        :snv     true ;
+        :ref     "T" ;
+        :var     "C" ;
+        :aa_ref  "Tca" ;
+        :aa_var  "Cca" ;
+        :strand  1 ;
+        :gene_name  "EPHA8" ;
+        :snp_id  "rs606002" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000070886 .
+    :annotated_snv_1_22915753_C  :high_pop_freq  1 .
+    :annotated_snv_1_22915753_C  :high_pop  "HUMANGENOME_JCVI:J. Craig Venter" .
+    
+    
+    :annotated_snv_1_22915753_C_ENST00000374644  :snv_id  :annotated_snv_1_22915753_C .
+    :annotated_snv_1_22915753_C_ENST00000374644  :tid  :ENST00000374644 .
+  
+    :annotated_snv_1_22915753_C_ENST00000374644  :protein_id     :ENSP00000363775 .
+    :annotated_snv_1_22915753_C_ENST00000374644  :polyphen  0 .
+    :annotated_snv_1_22915753_C_ENST00000374644  :sift      0.13 .
+    
+  
+
+    
+    :annotated_snv_1_22915753_C_ENST00000538803  :snv_id  :annotated_snv_1_22915753_C .
+    :annotated_snv_1_22915753_C_ENST00000538803  :tid  :ENST00000538803 .
+  
+    :annotated_snv_1_22915753_C_ENST00000538803  :protein_id     :ENSP00000440274 .
+    :annotated_snv_1_22915753_C_ENST00000538803  :polyphen  0 .
+    :annotated_snv_1_22915753_C_ENST00000538803  :sift      0.13 .
+    
+  
+
+    
+    :annotated_snv_1_22915858_T  :chr     "1" ;
+        :pos     22915858 ;
+        :snv     true ;
+        :ref     "C" ;
+        :var     "T" ;
+        :aa_ref  "Ctt" ;
+        :aa_var  "Ttt" ;
+        :strand  1 ;
+        :gene_name  "EPHA8" ;
+        :snp_id  "rs76452513,COSM99210" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000070886 .
+    :annotated_snv_1_22915858_T  :high_pop_freq  0.5 .
+    :annotated_snv_1_22915858_T  :high_pop  "COMPLETE_GENOMICS:CEU" .
+    
+    
+    :annotated_snv_1_22915858_T_ENST00000374644  :snv_id  :annotated_snv_1_22915858_T .
+    :annotated_snv_1_22915858_T_ENST00000374644  :tid  :ENST00000374644 .
+  
+    :annotated_snv_1_22915858_T_ENST00000374644  :protein_id     :ENSP00000363775 .
+    :annotated_snv_1_22915858_T_ENST00000374644  :polyphen  0 .
+    
+  
+
+    
+    :annotated_snv_1_22915858_T_ENST00000538803  :snv_id  :annotated_snv_1_22915858_T .
+    :annotated_snv_1_22915858_T_ENST00000538803  :tid  :ENST00000538803 .
+  
+    :annotated_snv_1_22915858_T_ENST00000538803  :protein_id     :ENSP00000440274 .
+    :annotated_snv_1_22915858_T_ENST00000538803  :polyphen  0 .
+    
+  
+
+    
+    :annotated_snv_1_22924337_T  :chr     "1" ;
+        :pos     22924337 ;
+        :snv     true ;
+        :ref     "A" ;
+        :var     "T" ;
+        :aa_ref  "gAg" ;
+        :aa_var  "gTg" ;
+        :strand  1 ;
+        :gene_name  "EPHA8" ;
+        :snp_id  "novel" ;
+        :effect  :missense_variant ;
+        :gene_id        :ENSG00000070886 .
+    
+    
+    :annotated_snv_1_22924337_T_ENST00000166244  :snv_id  :annotated_snv_1_22924337_T .
+    :annotated_snv_1_22924337_T_ENST00000166244  :tid  :ENST00000166244 .
+  
+    :annotated_snv_1_22924337_T_ENST00000166244  :protein_id     :ENSP00000166244 .
+    :annotated_snv_1_22924337_T_ENST00000166244  :polyphen  0.999 .
+    :annotated_snv_1_22924337_T_ENST00000166244  :sift      0 .
+    
+  
+
