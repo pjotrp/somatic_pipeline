@@ -9,6 +9,8 @@
 #
 #   env INFILE=test/data/input/snv/example-varscan.snp.snv1 erb ./templates/rdf/annotate_snv1.rdf
 #
+#   env INFILE=test/data/input/snv/example-varscan.snp.snv1 erb ./templates/rdf/annotate_snv1.rdf > ./test/data/regression/snv/example-varscan.snp.snv1.rdf
+#
 # Example output: 
 #
 #  :annotated_snv_1_10338145_G  :chr     "1" .
@@ -49,8 +51,8 @@
         :snv     true ;
         :ref     "<%= ref %>" ;
         :var     "<%= var %>" ;
-        :aa_ref  "<%= aaref %>" ;
-        :aa_var  "<%= aavar %>" ;
+        <% if aaref %>:aa_ref  "<%= aaref %>" ;<% end %>
+        <% if aavar %>:aa_var  "<%= aavar %>" ;<% end %>
         :strand  <%= fields[3] %> ;
         :gene_name  "<%= fields[9] %>" ;
         :snp_id  "<%= fields[12] %>" ;
