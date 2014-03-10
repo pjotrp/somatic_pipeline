@@ -44,13 +44,16 @@
      prev_id = id
      id = ':'+['annotated_snv',chr,pos,var].join('_')
      tid = id+'_'+fields[26]
+     # First pase info for hints of cancer involvement
      info = fields[30]
      cancer = info =~ /cancer/i
      breast_cancer = info =~ /breast_cancer/i
      ovarian_cancer = info =~ /ovarian_cancer/i
+     # Next the COSMIC data
      high_pop = fields[24]
      breast_cancer = true if high_pop =~ /tumour_site:breast/
      ovarian_cancer = true if high_pop =~ /tumour_site:ovary/
+     cancer = true if high_pop =~ /tumour/
 %>
     <% if id != prev_id %>
     <%= id %>  :chr     "<%= chr %>" ;
