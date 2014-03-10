@@ -44,6 +44,13 @@
      prev_id = id
      id = ':'+['annotated_snv',chr,pos,var].join('_')
      tid = id+'_'+fields[26]
+     info = fields[30]
+     cancer = info =~ /cancer/i
+     breast_cancer = info =~ /breast_cancer/i
+     ovarian_cancer = info =~ /ovarian_cancer/i
+     high_pop = fields[24]
+     breast_cancer = true if high_pop =~ /tumour_site:breast/
+     ovarian_cancer = true if high_pop =~ /tumour_site:ovary/
 %>
     <% if id != prev_id %>
     <%= id %>  :chr     "<%= chr %>" ;
@@ -60,6 +67,9 @@
         :gene_id        :<%= fields[25] %> .
     <% if high_pop_freq %><%= id %>  :high_pop_freq  <%= high_pop_freq %> .
     <%= id %>  :high_pop  "<%= fields[24] %>" .
+    <% if cancer %><%= id %>  :cancer :true .<% end %>
+    <% if breast_cancer %><%= id %>  :breast_cancer :true .<% end %>
+    <% if ovarian_cancer %><%= id %>  :ovarian_cancer :true .<% end %>
     <% end %>
     <% end %>
     <%= tid %>  :snv_id  <%= id %> .
