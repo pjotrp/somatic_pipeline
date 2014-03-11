@@ -1,3 +1,7 @@
+# Example:
+#
+#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh sparql/variants/test_snv1.rq 
+
 <%
    filter=ENV['FILTER']
 %>
@@ -5,11 +9,11 @@
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
 SELECT ?tid ?chr ?pos ?polyphen ?sift WHERE {
-  ?id :chr ?chr .
-  ?id :pos ?pos .
-  ?tid :snv_id ?id .
-  ?tid :polyphen ?polyphen .
-  ?tid :sift ?sift .
+  ?id snv1:chr ?chr .
+  ?id snv1:pos ?pos .
+  ?tid snv1:snv_id ?id .
+  ?tid snv1:polyphen ?polyphen .
+  ?tid snv1:sift ?sift .
   # ?id :transcript_id ?transcript .
   #?id :sift ?sift .
   #?id :polyphen ?polyphen .

@@ -3,6 +3,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix dc: <http://purl.org/dc/elements/1.1/>
 prefix hgnc: <http://identifiers.org/hgnc.symbol/>
 prefix doi: <http://dx.doi.org/>
-prefix : <http://biobeat.org/rdf/annotated-snv#> 
+prefix bed: <http://biobeat.org/rdf/bed#> 
+prefix snv1: <http://biobeat.org/rdf/annotated-snv#> 
+prefix : <http://biobeat.org/rdf/ns#> 
 
 
