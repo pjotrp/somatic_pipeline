@@ -1,0 +1,3750 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="name"/>
+    <variable name="gene"/>
+  </head>
+  <results>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PLD1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RAC1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>SMAD3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RAD51</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>STAT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>CCND1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RALB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>KRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RALBP1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>SMAD4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>SMAD2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RELA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>ERBB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>EGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>ARAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>NFKB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>STAT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RALA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>FIGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>BRCA2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>BAD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>BCL2L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>IKBKG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>CDC42</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>CHUK</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RAC3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>JAK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFBR2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>IKBKB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>VEGFC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN2A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFB3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>VEGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RAC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK10</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>RALGDS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>VEGFB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>BRAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>EGFR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFBR1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PANCREATIC_CANCER</literal></binding>
+      <binding name="gene"><literal>ARHGEF6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>GLI2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT7B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>DVL1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>APC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>BMP2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT5A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>SMO</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT9A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>STK36</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>CTNNB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>DVL2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT3A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT5B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>APC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT11</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>SHH</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT16</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT7A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT9B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PTCH1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>GLI3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT8B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>LEF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>SUFU</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PTCH2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>AXIN1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT2B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD10</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>GLI1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>AXIN2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT10B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>HHIP</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>DVL3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FZD4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>BMP4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>GSK3B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT10A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TCF7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT8A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TCF7L2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>WNT4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BASAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TCF7L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNA2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>FOXO3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CCND1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>KRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>APC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNA3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>SOS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>ELK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>ERBB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>EGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CDH1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>ARAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PTEN</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>APC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>RAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MLH1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>BAD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNA1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>GRB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>HRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>LEF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>NRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AXIN1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>ILK</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PDPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AXIN2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>SOS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>GSK3B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MYC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>BRAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>EGFR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_ENDOMETRIAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>FOXO3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CCND1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>KRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>SOS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>ERBB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RASSF5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>EGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PRKCG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>ARAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>FHIT</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>BAD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>GRB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PLCG1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PRKCB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>HRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PLCG2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>NRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>STK4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PDPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RASSF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PRKCA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>SOS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RARB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN2A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>BRAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_NON_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>EGFR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>MMP1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>CCND1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>KRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN1A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>RPS6KA5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>ERBB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>IL8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>EGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>CDH1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>ARAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>FIGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>RAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>DAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>HRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>PGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>NRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>MMP9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>DAPK2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>MDM2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>RASSF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>TYMP</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>VEGFC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>RB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN2A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>VEGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>MYC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>VEGFB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>BRAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>MMP2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>DAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>EGFR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>FGFR3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_BLADDER_CANCER</literal></binding>
+      <binding name="gene"><literal>THBS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>CCND1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>KRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>PPARG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>RET</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>TPR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>CDH1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>TFG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>PAX8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>HRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>LEF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>NRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>NCOA4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>TPM3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>CCDC6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>NTRK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>MYC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>BRAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_THYROID_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>ARNT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PIK3CB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>RAC1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>MAP2K2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>KRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>AKT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PIK3R2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>SOS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PIK3R1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>JUN</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PIK3CD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PIK3CA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PAK4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>CRKL</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>MAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PAK7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>ARAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>VHL</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>RAPGEF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PAK2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FIGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>MAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>RAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>MAP2K1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>GRB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>HRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PIK3R5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>NRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>RAP1A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>CDC42</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>HGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>EP300</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>HIF1A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PIK3CG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PTPN11</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>ARNT</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>CREBBP</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>AKT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>MET</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>SOS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>SLC2A1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TGFB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>EGLN3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>EGLN1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>AKT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TCEB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>VEGFC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TGFB3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PDGFB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>EPAS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PAK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>GAB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TGFB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PIK3R3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>ETS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FLCN</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>FH</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>VEGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>RBX1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PAK6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>RAP1B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>TCEB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>EGLN2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>CRK</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>VEGFB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>BRAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>PAK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_RENAL_CELL_CARCINOMA</literal></binding>
+      <binding name="gene"><literal>CUL2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>BIRC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>COL4A6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMB3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>BIRC3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CYCS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CCND1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>SKP2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>APAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RELA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIAS3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIAS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>COL4A4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGA3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PTGS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PTEN</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>BCL2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>NFKB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMB4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGA6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGA2B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>FHIT</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>BCL2L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>IKBKG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PTK2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CCNE1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CKS1B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>XIAP</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>NOS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CHUK</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGA2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>MAX</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGAV</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>IKBKB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMC1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIAS4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>RARB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIAS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>COL4A2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>COL4A1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>NFKBIA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN1B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CCNE2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>MYC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN2B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>FN1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_SMALL_CELL_LUNG_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMC3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>RAC1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>SMAD3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>BIRC5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CYCS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CCND1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>KRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>APC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>SMAD4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>SMAD2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>JUN</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>ARAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MSH2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>BCL2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>APC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>RAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MLH1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>FOS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>BAD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>LEF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AXIN1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>APPL1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>RAC3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AXIN2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFBR2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MSH3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFB3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MSH6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>GSK3B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>DCC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>RHOA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>BAX</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>RAC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK10</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>RALGDS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>MYC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>BRAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFBR1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_COLORECTAL_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>FOXO1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CCND1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>KRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN1A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>SOS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CREB3L2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CREB3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>IGF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CREB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>RELA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>ERBB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>MTOR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CREB3L4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>HSP90B1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>EGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>ARAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PTEN</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CREB3L3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>AR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>BCL2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>NFKB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>KLK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>RAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>BAD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>INSRR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>GRB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>IKBKG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>FGFR1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>HRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>LEF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CCNE1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>NRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>IGF1R</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>HSP90AB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>EP300</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CHUK</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PDPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>MDM2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>HSP90AA1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CREBBP</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CREB3L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>GSTP1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFRB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>SOS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFRA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>IKBKB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>RB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>INS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>SRD5A2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>NKX3-1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>FGFR2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>GSK3B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CREB5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>NFKBIA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN1B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>CCNE2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>ATF4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>BRAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>EGFR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PROSTATE_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PPARD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNA2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ARNT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PLD1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RAC1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BIRC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SMAD3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>COL4A6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>NFKB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>STAT5B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RARA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CCNA1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>STAT5A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BIRC5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MMP1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FOXO1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMB3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PML</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>GLI2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BIRC3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT7B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF12</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RAD51</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>STAT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TP53</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CYCS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MECOM</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CCND1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RALB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>KRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF10</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FLT3LG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ABL1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PPARG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RUNX1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RALBP1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>DVL1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>KIT</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>APC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>JUP</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BMP2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SKP2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN1A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNA3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SOS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SMAD4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SMAD2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RET</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>IGF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RELA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CSF3R</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ERBB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>IL8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MTOR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>JUN</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TPR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>HSP90B1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF13</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIAS3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RASSF5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF11</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CEBPA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIAS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>EGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT5A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SMO</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>KITLG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PRKCG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CRKL</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>COL4A4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGA3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CTBP1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LOC652346</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT9A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CDH1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TFG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CBLB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>STK36</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ARAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CSF2RA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PTGS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PTEN</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>AR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MSH2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BCL2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>NFKB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>STAT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>VHL</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SPI1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>KLK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CBL</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>DVL2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT3A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMB4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT5B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>APC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RALA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT11</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGA6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FIGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BRCA2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PAX8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SHH</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGA2B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT16</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CTBP2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT7A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MLH1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MAP2K1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FOS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT9B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BAD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LOC652799</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CTNNA1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>GRB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>DAPK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PTCH1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PLCG1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BCL2L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>GLI3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>IKBKG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGFR1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PRKCB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT8B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF22</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>HRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PTK2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LEF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MITF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BID</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CCNE1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FADD</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SUFU</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FASLG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF20</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CKS1B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PLCG2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RUNX1T1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>NRAS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PTCH2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ZBTB16</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>AXIN1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CSF1R</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MMP9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CDC42</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>IGF1R</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>XIAP</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>NCOA4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>HGF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>STK4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT2B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD10</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>HSP90AB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>APPL1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>NOS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>EP300</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CHUK</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>DAPK2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>GLI1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RAC3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>HDAC1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>HIF1A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>AXIN2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MDM2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF23</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3CG</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RASSF1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMA4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>JAK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ARNT</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>HDAC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FLT3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PRKCA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>HSP90AA1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CREBBP</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFBR2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LOC652671</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGA2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>GSTP1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RXRA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MAX</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MET</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGAV</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFRB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SOS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFRA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TRAF2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CBLC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ITGB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>SLC2A1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TPM3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>IKBKB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD9</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>EGLN3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF16</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF5</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CCDC6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>EGLN1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMC1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MSH3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>AKT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TCEB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>VEGFC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT10B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF14</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>HHIP</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF19</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIAS4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RARB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIAS2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>NKX3-1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN2A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BCR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>DVL3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFB3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF17</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGFR2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FZD4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BMP4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PDGFB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MSH6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>EPAS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>GSK3B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFB1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>PIK3R3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>ETS1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>NTRK1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT10A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>IL6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>COL4A2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>COL4A1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT8A</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FH</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>VEGFA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>DCC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>NFKBIA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RHOA</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RBX1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN1B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BAX</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TCEB2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RAC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MAPK10</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>EGLN2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMC2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>RALGDS</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CCNE2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CRK</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MYC</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>VEGFB</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF21</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>E2F1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CASP8</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>BRAF</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>MMP2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CDK6</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>DAPK3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CDKN2B</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>EGFR</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>CUL2</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGFR3</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TGFBR1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>WNT4</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FGF18</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>TCF7L1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>FN1</literal></binding>
+    </result>
+    <result>
+      <binding name="name"><literal>KEGG_PATHWAYS_IN_CANCER</literal></binding>
+      <binding name="gene"><literal>LAMC3</literal></binding>
+    </result>
+  </results>
+</sparql>
+

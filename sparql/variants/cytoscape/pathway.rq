@@ -1,0 +1,15 @@
+#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh sparql/variants/cytoscape/pathway.rq
+
+<%
+   filter=ENV['FILTER']
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+
+SELECT ?name ?gene WHERE {
+  ?id gsea:geneset true .
+  ?id rdf:label ?name .
+  ?id gsea:gene ?gene .
+  ?id gsea:kegg true .
+  ?id gsea:cancer true .
+}

@@ -1,0 +1,42 @@
+# Fetch varscan2 germline variants for a number of known cancer genes.
+#
+# Example:
+#
+#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh sparql/variants/varscan2_germline.rq
+#
+#   env GENE='BRCA2' FILTER="015T" ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh sparql/variants/varscan2_germline.rq
+#   
+
+<%
+   filter=ENV['FILTER']
+   gene=ENV['GENE']
+   type=ENV['TYPE']
+   type = 'somatic' if !type 
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+
+SELECT DISTINCT ?sample ?gene ?chr ?pos ?effect WHERE {
+  ?sid sample:identifier ?sample ;
+       sample:quality ?quality .
+  FILTER ( ?quality = "high" || ?quality = "good" ) .
+  ?id :chr ?chr ;
+      :pos ?pos ;
+      :type :<%= type %>;
+      :identifier ?sample ;
+      :caller :varscan2 .
+  <% if filter %>
+    FILTER( CONTAINS( ?sample,"<%= filter %>" ) ) .
+  <% end %>
+  ?ann snv1:chr ?chr ;
+       snv1:snv true ;
+       snv1:pos ?pos ;
+       snv1:effect ?effect ;
+       snv1:gene_name ?gene .
+  <% if gene %>
+    FILTER( ?gene = "<%= gene %>" ) .
+  <% else %>
+    ?anng annotate:gene ?gene ;
+          annotate:tumor_suppressor true .
+  <% end %>
+}
