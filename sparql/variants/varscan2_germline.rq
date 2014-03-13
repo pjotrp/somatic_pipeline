@@ -16,27 +16,35 @@
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
-SELECT DISTINCT ?sample ?gene ?chr ?pos ?effect WHERE {
+SELECT DISTINCT ?sample ?gene ?chr ?pos ?snp_id ?effect WHERE {
+  # Reduce samples
   ?sid sample:identifier ?sample ;
        sample:quality ?quality .
   FILTER ( ?quality = "high" || ?quality = "good" ) .
+  <% if filter %>
+    FILTER( CONTAINS( ?sample,"<%= filter %>" ) ) .
+  <% end %>
+  # Select variants
   ?id :chr ?chr ;
       :pos ?pos ;
       :type :<%= type %>;
       :identifier ?sample ;
-      :caller :varscan2 .
-  <% if filter %>
-    FILTER( CONTAINS( ?sample,"<%= filter %>" ) ) .
-  <% end %>
+      # :hc true ;
+      :caller :somaticsniper .
+  # Select on effect (is a snv1)
   ?ann snv1:chr ?chr ;
        snv1:snv true ;
        snv1:pos ?pos ;
        snv1:effect ?effect ;
+       snv1:snp_id ?snp_id ;
        snv1:gene_name ?gene .
+  # Now filter genes
   <% if gene %>
     FILTER( ?gene = "<%= gene %>" ) .
   <% else %>
     ?anng annotate:gene ?gene ;
           annotate:tumor_suppressor true .
+    # BRCA1 BRCA2 ATM CHEK2 TP53 APC FAS RB1 PLCG1
+    # FILTER( ?gene="BRCA1"||?gene="BRCA2"||?gene="ATM"||?gene="CHECK2"||?gene="TP53"||?gene="APC"||?gene="FAS"||?gene="RB1"||?gene="PLCG1" ) .
   <% end %>
 }
