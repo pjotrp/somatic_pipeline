@@ -11,16 +11,20 @@
    filter=ENV['FILTER']
    gene=ENV['GENE']
    type=ENV['TYPE']
+   hc=ENV['HC']
+   quality=ENV['QUALITY']
    type = 'somatic' if !type 
 %>
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
-SELECT DISTINCT ?sample ?gene ?chr ?pos ?snp_id ?effect WHERE {
+SELECT DISTINCT ?sample ?gene ?chr ?pos ?snp_id ?effect ?freq ?quality ?caller WHERE {
   # Reduce samples
   ?sid sample:identifier ?sample ;
        sample:quality ?quality .
+  <% if quality %>
   FILTER ( ?quality = "high" || ?quality = "good" ) .
+  <% end %>
   <% if filter %>
     FILTER( CONTAINS( ?sample,"<%= filter %>" ) ) .
   <% end %>
@@ -29,8 +33,8 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?snp_id ?effect WHERE {
       :pos ?pos ;
       :type :<%= type %>;
       :identifier ?sample ;
-      # :hc true ;
-      :caller :somaticsniper .
+      <% if hc %>:hc true ; <% end %>
+      :caller ?caller .
   # Select on effect (is a snv1)
   ?ann snv1:chr ?chr ;
        snv1:snv true ;
@@ -46,5 +50,10 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?snp_id ?effect WHERE {
           annotate:tumor_suppressor true .
     # BRCA1 BRCA2 ATM CHEK2 TP53 APC FAS RB1 PLCG1
     # FILTER( ?gene="BRCA1"||?gene="BRCA2"||?gene="ATM"||?gene="CHECK2"||?gene="TP53"||?gene="APC"||?gene="FAS"||?gene="RB1"||?gene="PLCG1" ) .
+  <% end %>
+  <% if type=='germline' %>
+  OPTIONAL { ?id :variant_frequency_normal ?freq }
+  <% else %>
+  OPTIONAL { ?id :variant_frequency_tumor ?freq }
   <% end %>
 }
