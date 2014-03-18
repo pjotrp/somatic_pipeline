@@ -18,9 +18,10 @@
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
-SELECT DISTINCT ?sample ?gene ?chr ?pos ?snp_id ?effect ?freq ?quality ?caller WHERE {
+SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?effect ?freq ?quality ?caller ?remark WHERE {
   # Reduce samples
   ?sid sample:identifier ?sample ;
+       sample:cnv_rank ?cnv_rank ;
        sample:quality ?quality .
   <% if quality %>
   FILTER ( ?quality = "high" || ?quality = "good" ) .
@@ -31,6 +32,7 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?snp_id ?effect ?freq ?quality ?caller W
   # Select variants
   ?id :chr ?chr ;
       :pos ?pos ;
+      :variant ?var ;
       :type :<%= type %>;
       :identifier ?sample ;
       <% if hc %>:hc true ; <% end %>
@@ -56,4 +58,5 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?snp_id ?effect ?freq ?quality ?caller W
   <% else %>
   OPTIONAL { ?id :variant_frequency_tumor ?freq }
   <% end %>
+  OPTIONAL { ?ann snv1:remark ?remark }
 }
