@@ -1,0 +1,56 @@
+# Count somatic variants 
+#
+# Example:
+#
+#   env GENE='BRCA2' QUALITY=1 ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh sparql/variants/count_somatic.rq
+#   
+
+<%
+   gene=ENV['GENE']
+   type=ENV['TYPE']
+   filter=ENV['FILTER']
+   hc=ENV['HC']
+   quality=ENV['QUALITY']
+   type = 'somatic' if !type 
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+
+# SELECT DISTINCT ?sample ?gene ?chr ?pos WHERE {
+SELECT ?sample (count(?sample) as ?num) ?gene ?chr ?pos WHERE {
+# SELECT (count(?ann) as ?num) ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?freq ?quality ?caller ?remark WHERE {
+  # Reduce samples
+  ?sid sample:identifier ?identifier ;
+       sample:sample ?sample ;
+       sample:cnv_rank ?cnv_rank ;
+       sample:quality ?quality .
+  FILTER ( ?quality = "high" || ?quality = "good" ) .
+  <% if filter %>
+    FILTER( CONTAINS( ?identifier,"<%= filter %>" ) ) .
+  <% end %>
+  # Select variants
+  ?id :chr ?chr ;
+      :pos ?pos ;
+      :variant ?var ;
+      :type :<%= type %>;
+      :identifier ?identifier ;
+      <% if hc %>:hc true ; <% end %>
+      :caller ?caller .
+  # Select on effect (is a snv1)
+  ?ann snv1:chr ?chr ;
+       snv1:snv true ;
+       snv1:pos ?pos ;
+       snv1:effect ?effect ;
+       snv1:snp_id ?snp_id ;
+       snv1:gene_name ?gene .
+  # Now filter genes
+  FILTER( ?gene = "<%= gene %>" ) .
+  # <% if type=='germline' %>
+  # OPTIONAL { ?id :variant_frequency_normal ?freq }
+  # <% else %>
+  # OPTIONAL { ?id :variant_frequency_tumor ?freq }
+  # <% end %>
+  # OPTIONAL { ?ann snv1:remark ?remark }
+}
+GROUP BY ?sample
+# ORDER BY ?id
