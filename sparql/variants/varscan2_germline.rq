@@ -18,23 +18,24 @@
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
-SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?effect ?freq ?quality ?caller ?remark WHERE {
+SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?freq ?quality ?remark WHERE {
   # Reduce samples
-  ?sid sample:identifier ?sample ;
+  ?sid sample:identifier ?identifier ;
+       sample:sample ?sample ;
        sample:cnv_rank ?cnv_rank ;
        sample:quality ?quality .
   <% if quality %>
   FILTER ( ?quality = "high" || ?quality = "good" ) .
   <% end %>
   <% if filter %>
-    FILTER( CONTAINS( ?sample,"<%= filter %>" ) ) .
+    FILTER( CONTAINS( ?identifier,"<%= filter %>" ) ) .
   <% end %>
   # Select variants
   ?id :chr ?chr ;
       :pos ?pos ;
       :variant ?var ;
       :type :<%= type %>;
-      :identifier ?sample ;
+      :identifier ?identifier ;
       <% if hc %>:hc true ; <% end %>
       :caller ?caller .
   # Select on effect (is a snv1)
