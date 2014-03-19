@@ -6,16 +6,14 @@
 #   
 
 <%
-   gene=ENV['GENE']
-   type=ENV['TYPE']
-   filter=ENV['FILTER']
+   count=ENV['COUNT']
    hc=ENV['HC']
-   quality=ENV['QUALITY']
-   type = 'somatic' if !type 
+   count = 'mutations' if !count
 %>
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
+<% if count == 'quality' %>
 # SELECT ?species ?source (COUNT(?id) AS ?num) WHERE
 # SELECT ?sample ?quality WHERE 
 SELECT ?quality (COUNT(?sample) AS ?num) WHERE 
@@ -28,4 +26,19 @@ SELECT ?quality (COUNT(?sample) AS ?num) WHERE
 GROUP by ?quality
 # ORDER by ?species ?source
 
+<% else %>
+
+# Count mutations
+# SELECT ?quality (COUNT(?sample) AS ?num) WHERE 
+SELECT ?identifier (COUNT(?id) as ?num) WHERE 
+{
+  ?id :type :somatic ;
+      :caller :somaticsniper ;
+      <% if hc %>
+      :hc true ;
+      <% end %>
+      :identifier ?identifier .
+}
+GROUP by ?identifier
+<% end %>
 
