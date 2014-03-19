@@ -13,12 +13,14 @@
    type=ENV['TYPE']
    hc=ENV['HC']
    quality=ENV['QUALITY']
+   remark=ENV['REMARK']
    type = 'somatic' if !type 
 %>
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
-SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?freq ?quality ?remark WHERE {
+# SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?freq ?quality ?type ?remark WHERE {
+SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?freq <%= (remark ? '?remark' : '') %> WHERE {
   # Reduce samples
   ?sid sample:identifier ?identifier ;
        sample:sample ?sample ;
@@ -34,7 +36,10 @@ SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?freq ?quality ?r
   ?id :chr ?chr ;
       :pos ?pos ;
       :variant ?var ;
+      <% if type %>
       :type :<%= type %>;
+      <% end %>
+      :type ?type ;
       :identifier ?identifier ;
       <% if hc %>:hc true ; <% end %>
       :caller ?caller .
@@ -49,15 +54,18 @@ SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?freq ?quality ?r
   <% if gene %>
     FILTER( ?gene = "<%= gene %>" ) .
   <% else %>
-    ?anng annotate:gene ?gene ;
-          annotate:tumor_suppressor true .
+    # ?anng annotate:gene ?gene ;
+    #       annotate:tumor_suppressor true .
     # BRCA1 BRCA2 ATM CHEK2 TP53 APC FAS RB1 PLCG1
     # FILTER( ?gene="BRCA1"||?gene="BRCA2"||?gene="ATM"||?gene="CHECK2"||?gene="TP53"||?gene="APC"||?gene="FAS"||?gene="RB1"||?gene="PLCG1" ) .
+    FILTER ( CONTAINS("BRCA1",?gene) ) .
   <% end %>
   <% if type=='germline' %>
   OPTIONAL { ?id :variant_frequency_normal ?freq }
   <% else %>
   OPTIONAL { ?id :variant_frequency_tumor ?freq }
   <% end %>
+  <% if remark %>
   OPTIONAL { ?ann snv1:remark ?remark }
+  <% end %>
 }

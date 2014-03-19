@@ -6,6 +6,8 @@ prefix doi: <http://dx.doi.org/>
 prefix bed: <http://biobeat.org/rdf/bed#> 
 prefix snv1: <http://biobeat.org/rdf/annotated-snv#> 
 prefix gsea: <http://biobeat.org/rdf/gsea#> 
+prefix sample: <http://biobeat.org/rdf/sample#>
+prefix annotate: <http://biobeat.org/rdf/annotate#> 
 prefix : <http://biobeat.org/rdf/ns#> 
 
 

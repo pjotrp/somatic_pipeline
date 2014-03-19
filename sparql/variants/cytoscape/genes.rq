@@ -1,0 +1,45 @@
+# Fetch varscan2 germline variants for a number of known cancer genes.
+#
+# Example:
+#
+#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh sparql/variants/varscan2_germline.rq
+#
+#   env FILTER="015T" ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh sparql/variants/varscan2_germline.rq
+#   
+
+<%
+   sample=ENV['SAMPLE']
+   gene=ENV['GENE']
+   type=ENV['TYPE']
+   hc=ENV['HC']
+   pathway=ENV['PATHWAY']
+   type = 'somatic' if !type 
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+
+SELECT DISTINCT ?gene ?pw WHERE {
+  # Reduce samples
+  ?sid sample:identifier ?identifier ;
+       sample:sample ?sample ;
+       sample:quality ?quality .
+  ?sid sample:sample <%= sample %> .
+  # Select variants
+  ?id :chr ?chr ;
+      :pos ?pos ;
+      <% if type %>
+      :type :<%= type %>;
+      <% end %>
+      :type ?type ;
+      :identifier ?identifier ;
+      <% if hc %>:hc true ; <% end %>
+      :caller ?caller .
+  # Select on effect (is a snv1)
+  ?ann snv1:chr ?chr ;
+       snv1:snv true ;
+       snv1:pos ?pos ;
+       snv1:gene_name ?gene .
+  # ?pw  gsea:gene ?gene ;
+  #        rdf:label "<%= pathway %>"
+
+}
