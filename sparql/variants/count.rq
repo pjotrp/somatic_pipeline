@@ -1,0 +1,31 @@
+# Count basic stats
+#
+# Example:
+#
+#   env GENE='BRCA2' QUALITY=1 ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh sparql/variants/count.rq
+#   
+
+<%
+   gene=ENV['GENE']
+   type=ENV['TYPE']
+   filter=ENV['FILTER']
+   hc=ENV['HC']
+   quality=ENV['QUALITY']
+   type = 'somatic' if !type 
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+
+# SELECT ?species ?source (COUNT(?id) AS ?num) WHERE
+# SELECT ?sample ?quality WHERE 
+SELECT ?quality (COUNT(?sample) AS ?num) WHERE 
+{
+  ?sid sample:identifier ?identifier ;
+       sample:sample ?sample ;
+       sample:cnv_rank ?cnv_rank ;
+       sample:quality ?quality .
+}
+GROUP by ?quality
+# ORDER by ?species ?source
+
+
