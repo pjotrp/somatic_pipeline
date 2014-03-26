@@ -13,6 +13,7 @@
    type=ENV['TYPE']
    hc=ENV['HC']
    cosmic=ENV['COSMIC']
+   snpdb=ENV['SNPDB']
    quality=ENV['QUALITY']
    remark=ENV['REMARK']
    type = 'somatic' if !type 
@@ -53,6 +54,13 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?cosmicid ?aa ?cancer ?freq
           cosmic:descr ?remark ;
           cosmic:aa_mutation ?aa ;
           cosmic:gene_name ?gene .
+  <% elsif snpdb %>
+  ?snp snpdb:chr ?chr ;
+       snpdb:pos ?pos ; 
+       snpdb:gene_name ?gene .
+       # snpdb:snpid ?snp_id ;
+       # snpdb:snpid ?type ;
+       # snpdb:descr ?cancer .
   <% else %>
   ?ann snv1:chr ?chr ;
        snv1:snv true ;
