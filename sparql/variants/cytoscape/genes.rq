@@ -39,7 +39,11 @@ SELECT DISTINCT ?gene ?pw WHERE {
        snv1:snv true ;
        snv1:pos ?pos ;
        snv1:gene_name ?gene .
-  # ?pw  gsea:gene ?gene ;
-  #        rdf:label "<%= pathway %>"
+  ?pwid  gsea:geneset true ;
+  <% if pathway %>
+         rdf:label "<%= pathway %>" ;
+  <% end %>
+         rdf:label ?pw ;
+         gsea:gene ?gene .
 
 }

@@ -12,6 +12,7 @@
    gene=ENV['GENE']
    type=ENV['TYPE']
    hc=ENV['HC']
+   cosmic=ENV['COSMIC']
    quality=ENV['QUALITY']
    remark=ENV['REMARK']
    type = 'somatic' if !type 
@@ -20,7 +21,7 @@
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
 # SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?freq ?quality ?type ?remark WHERE {
-SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?freq <%= (remark ? '?remark' : '') %> WHERE {
+SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?cosmicid ?aa ?cancer ?freq <%= (remark ? '?remark' : '') %> WHERE {
   # Reduce samples
   ?sid sample:identifier ?identifier ;
        sample:sample ?sample ;
@@ -44,12 +45,23 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?freq <%= (remark ? '?remar
       <% if hc %>:hc true ; <% end %>
       :caller ?caller .
   # Select on effect (is a snv1)
+  <% if cosmic %>
+  ?cosmic cosmic:chr ?chr ;
+          cosmic:pos ?pos ;
+          cosmic:cosmic ?cosmicid ;
+          cosmic:cancer ?cancer ;
+          cosmic:descr ?remark ;
+          cosmic:aa_mutation ?aa ;
+          cosmic:gene_name ?gene .
+  <% else %>
   ?ann snv1:chr ?chr ;
        snv1:snv true ;
        snv1:pos ?pos ;
+       snv1:aa_var ?aa ;
        snv1:effect ?effect ;
        snv1:snp_id ?snp_id ;
        snv1:gene_name ?gene .
+  <% end %>
   # Now filter genes
   <% if gene %>
     FILTER( ?gene = "<%= gene %>" ) .
