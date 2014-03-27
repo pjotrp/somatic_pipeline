@@ -1,5 +1,6 @@
-#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh sparql/variants/cytoscape/pathway.rq
-
+# 
+# env FILTER=REACTOME_DOUBLE_STRAND_BREAK_REPAIR ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh pathway.rq
+#
 <%
    filter=ENV['FILTER']
 %>

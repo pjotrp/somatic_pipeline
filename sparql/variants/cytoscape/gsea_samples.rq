@@ -1,0 +1,37 @@
+# Find out which samples share genes in the same gene set
+#
+# env FILTER=REACTOME_DOUBLE_STRAND_BREAK_REPAIR ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh gsea_samples.rq
+#
+<%
+   filter=ENV['FILTER']
+   hc=ENV['HC']
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+
+SELECT DISTINCT ?geneset ?sample WHERE {
+  ?setid gsea:geneset true ;
+         rdf:label ?geneset ;
+         rdf:label "<%= filter %>" ;
+         # gsea:gene "BRCA1" ;
+         gsea:gene ?gene .
+  # Select variants
+  ?id :chr ?chr ;
+      :pos ?pos ;
+      :identifier ?identifier ;
+      <% if hc %>
+      :hc true ; 
+      <% end %>
+      :caller ?caller .
+  ?ann snv1:chr ?chr ;
+       snv1:snv true ;
+       snv1:pos ?pos ;
+       snv1:aa_var ?aa ;
+       snv1:effect ?effect ;
+       snv1:snp_id ?snp_id ;
+       snv1:gene_name ?gene .
+  ?sid sample:identifier ?identifier ;
+       sample:sample ?sample ;
+       sample:quality ?quality .
+  # FILTER ( ?quality = "high" || ?quality = "good" ) .
+}
