@@ -7,6 +7,8 @@ prefix bed: <http://biobeat.org/rdf/bed#>
 prefix snv1: <http://biobeat.org/rdf/annotated-snv#> 
 prefix gsea: <http://biobeat.org/rdf/gsea#> 
 prefix sample: <http://biobeat.org/rdf/sample#>
+prefix dbsnp: <http://biobeat.org/rdf/dbsnp#>
+prefix cosmic: <http://biobeat.org/rdf/cosmic/mutation#>
 prefix annotate: <http://biobeat.org/rdf/annotate#> 
 prefix : <http://biobeat.org/rdf/ns#> 
 

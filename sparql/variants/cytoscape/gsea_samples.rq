@@ -5,15 +5,16 @@
 <%
    filter=ENV['FILTER']
    hc=ENV['HC']
+   dbsnp=ENV['DBSNP']
+   cosmic=ENV['COSMIC']
 %>
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
-SELECT DISTINCT ?geneset ?sample WHERE {
+SELECT DISTINCT ?sample ?geneset WHERE {
   ?setid gsea:geneset true ;
          rdf:label ?geneset ;
          rdf:label "<%= filter %>" ;
-         # gsea:gene "BRCA1" ;
          gsea:gene ?gene .
   # Select variants
   ?id :chr ?chr ;
@@ -22,16 +23,29 @@ SELECT DISTINCT ?geneset ?sample WHERE {
       <% if hc %>
       :hc true ; 
       <% end %>
+      # :type :somatic ;
+      :type :germline ;
       :caller ?caller .
+  <% if dbsnp %>
+  ?snp dbsnp:chr ?chr ;
+       dbsnp:pos ?pos ; 
+       dbsnp:gene_name ?gene .
+  <% elsif cosmic %>
+  ?cosmic cosmic:chr ?chr ;
+          cosmic:pos ?pos ;
+          cosmic:cancer ?cancer ;
+          cosmic:gene_name ?gene .
+  <% else %>
   ?ann snv1:chr ?chr ;
        snv1:snv true ;
        snv1:pos ?pos ;
-       snv1:aa_var ?aa ;
        snv1:effect ?effect ;
        snv1:snp_id ?snp_id ;
        snv1:gene_name ?gene .
+  <% end %>
   ?sid sample:identifier ?identifier ;
-       sample:sample ?sample ;
-       sample:quality ?quality .
+       sample:sample ?sample .
+  MINUS { ?sid sample:quality "low" } .
+  MINUS { ?sid sample:quality "maybe" } .
   # FILTER ( ?quality = "high" || ?quality = "good" ) .
 }
