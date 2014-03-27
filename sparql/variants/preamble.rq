@@ -8,7 +8,7 @@ prefix snv1: <http://biobeat.org/rdf/annotated-snv#>
 prefix sample: <http://biobeat.org/rdf/sample#>
 prefix annotate: <http://biobeat.org/rdf/annotate#> 
 prefix cosmic: <http://biobeat.org/rdf/cosmic/mutation#> 
-prefix snpdb: <http://biobeat.org/rdf/snpdb#> 
+prefix dbsnp: <http://biobeat.org/rdf/dbsnp#> 
 prefix : <http://biobeat.org/rdf/ns#>  
 
 

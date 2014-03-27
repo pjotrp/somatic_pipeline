@@ -13,7 +13,7 @@
    type=ENV['TYPE']
    hc=ENV['HC']
    cosmic=ENV['COSMIC']
-   snpdb=ENV['SNPDB']
+   dbsnp=ENV['DBSNP']
    quality=ENV['QUALITY']
    remark=ENV['REMARK']
    type = 'somatic' if !type 
@@ -22,7 +22,7 @@
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
 # SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?freq ?quality ?type ?remark WHERE {
-SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?cosmicid ?aa ?cancer ?freq <%= (remark ? '?remark' : '') %> WHERE {
+SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?cosmicid ?aa ?cancer ?freq ?remark WHERE {
   # Reduce samples
   ?sid sample:identifier ?identifier ;
        sample:sample ?sample ;
@@ -54,13 +54,13 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?cosmicid ?aa ?cancer ?freq
           cosmic:descr ?remark ;
           cosmic:aa_mutation ?aa ;
           cosmic:gene_name ?gene .
-  <% elsif snpdb %>
-  ?snp snpdb:chr ?chr ;
-       snpdb:pos ?pos ; 
-       snpdb:gene_name ?gene .
-       # snpdb:snpid ?snp_id ;
-       # snpdb:snpid ?type ;
-       # snpdb:descr ?cancer .
+  <% elsif dbsnp %>
+  ?snp dbsnp:chr ?chr ;
+       dbsnp:pos ?pos ; 
+       dbsnp:gene_name ?gene ;
+       dbsnp:snpid ?snp_id .
+       # dbsnp:type ?type 
+  OPTIONAL { ?snp dbsnp:descr ?remark }.
   <% else %>
   ?ann snv1:chr ?chr ;
        snv1:snv true ;
