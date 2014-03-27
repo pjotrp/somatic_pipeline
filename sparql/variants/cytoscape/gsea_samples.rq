@@ -11,7 +11,7 @@
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
-SELECT DISTINCT ?sample ?geneset WHERE {
+SELECT DISTINCT ?sample ?cnv_rank ?geneset WHERE {
   ?setid gsea:geneset true ;
          rdf:label ?geneset ;
          rdf:label "<%= filter %>" ;
@@ -23,8 +23,8 @@ SELECT DISTINCT ?sample ?geneset WHERE {
       <% if hc %>
       :hc true ; 
       <% end %>
-      # :type :somatic ;
-      :type :germline ;
+      :type :somatic ;
+      # :type :germline ;
       :caller ?caller .
   <% if dbsnp %>
   ?snp dbsnp:chr ?chr ;
@@ -44,6 +44,7 @@ SELECT DISTINCT ?sample ?geneset WHERE {
        snv1:gene_name ?gene .
   <% end %>
   ?sid sample:identifier ?identifier ;
+       sample:cnv_rank ?cnv_rank ;
        sample:sample ?sample .
   MINUS { ?sid sample:quality "low" } .
   MINUS { ?sid sample:quality "maybe" } .
