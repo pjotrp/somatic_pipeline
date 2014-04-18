@@ -48,5 +48,4 @@ SELECT DISTINCT ?sample ?cnv_rank ?geneset WHERE {
        sample:sample ?sample .
   MINUS { ?sid sample:quality "low" } .
   MINUS { ?sid sample:quality "maybe" } .
-  # FILTER ( ?quality = "high" || ?quality = "good" ) .
 }

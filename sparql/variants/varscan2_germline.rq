@@ -22,7 +22,7 @@
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
 
 # SELECT DISTINCT ?sample ?cnv_rank ?gene ?chr ?pos ?var ?snp_id ?freq ?quality ?type ?remark WHERE {
-SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?cosmicid ?aa ?cancer ?freq ?remark WHERE {
+SELECT DISTINCT ?sample ?gene ?chr ?pos ?ref ?call ?var ?snp_id ?cosmicid ?cancer ?freq ?remark WHERE {
   # Reduce samples
   ?sid sample:identifier ?identifier ;
        sample:sample ?sample ;
@@ -37,7 +37,8 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?cosmicid ?aa ?cancer ?freq
   # Select variants
   ?id :chr ?chr ;
       :pos ?pos ;
-      :variant ?var ;
+      :ref ?ref ;
+      :variant ?call ;
       <% if type %>
       :type :<%= type %>;
       <% end %>
@@ -53,6 +54,7 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?cosmicid ?aa ?cancer ?freq
           cosmic:cancer ?cancer ;
           cosmic:descr ?remark ;
           cosmic:aa_mutation ?aa ;
+          cosmic:nuc_mutation ?var ;
           cosmic:gene_name ?gene .
   <% elsif dbsnp %>
   ?snp dbsnp:chr ?chr ;
@@ -65,7 +67,8 @@ SELECT DISTINCT ?sample ?gene ?chr ?pos ?var ?snp_id ?cosmicid ?aa ?cancer ?freq
   ?ann snv1:chr ?chr ;
        snv1:snv true ;
        snv1:pos ?pos ;
-       snv1:aa_var ?aa ;
+       snv1:var ?var ;
+       # snv1:aa_var ?aa ;
        snv1:effect ?effect ;
        snv1:snp_id ?snp_id ;
        snv1:gene_name ?gene .
