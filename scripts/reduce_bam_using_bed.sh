@@ -25,7 +25,7 @@ echo $BASEDIR
 while read bam ; do
   echo Reducing $bam...
 
-  echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE > $(basename $bam .bam).$design.bam"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --ignore-queue --pfff $*
+  echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE > $(basename $bam .bam).$design.bam"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --pfff -d .
 done
 
 
