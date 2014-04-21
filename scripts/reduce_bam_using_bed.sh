@@ -8,7 +8,7 @@
 #
 # Create list with something like
 #
-#   find /data/mapping/cancer -name '*MBC*'|grep bam$
+#   find /data/mapping/cancer -name '*MBC*'|grep -v wf|grep bam$
 #
 # e.g.
 #
