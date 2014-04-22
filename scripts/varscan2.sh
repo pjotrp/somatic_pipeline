@@ -2,7 +2,7 @@
 #
 # Usage
 #
-#   varscan2.sh [--config env.sh] normaldescr tumordescr normal.bam tumor.bam
+#   varscan2.sh [--config env.sh] normalname tumorname normal.bam tumor.bam
 #
 # This script is normally run from a controller which creates env.sh. It can also 
 # be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
@@ -38,8 +38,8 @@ if [ $1 == "--config" ]; then
   shift ; shift
   . $config
 fi
-normalname=$1
-tumorname=$2
+normalname=$1 # unused
+tumorname=$2  # unused
 normal=$3
 tumor=$4
 
@@ -96,6 +96,7 @@ echo "java -jar ~/opt/lib/VarScan.v2.3.6.jar processSomatic $normal-$tumor.varSc
 exit 0
 
 # The following runs the alternative readcount tools (older scoring)
+# this is no longer used.
 #
 echo "==== Readcount on tumor $tumor..."
 for chr in $CHROMOSOMES ; do
