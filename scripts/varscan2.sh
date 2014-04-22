@@ -54,33 +54,6 @@ set
 
 mkdir -p varscan2
 
-echo "normal=$normal tumor=$tumor"
-
-for x in $normal $tumor ; do 
-  echo "==== Remove duplicates of $x"
-  name="${x%.*}"
-  x2=${name}_rmdup.bam
-  echo "$sambamba markdup -r $x $x2"| $onceonly --pfff -d . -v --skip $x2
-  [ $? -ne 0 ] && exit 1
-done
-normal=${normal%.*}_rmdup.bam
-tumor=${tumor%.*}_rmdup.bam
-echo "normal=$normal tumor=$tumor"
-
-for x in $normal $tumor ; do 
-  echo "==== Index with Samtools $x ..."
-  echo "$sambamba index $x"| $onceonly --pfff -d . -v
-  [ $? -ne 0 ] && exit 1
-  echo "==== Index fasta with samtools ..."
-  echo "$samtools faidx $refgenome"|$onceonly --pfff -d . -v
-  [ $? -ne 0 ] && exit 1
-  echo "==== Create samtools mpileup of $x"
-  # check -E option
-  # echo "$samtools mpileup -B -q $phred -f $refgenome -l $bed ../$x > $x.mpileup"|$onceonly --pfff -v -d varscan2 --skip $x.mpileup
-  echo "$samtools mpileup -B -q $phred -f $refgenome -l $bed ../$x > $x.mpileup"|$onceonly --pfff -v -d varscan2 --skip $x.mpileup
-  [ $? -ne 0 ] && exit 1
-done
-
 # --mpileup 1 option (newer undocumented scoring)
 # options=$normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.001 --strand-filter --min-var-freq 0.20
 options="$normal.mpileup $tumor.mpileup $normal-$tumor.varScan.output --min-coverage-normal 5 --min-coverage-tumor 6 --somatic-p-value 0.01 --min-var-freq 0.15"
