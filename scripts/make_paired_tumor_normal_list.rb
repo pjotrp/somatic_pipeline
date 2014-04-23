@@ -3,6 +3,11 @@
 # Create a list of paired somatic files reading filenames as input. The
 # assumption is that base file names are almost the same, with one different
 # character R or N for normal and T for tumor. Here only T is checked.
+#
+# Example
+#
+#   ./make_paired_tumor_normal_list.rb /export/data/MBC/test/*p.bam
+#   
 
 # $stderr.print "Fetching all BAM names in #{dir}\n"
 # bamlist = `find #{dir} -type f -name '*.bam'`.strip.split("\n").sort.uniq
