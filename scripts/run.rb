@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 #
-# This runner takes a file of normal-tumor BAM files and executes the script standalone
+# This runner takes a file of normal-tumor files and executes the script standalone
 # or on PBS with the --pbs switch.
 #
 # Configuration through JSON file
