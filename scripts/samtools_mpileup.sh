@@ -25,7 +25,9 @@ echo "$samtools faidx $refgenome"|$onceonly --pfff -d . -v
 while read bam ; do
   echo ==== $samtools mpileup $bam...
   outfn=$(basename $bam .bam).mpileup
-  # check -E option, you can also filter on $BED
-  echo "$samtools mpileup -B -C -E -S -q $phred -l $BED -f $refgenome $bam > $outfn"|$onceonly --pfff -v -d . --out $outfn
+  # Optimized for FFPE after rmdup, settings comparable with bcbio-next
+  #
+  # Using -E instead of BAQ (no -B)
+  echo "$samtools mpileup -E -m 3 -q $phred -l $BED -f $refgenome $bam > $outfn"|$onceonly --pfff -v -d . --out $outfn
   [ $? -ne 0 ] && exit 1
 done
