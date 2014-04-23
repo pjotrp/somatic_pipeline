@@ -1,6 +1,6 @@
 #! /bin/bash
 # 
-# Simple annotator loop
+# Simple annotator loop for .vcf and .snp files
 #
 #   ./annotator.sh < list
 #
