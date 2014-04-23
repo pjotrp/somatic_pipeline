@@ -1,7 +1,9 @@
 #! /usr/bin/env ruby
 #
 # This runner takes a file of normal-tumor files and executes the script standalone
-# or on PBS with the --pbs switch.
+# or on PBS with the --pbs switch. Note that the script creates a symlink
+# pointing to the full path after makeing the original read-only. This the run
+# becomes slightly less error prone.
 #
 # Configuration through JSON file
 #
@@ -9,9 +11,13 @@
 #
 #   ./scripts/run.rb --config run.json ./scripts/varscan2.sh somatic_list.txt
 #
+# or more complete 
+#
+#   ~/opt/somatic_pipeline/scripts/run.rb --config ~/data/run5/run.json ~/opt/somatic_pipeline/scripts/varscan2.sh ~/data/run5/paired_tumor_normal_list.txt
+#
 # or a full on with --pbs
 #
-#   wgs01:~/data/trials/chr17$ ~/opt/somatic_pipeline/scripts/run.rb --pbs --config run.json ~/opt/somatic_pipeline/scripts/varscan2.sh somatic2_bams.txt
+#   wgs01:~/data/trials/chr17$ ~/opt/somatic_pipeline/scripts/run.rb --pbs --config run.json ~/opt/somatic_pipeline/scripts/varscan2.sh somatic2_infiles.txt
 #
 # Example of run.json
 #
@@ -92,30 +98,30 @@ File.read(listfn).each_line do | line |
   next if line =~ /^#/
   normal,tumor = line.strip.split(/\s+/)
   list = nil
-  find = lambda { |fullbampath|
-    bam = File.basename(fullbampath)
+  find = lambda { |fullpath|
+    infile = File.basename(fullpath)
     # ---- Make sure the file is read-only!
-    if File.writable?(fullbampath)
+    if File.writable?(fullpath)
       # Try to make it read-only
       begin
-        File.chmod(0444,fullbampath)
+        File.chmod(0444,fullpath)
       rescue Errno::EPERM
       end
-      if File.writable?(fullbampath)
-        $stderr.print "WARNING: File is not read-only #{fullbampath}!\n"
+      if File.writable?(fullpath)
+        $stderr.print "WARNING: File is not read-only #{fullpath}!\n"
       end
     end
     # ---- From now on use a symlink to the file
-    FileUtils.ln_s(fullbampath,bam,verbose: true) if not File.symlink?(bam)
-    raise "Will not use a non-symlink for #{bam}!" if not File.symlink?(bam) 
-    return bam,fullbampath
+    FileUtils.ln_s(fullpath,infile,verbose: true) if not File.symlink?(infile)
+    raise "Will not use a non-symlink for #{infile}!" if not File.symlink?(infile) 
+    return infile,fullpath
   }
   # ---- We only accept symlinks for input!
   normal,normal_fullpath = find.call(normal) if not File.symlink?(normal)
   tumor,tumor_fullpath = find.call(tumor) if not File.symlink?(tumor)
   print "Normal=",normal,"\tTumor=",tumor
-  normalname=File.basename(normal,'.bam')
-  tumorname=File.basename(tumor,'.bam')
+  normalname=File.basename(normal,'.bam')  # strip .bam
+  tumorname=File.basename(tumor,'.bam')    
   p [normalname,tumorname]
   cmd = [script,(config ? '--config '+abs_env_sh : ''),normalname,tumorname,normal,tumor,normal_fullpath,tumor_fullpath].join(" ")
   if options[:pbs]
