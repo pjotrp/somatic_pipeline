@@ -43,7 +43,7 @@ tumorname=$2  # unused
 normal=$3
 tumor=$4
 
-phred=10  # 1:1000
+phred=30  # 1:1000
 onceonly=$ONCEONLY
 refgenome=$REFSEQ
 samtools=$SAMTOOLS
@@ -58,7 +58,7 @@ mkdir -p varscan2
 
 outfn=$normal-$tumor.varScan.output
 
-options="../$normal ../$tumor $outfn --min-coverage-normal 5 --min-coverage-tumor 6 --p-value 0.98 --somatic-p-value 0.01 --strand-filter 1 --tumor-purity 0.40"
+options="../$normal ../$tumor $outfn --min-coverage-normal 5 --min-coverage-tumor 6 --p-value 0.98 --somatic-p-value 0.01 --tumor-purity 0.40"
 
 echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $options"|$onceonly --pfff --in ../$normal --in ../$tumor --skip-glob "$outfn*" -v -d varscan2
 [ $? -ne 0 ] && exit 1
