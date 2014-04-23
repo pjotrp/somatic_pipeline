@@ -13,10 +13,9 @@ onceonly=$HOME/izip/git/opensource/ruby/once-only/bin/once-only
 
 REFSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
 BED="$HOME/kinome_design_SS_V2_110811_nochr_annot_sorted.bed"
-phred=10  # 1:1000
+phred=10  # 1:10
 bed=$BED
 refgenome=$REFSEQ
-
 
 echo "==== Index fasta with samtools ..."
 echo "$samtools faidx $refgenome"|$onceonly --pfff -d . -v
