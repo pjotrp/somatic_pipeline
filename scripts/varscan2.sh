@@ -58,7 +58,7 @@ mkdir -p varscan2
 
 outfn=$normal-$tumor.varScan.output
 
-options="../$normal ../$tumor $outfn --min-coverage-normal 5 --min-coverage-tumor 6 --p-value 0.98 --somatic-p-value 0.01 --tumor-purity 0.40"
+options="../$normal ../$tumor $outfn --min-coverage-normal 5 --min-coverage-tumor 8 --p-value 0.98 --somatic-p-value 0.01"
 
 echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $options"|$onceonly --pfff --in ../$normal --in ../$tumor --skip-glob "$outfn*" -v -d varscan2
 [ $? -ne 0 ] && exit 1
