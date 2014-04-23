@@ -12,11 +12,6 @@
 
 # ---- Default settings
 normalSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
-if [ ! -z $CHR ]; then
-  BED="$HOME/full_kinome_CoDeCZ_chr$CHR.bed"
-else
-  BED="$HOME/full_kinome_CoDeCZ.bed"
-fi
 SAMTOOLS=$HOME/opt/bin/samtools
 SAMBAMBA=$HOME/opt/bin/sambamba
 BAMANNOTATE=/data/common_scripts/stef/getBamAnnotate.pl
@@ -46,7 +41,6 @@ onceonly=$ONCEONLY
 normalgenome=$normalSEQ
 samtools=$SAMTOOLS
 sambamba=$SAMBAMBA
-bed=$BED
 bamannotate=$BAMANNOTATE
 inheritance=$INHERITANCE
 cachedir=`pwd`  # otherwise set to `pwd`
