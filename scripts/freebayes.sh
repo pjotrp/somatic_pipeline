@@ -2,14 +2,17 @@
 #
 # Usage
 #
-#   freebayes.sh [--config env.sh] normalname tumorname normal.mpileup tumor.mpileup
+#   freebayes.sh [--config env.sh] normalname tumorname normal.bam tumor.bam
 #
 # This script is normally run from a controller which creates env.sh. It can also 
 # be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
 #
 # E.g.
 #
-#   ~/opt/somatic_pipeline/scripts/run.rb --pbs --config run.json ~/opt/somatic_pipeline/scripts/freebayes.sh all_mbc.txt
+#  ~/opt/somatic_pipeline/scripts/make_paired_tumor_normal_list.rb /home/cog/pprins/data/run5/bam_reduced/*p.bam > ../../../paired_tumor_normal_bamlist.txt
+#  ~/opt/somatic_pipeline/scripts/run.rb --config ../../run.json ~/opt/somatic_pipeline/scripts/freebayes.sh ../../paired_tumor_normal_bamlist.txt
+#
+#
 #
 
 # ---- Default settings
@@ -49,9 +52,28 @@ set
 
 mkdir -p freebayes
 
-outfn=$normal-$tumor.freebayes.output
+for bam in $normal $tumor ; do
+  echo ==== $sambamba index $bam...
+  outfn1=$(basename $bam .bam).bam.bai
+  echo "$sambamba index $bam"| $onceonly --pfff -d . -v -in $bam --out $outfn1
+  [ $? -ne 0 ] && exit 1
+done
 
+
+outfn=$normal-$tumor.freebayes.output
 options="-f $refgenome -C 3 -t $bed --pooled-discrete --genotype-qualities --min-coverage 5"
-echo "$freebayes $options ../$tumor ../$normal $outfn.vcf > "|$onceonly --pfff --in ../$normal --in ../$tumor --skip-glob $outfn.vcf -v -d freebayes
+echo "$freebayes $options ../$normal ../$tumor > $outfn.vcf "|$onceonly --pfff --in ../$normal --in ../$tumor --out $outfn.vcf -v -d freebayes
 [ $? -ne 0 ] && exit 1
+
+samples=`~/izip/git/opensource/ruby/bioruby-vcf/bin/bio-vcf -q --eval-once 'header.samples.join(" ")' < freebayes/$outfn.vcf`
+
+echo "##### "$samples
+echo "$HOME/opt/vcflib/bin/vcfsamplediff VT $samples $outfn.vcf > $outfn.diff.vcf"|$onceonly --pfff --in $outfn.vcf --out $outfn.diff.vcf -v -d freebayes
+[ $? -ne 0 ] && exit 1
+
+grep -i VT=germline freebayes/$outfn.diff.vcf > freebayes/$outfn.Germline.vcf
+grep -i VT=Somatic freebayes/$outfn.diff.vcf > freebayes/$outfn.Somatic.vcf
+grep -i VT=LOH freebayes/$outfn.diff.vcf > freebayes/$outfn.LOH.vcf
+
+exit 0
 
