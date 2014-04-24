@@ -15,13 +15,6 @@
 # CHR=17
 
 # ---- Default settings
-REFSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
-if [ ! -z $CHR ]; then
-  BED="$HOME/full_kinome_CoDeCZ_chr$CHR.bed"
-else
-  # BED="$HOME/full_kinome_CoDeCZ.bed"
-  BED="$HOME/kinome_design_SS_V2_110811_nochr_annot.bed"
-fi
 SAMTOOLS=$HOME/opt/bin/samtools
 SAMBAMBA=$HOME/opt/bin/sambamba
 ONCEONLY="$HOME/izip/git/opensource/ruby/once-only/bin/once-only"
@@ -45,10 +38,8 @@ tumor=$4
 
 phred=30  # 1:1000
 onceonly=$ONCEONLY
-refgenome=$REFSEQ
 samtools=$SAMTOOLS
 sambamba=$SAMBAMBA
-bed=$BED
 
 set
 
