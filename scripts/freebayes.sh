@@ -71,9 +71,10 @@ echo "##### "$samples
 echo "$HOME/opt/vcflib/bin/vcfsamplediff VT $samples $outfn.vcf > $outfn.diff.vcf"|$onceonly --pfff --in $outfn.vcf --out $outfn.diff.vcf -v -d freebayes
 [ $? -ne 0 ] && exit 1
 
-grep -i VT=germline freebayes/$outfn.diff.vcf > freebayes/$outfn.Germline.vcf
-grep -i VT=Somatic freebayes/$outfn.diff.vcf > freebayes/$outfn.Somatic.vcf
-grep -i VT=LOH freebayes/$outfn.diff.vcf > freebayes/$outfn.LOH.vcf
+head -57 freebayes/$outfn.diff.vcf > freebayes/$outfn.Germline.vcf
+head -57 freebayes/$outfn.diff.vcf > freebayes/$outfn.Somatic.vcf
+grep -i VT=germline freebayes/$outfn.diff.vcf >> freebayes/$outfn.Germline.vcf
+grep -i VT=Somatic freebayes/$outfn.diff.vcf >> freebayes/$outfn.Somatic.vcf
 
 exit 0
 
