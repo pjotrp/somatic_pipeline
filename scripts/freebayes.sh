@@ -61,7 +61,7 @@ done
 
 
 outfn=$normal-$tumor.freebayes.output
-options="-f $refgenome -C 3 -t $bed --pooled-discrete --genotype-qualities --min-coverage 5"
+options="-f $refgenome -C 3 -t $bed --pooled-discrete --genotype-qualities --min-coverage 5 --no-indels --no-mnps --no-complex"
 echo "$freebayes $options ../$normal ../$tumor > $outfn.vcf "|$onceonly --pfff --in ../$normal --in ../$tumor --out $outfn.vcf -v -d freebayes
 [ $? -ne 0 ] && exit 1
 
