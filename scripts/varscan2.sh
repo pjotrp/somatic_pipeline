@@ -11,8 +11,7 @@
 #
 #   ~/opt/somatic_pipeline/scripts/run.rb --pbs --config run.json ~/opt/somatic_pipeline/scripts/varscan2.sh all_mbc.txt
 #
-# Uncomment for testing:
-# CHR=17
+# If you want additional VCF output set varscan_vcf=1 in run.json.
 
 # ---- Default settings
 SAMTOOLS=$HOME/opt/bin/samtools
@@ -56,6 +55,12 @@ echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $options"|$onceonly --p
 
 echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar processSomatic $outfn.snp"|$onceonly -v -d varscan2 --in $outfn.snp
 [ $? -ne 0 ] && exit 1
+
+if [ ! -z $varscan_vcf ]; then
+  # Create (optional) VCF output
+  echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic --output-vcf $options"|$onceonly --pfff --in ../$normal --in ../$tumor --skip-glob "$outfn*" -v -d varscan2
+  [ $? -ne 0 ] && exit 1
+fi
 
 exit 0
 
