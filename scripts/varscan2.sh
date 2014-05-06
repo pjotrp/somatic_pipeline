@@ -56,9 +56,9 @@ echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $options"|$onceonly --p
 echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar processSomatic $outfn.snp"|$onceonly -v -d varscan2 --in $outfn.snp
 [ $? -ne 0 ] && exit 1
 
-if [ ! -z $varscan_vcf ]; then
+if [ ! -z $VARSCAN_VCF ]; then
   # Create (optional) VCF output
-  echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic --output-vcf $options"|$onceonly --pfff --in ../$normal --in ../$tumor --skip-glob "$outfn*" -v -d varscan2
+  echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic --output-vcf 1 $options"|$onceonly --pfff --in ../$normal --in ../$tumor --skip-glob "$outfn*" -v -d varscan2
   [ $? -ne 0 ] && exit 1
 fi
 
