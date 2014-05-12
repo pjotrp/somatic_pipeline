@@ -32,7 +32,7 @@
 #
 
 # ---- Default settings
-# REFSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
+REFSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
 # BED="$HOME/kinome_design_SS_V2_110811_nochr_annot_sorted.bed"
 
 SAMTOOLS=$HOME/opt/bin/samtools
@@ -58,7 +58,7 @@ tumor=$4
 
 phred=10  # 1:10
 onceonly=$ONCEONLY
-# refgenome=$REFSEQ
+refgenome=$REFSEQ
 samtools=$SAMTOOLS
 sambamba=$SAMBAMBA
 # bed=$BED
