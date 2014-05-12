@@ -9,6 +9,10 @@
 #
 # E.g.
 #
+#  ./make_paired_tumor_normal_list.rb ~/data/run5/bam_reduced/mpileup/*.mpileup > ~/data/run5/paired_tumor_normal_list.txt
+#
+#
+#
 #   ~/opt/somatic_pipeline/scripts/run.rb --pbs --config run.json ~/opt/somatic_pipeline/scripts/varscan2.sh all_mbc.txt
 #
 # If you want additional VCF output set varscan_vcf=1 in run.json.
@@ -50,6 +54,7 @@ outfn=$normal-$tumor.varScan.output
 
 options="../$normal ../$tumor $outfn --min-coverage-normal 5 --min-coverage-tumor 8 --somatic-p-value 0.001"
 
+# Make sure the inputs are pileups!
 echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $options"|$onceonly --pfff --in ../$normal --in ../$tumor --skip-glob "$outfn*" -v -d varscan2
 [ $? -ne 0 ] && exit 1
 
@@ -58,7 +63,7 @@ echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar processSomatic $outfn.snp"|$onc
 
 if [ ! -z $VARSCAN_VCF ]; then
   # Create (optional) VCF output
-  echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic --output-vcf 1 $options"|$onceonly --pfff --in ../$normal --in ../$tumor --skip-glob "$outfn*" -v -d varscan2
+  echo "java -jar $HOME/opt/lib/VarScan.v2.3.6.jar somatic $options --output-vcf "|$onceonly --pfff --in ../$normal --in ../$tumor --skip-glob "$outfn*" -v -d varscan2
   [ $? -ne 0 ] && exit 1
 fi
 
