@@ -88,11 +88,11 @@ echo "==== Somatic sniper"
 
 options="-J -Q $phred -s 0.01"
 outputsnp=$tumor.snp
-echo "$somaticsniper $options -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
+echo "$somaticsniper $options -f $refgenome ../$tumor ../$normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
 [ $? -ne 0 ] && exit 1
 
 outputvcf=$tumor.vcf
-echo "$somaticsniper $options -f $refgenome -F vcf $tumor $normal $outputvcf"| $onceonly --pfff -d somaticsniper -v --skip $outputvcf
+echo "$somaticsniper $options -f $refgenome -F vcf ../$tumor ../$normal $outputvcf"| $onceonly --pfff -d somaticsniper -v --skip $outputvcf
 [ $? -ne 0 ] && exit 1
 
 echo "DONE"
