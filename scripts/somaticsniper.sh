@@ -70,54 +70,6 @@ echo "normal=$normal tumor=$tumor"
 normalname="${normal%.*}"
 tumorname="${tumor%.*}"
 
-df -h
-
-if true ; then 
-  for x in $normal $tumor ; do 
-    echo "==== Remove duplicates of $x"
-    name="${x%.*}"
-    x2=$cachedir/$(basename $name)_rmdup.bam
-    if [ $use_cache == "true" ]; then
-      $sambamba markdup -r $x $x2
-    else
-      echo "$sambamba markdup -r $x $x2"| $onceonly --pfff --force -d . -v --skip $x2
-    fi
-    [ $? -ne 0 ] && exit 1
-  done
-  normal=$cachedir/$(basename ${normal%.*})_rmdup.bam
-  tumor=$cachedir/$(basename ${tumor%.*})_rmdup.bam
-  echo "**** normal=$normal tumor=$tumor"
-fi
-
-if true ; then 
-  for x in $normal $tumor ; do 
-    echo "==== Select design $x"
-    name="${x%.*}"
-    x2=${name}_bed.bam
-    if [ $use_cache == "true" ]; then
-      $HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2
-    else
-      echo "$HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2"| $onceonly --pfff --force -d . -v --skip $x2
-    fi
-    [ $? -ne 0 ] && exit 1
-  done
-  # Only keep the reduced files
-  # rm $normal
-  # rm $tumor
-  normal=${normal%.*}_bed.bam
-  tumor=${tumor%.*}_bed.bam
-  echo "normal=$normal tumor=$tumor"
-fi
-
-for x in $normal $tumor ; do 
-  echo "==== Index with Samtools $x ..."
-  echo "$sambamba index $x"| $onceonly --pfff -d . -v
-  [ $? -ne 0 ] && exit 1
-  echo "==== Index fasta with samtools ..."
-  echo "$samtools faidx $refgenome"|$onceonly --pfff -d . -v
-  [ $? -ne 0 ] && exit 1
-done
-
   echo "==== Somatic sniper"
   outputsnp=$tumor.snp
   outputvcf=$tumor.vcf
