@@ -1,26 +1,12 @@
 #! /bin/bash
 #
-# Run the somatic sniper on pairs of BAM files. Currently somatic sniper is
-# called twice to output both .vcf and .snp, which call the same variants, but
-# each contains sligthly different information.
-#
 # Usage
 #
-#   somaticsniper2.sh [--config env.sh] normal_descr tumor_descr normal.bam tumor.bam
+#   somaticsniper.sh [--config env.sh] normaldescr tumordescr normal.bam tumor.bam
 #
-# This script is normally run from a controller (./scripts/run.rb) which creates env.sh from a JSON config
-#
-# env.sh may contain overrides, such as
-#
-# SAMTOOLS="$HOME/opt/bin/samtools"
-# SAMBAMBA="$HOME/opt/bin/sambamba"
-#
-# The script can also be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
-#
-# Example:
-#
-# ~/opt/somatic_pipeline/scripts/somaticsniper2.sh /data/mapping/cancer/WKZ4_20131107_CPCTMBC07a08Run147_WH/merged_100R_F3_20131107/merged_100R_F3_20131107.bam /data/mapping/cancer/WKZ4_20131107_CPCTMBC07a08Run147_WH/merged_100T_F3_20131107/merged_100T_F3_20131107.bam
-#
+# This script is normally run from a controller which creates env.sh. It can also 
+# be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
+
 # Uncomment for testing:
 # CHR=17
 
@@ -47,8 +33,8 @@ if [ $1 == "--config" ]; then
   shift ; shift
   . $config
 fi
-# normalname=$1
-# tumorname=$2
+normalname=$1
+tumorname=$2
 normal=$3
 tumor=$4
 
@@ -59,8 +45,7 @@ samtools=$SAMTOOLS
 sambamba=$SAMBAMBA
 bed=$BED
 somaticsniper=bam-somaticsniper
-use_cache=
-cachedir=`pwd` # /tmp  # otherwise set to `pwd`
+cachedir=/tmp  # otherwise set to `pwd`
 
 set
 
@@ -70,42 +55,31 @@ echo "normal=$normal tumor=$tumor"
 normalname="${normal%.*}"
 tumorname="${tumor%.*}"
 
-df -h
-
-if true ; then 
+if false ; then 
   for x in $normal $tumor ; do 
     echo "==== Remove duplicates of $x"
     name="${x%.*}"
-    x2=$cachedir/$(basename $name)_rmdup.bam
-    if [ $use_cache == "true" ]; then
-      $sambamba markdup -r $x $x2
-    else
-      echo "$sambamba markdup -r $x $x2"| $onceonly --pfff --force -d . -v --skip $x2
-    fi
+    x2=$cachedir/${name}_rmdup.bam
+    echo "$sambamba markdup -r $x $x2"| $onceonly --pfff -d . -v --skip $x2
     [ $? -ne 0 ] && exit 1
   done
-  normal=$cachedir/$(basename ${normal%.*})_rmdup.bam
-  tumor=$cachedir/$(basename ${tumor%.*})_rmdup.bam
-  echo "**** normal=$normal tumor=$tumor"
+  normal=$cachedir/${normal%.*}_rmdup.bam
+  tumor=$cachedir/${tumor%.*}_rmdup.bam
+  echo "normal=$normal tumor=$tumor"
 fi
 
 if true ; then 
   for x in $normal $tumor ; do 
     echo "==== Select design $x"
     name="${x%.*}"
-    x2=${name}_bed.bam
-    if [ $use_cache == "true" ]; then
-      $HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2
-    else
-      echo "$HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2"| $onceonly --pfff --force -d . -v --skip $x2
-    fi
+    x2=$cachedir/${name}_bed.bam
+    echo "$HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2"| $onceonly --pfff -d . -v --skip $x2
+    # Don't use once-only here
+    # $HOME/opt/bedtools/bin/intersectBed -abam $x -b $bed > $x2
     [ $? -ne 0 ] && exit 1
   done
-  # Only keep the reduced files
-  # rm $normal
-  # rm $tumor
-  normal=${normal%.*}_bed.bam
-  tumor=${tumor%.*}_bed.bam
+  normal=$cachedir/${normal%.*}_bed.bam
+  tumor=$cachedir/${tumor%.*}_bed.bam
   echo "normal=$normal tumor=$tumor"
 fi
 
@@ -119,16 +93,8 @@ for x in $normal $tumor ; do
 done
 
   echo "==== Somatic sniper"
-  outputsnp=$tumor.snp
-  outputvcf=$tumor.vcf
-  # echo "$somaticsniper -q $phred -Q $phred -J -s 0.01 -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
-  echo "$somaticsniper -J -s 0.01 -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
+  echo "$somaticsniper -q $phred -Q $phred -J -N 8 -f $refgenome $tumor $normal $normalname-$tumorname.snp"| $onceonly --pfff -d somaticsniper -v --skip $normalname-$tumorname.snp
   [ $? -ne 0 ] && exit 1
-  echo "$somaticsniper -J -s 0.01 -f $refgenome -F vcf $tumor $normal $outputvcf"| $onceonly --pfff -d somaticsniper -v --skip $outputvcf
-  [ $? -ne 0 ] && exit 1
-
-echo "DONE FOR NOW"
-exit 0
 
 # The following runs readcount 
 #
@@ -144,6 +110,6 @@ for chr in $CHROMOSOMES ; do
   echo "perl $HOME/opt/somatic-sniper/src/scripts/fpfilter.pl --output-basename $tumorname.$chr --snp-file $normalname-$tumorname.snp --readcount-file $tumorname.$chr.readcount"|~/izip/git/opensource/ruby/once-only/bin/once-only --pfff -d somaticsniper -v
   [ $? -ne 0 ] && exit 1
   echo "perl $HOME/opt/somatic-sniper/src/scripts/highconfidence.pl --min-mapping-quality $phred --snp-file $tumorname.$chr.fp_pass"|$onceonly -d somaticsniper -v
-  # [ $? -ne 0 ] && exit 1  -- throws error on empty fp_pass!
+  [ $? -ne 0 ] && exit 1
 done
 
