@@ -30,16 +30,11 @@
 #
 # ~/opt/somatic_pipeline/scripts/somaticsniper2.sh /data/mapping/cancer/WKZ4_20131107_CPCTMBC07a08Run147_WH/merged_100R_F3_20131107/merged_100R_F3_20131107.bam /data/mapping/cancer/WKZ4_20131107_CPCTMBC07a08Run147_WH/merged_100T_F3_20131107/merged_100T_F3_20131107.bam
 #
-# Uncomment for testing:
-# CHR=17
 
 # ---- Default settings
 REFSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
-if [ ! -z $CHR ]; then
-  BED="$HOME/full_kinome_CoDeCZ_chr$CHR.bed"
-else
-  BED="$HOME/full_kinome_CoDeCZ.bed"
-fi
+# BED="$HOME/kinome_design_SS_V2_110811_nochr_annot_sorted.bed"
+
 SAMTOOLS=$HOME/opt/bin/samtools
 SAMBAMBA=$HOME/opt/bin/sambamba
 ONCEONLY="$HOME/izip/git/opensource/ruby/once-only/bin/once-only"
@@ -66,7 +61,7 @@ onceonly=$ONCEONLY
 refgenome=$REFSEQ
 samtools=$SAMTOOLS
 sambamba=$SAMBAMBA
-bed=$BED
+# bed=$BED
 somaticsniper=bam-somaticsniper
 use_cache=
 cachedir=`pwd` # /tmp  # otherwise set to `pwd`
@@ -84,7 +79,6 @@ tumorname="${tumor%.*}"
 # -Q 10 is just to avoid the low quality reads
 
 echo "==== Somatic sniper"
-# echo "$somaticsniper -q $phred -Q $phred -J -s 0.01 -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
 
 options="-J -Q $phred -s 0.01"
 outputsnp=$tumor.snp
