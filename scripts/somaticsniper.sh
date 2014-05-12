@@ -10,6 +10,15 @@
 #
 # This script is normally run from a controller (./scripts/run.rb) which creates env.sh from a JSON config
 #
+#  E.g., make list:
+#
+#    ~/opt/somatic_pipeline/scripts/make_paired_tumor_normal_list.rb /home/cog/pprins/data/run5/bam_reduced/*p.bam > ../../../paired_tumor_normal_bamlist.txt
+#
+#  and run
+#
+#    ~/opt/somatic_pipeline/scripts/run.rb --config ../../run.json ~/opt/somatic_pipeline/scripts/somaticsniper.sh ../../paired_tumor_normal_bamlist.txt
+#
+#    
 # env.sh may contain overrides, such as
 #
 # SAMTOOLS="$HOME/opt/bin/samtools"
@@ -52,7 +61,7 @@ fi
 normal=$3
 tumor=$4
 
-phred=30  # 1:1000
+phred=10  # 1:10
 onceonly=$ONCEONLY
 refgenome=$REFSEQ
 samtools=$SAMTOOLS
@@ -70,19 +79,27 @@ echo "normal=$normal tumor=$tumor"
 normalname="${normal%.*}"
 tumorname="${tumor%.*}"
 
-  echo "==== Somatic sniper"
-  outputsnp=$tumor.snp
-  outputvcf=$tumor.vcf
-  # echo "$somaticsniper -q $phred -Q $phred -J -s 0.01 -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
-  echo "$somaticsniper -J -s 0.01 -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
-  [ $? -ne 0 ] && exit 1
-  echo "$somaticsniper -J -s 0.01 -f $refgenome -F vcf $tumor $normal $outputvcf"| $onceonly --pfff -d somaticsniper -v --skip $outputvcf
-  [ $? -ne 0 ] && exit 1
+# -J using joint mode because tumor and normal are from the same source
+# -s 0.01 is recommended
+# -Q 10 is just to avoid the low quality reads
 
-echo "DONE FOR NOW"
+echo "==== Somatic sniper"
+# echo "$somaticsniper -q $phred -Q $phred -J -s 0.01 -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
+
+options="-J -Q $phred -s 0.01"
+outputsnp=$tumor.snp
+echo "$somaticsniper $options -f $refgenome $tumor $normal $outputsnp"| $onceonly --pfff -d somaticsniper -v --skip $outputsnp
+[ $? -ne 0 ] && exit 1
+
+outputvcf=$tumor.vcf
+echo "$somaticsniper $options -f $refgenome -F vcf $tumor $normal $outputvcf"| $onceonly --pfff -d somaticsniper -v --skip $outputvcf
+[ $? -ne 0 ] && exit 1
+
+echo "DONE"
 exit 0
 
-# The following runs readcount 
+# The following runs readcount - we are no longer using these as it is better to 
+# filter on other evidence
 #
 echo "==== Readcount on tumor $tumor..."
 # CHROMOSOMES="17 18 19 20"
