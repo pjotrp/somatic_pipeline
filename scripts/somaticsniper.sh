@@ -93,7 +93,23 @@ echo "DONE"
 exit 0
 
 # The following runs readcount - we are no longer using these as it is better to 
-# filter on other evidence
+# filter on other evidence.
+#
+# The following filter does:
+#
+# 1. Filter reads on PHRED=30 (originally)
+# 2. Min_var_freq  0.30(!)
+# 3. Min_var_count 12(!)
+# etc. etc.
+#
+# More tweaking needed if we go down this route. Better to use bio-vcf instead.
+#
+# The high confidence filter proved to be useless for SOLiD. The settings
+#
+# my $min_mapping_quality = 40;
+# my $min_somatic_score = 40;
+# 
+# are too stringent.
 #
 echo "==== Readcount on tumor $tumor..."
 # CHROMOSOMES="17 18 19 20"
