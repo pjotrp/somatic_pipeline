@@ -16,7 +16,7 @@ SELECT ?gene_name ?chr ?pos (count(?sample) as ?num) WHERE {
          hgmd:descr ?descr .
   OPTIONAL { ?snpid hgmd:breast_cancer ?breast_cancer }
   OPTIONAL { ?snpid hgmd:cancer ?cancer }
-  ?snpid hgmd:cancer true .
+  # ?snpid hgmd:cancer true .
   # ?snpid hgmd:breast_cancer true .
   # ?snpid hgmd:variant_type hgmd:causal .
   ?fbid  freebayes:chr  ?chr ;
