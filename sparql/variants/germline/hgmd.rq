@@ -1,0 +1,28 @@
+# Fetch HGMD germline variants for a number of known cancer genes
+#
+# Example:
+#
+#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh hgmd.rq
+#
+
+<%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
+
+SELECT ?gene_name ?chr ?pos (count(?sample) as ?num) WHERE {
+# SELECT ?chr ?pos ?sample ?gene_name ?cancer ?breast_cancer ?variant_type ?descr WHERE {
+  ?snpid hgmd:chr ?chr ;
+         hgmd:pos ?pos ;
+         hgmd:gene_name ?gene_name ;
+         hgmd:variant_type ?variant_type ;
+         hgmd:descr ?descr .
+  OPTIONAL { ?snpid hgmd:breast_cancer ?breast_cancer }
+  OPTIONAL { ?snpid hgmd:cancer ?cancer }
+  ?snpid hgmd:cancer true .
+  # ?snpid hgmd:breast_cancer true .
+  # ?snpid hgmd:variant_type hgmd:causal .
+  ?fbid  freebayes:chr  ?chr ;
+         freebayes:pos  ?pos ;
+         freebayes:sample ?sample .
+}
+GROUP BY ?chr ?pos
+ORDER BY ?chr ?pos
+
