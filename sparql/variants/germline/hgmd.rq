@@ -4,6 +4,15 @@
 #
 #   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh hgmd.rq
 #
+# lists:
+#
+#   1. BC and causal
+#   2. Cancer and causal
+#   3. SV and causal
+#   4. BC associated
+#   5. Cancer associated
+#
+<% list=1 ; list=ENV['LIST'] ; filter = true if ENV['FILTER'] ; list = list.to_i %>
 
 <%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
 
@@ -22,11 +31,37 @@ SELECT DISTINCT ?chr ?pos ?ref ?var ?dbsnp ?sample ?af ?gene_name ?cancer ?breas
   OPTIONAL { ?snpid hgmd:cancer ?cancer }
   OPTIONAL { ?snpid hgmd:af ?af }
   OPTIONAL { ?snpid hgmd:dbsnp ?dbsnp }
+  <% if list == 1 %>
+    ?snpid hgmd:breast_cancer true .
+    ?snpid hgmd:variant_type hgmd:causal .
+  <% end %>
+  <% if list == 2 %>
+    ?snpid hgmd:cancer true .
+    ?snpid hgmd:variant_type hgmd:causal .
+  <% end %>
+  <% if list == 3 %>
+    ?snpid hgmd:variant_type hgmd:causal .
+    ?annid annotate:gene ?gene_name ;
+           annotate:tumor_suppressor true .
+  <% end %>
+  <% if list == 4 %>
+    ?snpid hgmd:breast_cancer true .
+  <% end %>
+  <% if list == 5 %>
+    ?snpid hgmd:cancer true .
+  <% end %>
+  <% if filter %>
+    <% if list<4 %>
+      FILTER ( ?af <= 0.05 )
+    <% else %>
+      FILTER ( ?af <= 0.30 )
+    <% end %>
+  <% end %>
   # ?snpid hgmd:cancer true .
-  MINUS { ?snpid hgmd:breast_cancer true } .
+  # MINUS { ?snpid hgmd:breast_cancer true } .
   # ?snpid hgmd:breast_cancer true .
   # ?snpid hgmd:variant_type hgmd:causal .
-  MINUS { ?snpid hgmd:variant_type hgmd:causal } .
+  # MINUS { ?snpid hgmd:variant_type hgmd:causal } .
   ?fbid  freebayes:chr  ?chr ;
          freebayes:pos  ?pos ;
          freebayes:sample ?sample .
