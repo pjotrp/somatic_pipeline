@@ -1,0 +1,65 @@
+# Fetch ClinVar variants for a number of known cancer genes
+#
+# Example:
+#
+#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh clinvar.rq
+#
+# lists:
+#
+#   1. BC and causal
+#   2. Cancer and causal
+#   3. SV and causal
+#   4. BC associated
+#   5. Cancer associated
+#
+<% list=1 ; list=ENV['LIST'] ; filter = true if ENV['FILTER'] ; list = list.to_i %>
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+prefix : <http://biobeat.org/rdf/clinvar>  
+
+# SELECT ?gene_name ?chr ?pos (count(?sample) as ?num) WHERE {
+SELECT DISTINCT ?chr ?pos ?ref ?var ?dbsnp ?sample ?af ?gene_name ?cancer ?breast_cancer ?variant_type ?vt ?descr WHERE {
+  ?snpid seq:chr ?chr ;
+         seq:pos ?pos ;
+         seq:ref ?ref ;
+         seq:alt ?alt ;
+         seq:gene_name ?gene_name ;
+         # :type ?variant_type ;
+         :descr ?descr .
+  OPTIONAL { ?snpid annotate:breast_cancer ?breast_cancer }
+  OPTIONAL { ?snpid annotate:cancer ?cancer }
+  OPTIONAL { ?snpid dbsnp:id ?dbsnp }
+  <% if list == 1 %>
+    ?snpid annotate:breast_cancer true .
+    # MINUS { ?snpid annotate:associated true } .
+  <% end %>
+  <% if list == 2 %>
+    ?snpid annotate:cancer true .
+    MINUS { ?snpid annotate:associated true } .
+  <% end %>
+  <% if list == 3 %>
+    ?annid annotate:gene ?gene_name ;
+           annotate:tumor_suppressor true .
+  <% end %>
+  <% if list == 4 %>
+    ?snpid annotate:breast_cancer true .
+  <% end %>
+  <% if list == 5 %>
+    ?snpid annotate:cancer true .
+  <% end %>
+  # <% if filter %>
+  #   <% if list<4 %>
+  #     FILTER ( !BOUND(?af) || ?af <= 0.05 )
+  #   <% else %>
+  #     FILTER ( !BOUND(?af) || ?af <= 0.30 )
+  #   <% end %> 
+  # <% end %>
+  #?fbid  freebayes:chr  ?chr ;
+  #       freebayes:pos  ?pos ;
+         # freebayes:ref  ?ref ;
+         # freebayes:alt  ?alt ;
+  #       freebayes:sample ?sample .
+}
+# GROUP BY ?chr ?pos
+# ORDER BY ?chr ?pos
+
