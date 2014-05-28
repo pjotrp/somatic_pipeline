@@ -53,10 +53,10 @@ SELECT DISTINCT ?chr ?pos ?ref ?var ?dbsnp ?sample ?af ?gene_name ?cancer ?breas
   <% end %>
   <% if filter %>
     <% if list<4 %>
-      FILTER ( ?af <= 0.05 )
+      FILTER ( !BOUND(?af) || ?af <= 0.05 )
     <% else %>
-      FILTER ( ?af <= 0.30 )
-    <% end %>
+      FILTER ( !BOUND(?af) || ?af <= 0.30 )
+    <% end %> 
   <% end %>
   # ?snpid hgmd:cancer true .
   # MINUS { ?snpid hgmd:breast_cancer true } .
