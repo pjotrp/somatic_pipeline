@@ -31,6 +31,7 @@ SELECT DISTINCT ?chr ?pos ?ref ?var ?dbsnp ?sample ?af ?gene_name ?cancer ?breas
   OPTIONAL { ?snpid hgmd:cancer ?cancer }
   OPTIONAL { ?snpid hgmd:af ?af }
   OPTIONAL { ?snpid hgmd:dbsnp ?dbsnp }
+  MINUS { ?snpid hgmd:variant_type hgmd:reduced } .
   <% if list == 1 %>
     ?snpid hgmd:breast_cancer true .
     ?snpid hgmd:variant_type hgmd:causal .
