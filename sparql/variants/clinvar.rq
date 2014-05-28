@@ -22,10 +22,11 @@ SELECT DISTINCT ?chr ?pos ?ref ?alt ?dbsnp ?sample ?af ?gene_name ?cancer ?breas
   ?snpid seq:chr ?chr ;
          seq:pos ?pos ;
          seq:ref ?ref ;
+         db:id :clinvar ;  <--- check RDF 
          seq:alt ?alt ;
          seq:gene_name ?gene_name ;
          # :type ?variant_type ;
-         :descr ?descr .
+         disease:descr ?descr .
   OPTIONAL { ?snpid annotate:breast_cancer ?breast_cancer }
   OPTIONAL { ?snpid annotate:cancer ?cancer }
   OPTIONAL { ?snpid dbsnp:id ?dbsnp }
