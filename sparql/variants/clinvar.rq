@@ -18,7 +18,7 @@
 prefix : <http://biobeat.org/rdf/clinvar>  
 
 # SELECT ?gene_name ?chr ?pos (count(?sample) as ?num) WHERE {
-SELECT DISTINCT ?chr ?pos ?ref ?var ?dbsnp ?sample ?af ?gene_name ?cancer ?breast_cancer ?variant_type ?vt ?descr WHERE {
+SELECT DISTINCT ?chr ?pos ?ref ?alt ?dbsnp ?sample ?af ?gene_name ?cancer ?breast_cancer ?variant_type ?vt ?descr WHERE {
   ?snpid seq:chr ?chr ;
          seq:pos ?pos ;
          seq:ref ?ref ;
@@ -54,11 +54,11 @@ SELECT DISTINCT ?chr ?pos ?ref ?var ?dbsnp ?sample ?af ?gene_name ?cancer ?breas
   #     FILTER ( !BOUND(?af) || ?af <= 0.30 )
   #   <% end %> 
   # <% end %>
-  #?fbid  freebayes:chr  ?chr ;
-  #       freebayes:pos  ?pos ;
+  ?fbid  freebayes:chr  ?chr ;
+         freebayes:pos  ?pos ;
          # freebayes:ref  ?ref ;
          # freebayes:alt  ?alt ;
-  #       freebayes:sample ?sample .
+         freebayes:sample ?sample .
 }
 # GROUP BY ?chr ?pos
 # ORDER BY ?chr ?pos
