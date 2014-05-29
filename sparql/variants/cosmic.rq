@@ -1,0 +1,71 @@
+# Fetch COSMIC variants for a number of known cancer genes
+#
+# Example:
+#
+#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh clinvar.rq
+#
+# lists:
+#
+#   1. BC and causal
+#   2. Cancer and causal
+#   3. SV and causal
+#   4. BC associated
+#   5. Cancer associated
+#
+<% list=1 ; list=ENV['LIST'] ; list = list.to_i 
+   filter = true if ENV['FILTER'] 
+   plot=ENV['PLOT']
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+prefix : <http://biobeat.org/rdf/cosmic>  
+
+# SELECT ?gene_name ?chr ?pos ?sample (count(?sample) as ?num) WHERE {
+<% if plot=="PLOT1" %>
+SELECT DISTINCT ?gene_name ?chr ?pos ?alt2 ?sample WHERE {
+<% else %>
+SELECT DISTINCT ?chr ?pos ?ref ?alt ?ref2 ?alt2 ?dbsnp ?sample ?af ?gene_name ?cancer ?breast_cancer ?variant_type ?vt ?descr ?cosmicid WHERE {
+<% end %>
+  ?snpid seq:chr ?chr ;
+         seq:pos ?pos ;
+         seq:ref ?ref ;
+         seq:alt ?alt ;
+         seq:gene_name ?gene_name ;
+         db:id ?cosmic ;
+         cosmic:id ?cosmicid .
+  OPTIONAL { ?snpid disease:descr ?descr }
+  OPTIONAL { ?snpid disease:descr ?descr }
+  OPTIONAL { ?snpid annotate:breast_cancer ?breast_cancer }
+  OPTIONAL { ?snpid annotate:cancer ?cancer }
+  <% if list == 1 %>
+    ?snpid annotate:breast_cancer true .
+  <% end %>
+  <% if list == 2 %>
+    ?snpid annotate:cancer true .
+  <% end %>
+  <% if list == 3 %>
+    ?annid annotate:gene ?gene_name ;
+           annotate:tumor_suppressor true .
+  <% end %>
+  <% if list == 4 %>
+    ?snpid annotate:breast_cancer true .
+  <% end %>
+  <% if list == 5 %>
+    ?snpid annotate:cancer true .
+  <% end %>
+  # <% if filter %>
+  #   <% if list<4 %>
+  #     FILTER ( !BOUND(?af) || ?af <= 0.05 )
+  #   <% else %>
+  #     FILTER ( !BOUND(?af) || ?af <= 0.30 )
+  #   <% end %> 
+  # <% end %>
+  ?freebayes  seq:chr  ?chr ;
+         seq:pos  ?pos ;
+         mbc:sample ?sample .
+  OPTIONAL { ?freebayes seq:ref  ?ref2 }
+  OPTIONAL { ?freebayes seq:alt  ?alt2 }
+}
+# GROUP BY ?chr ?pos
+# ORDER BY ?chr ?pos
+
