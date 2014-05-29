@@ -3,5 +3,11 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix hgnc: <http://identifiers.org/hgnc.symbol/> .
 @prefix doi: <http://dx.doi.org/> .
-@prefix : <http://biobeat.org/rdf/annotated-snv#> .
+@prefix seq: <http://biobeat.org/rdf/seq#> .
+@prefix dbsnp: <http://biobeat.org/rdf/dbsnp#> .
+@prefix snv: <http://biobeat.org/rdf/snv#> .
+@prefix db: <http://biobeat.org/rdf/db#> .
+@prefix ensembl: <http://biobeat.org/rdf/ensembl#> .
+
+@prefix : <http://biobeat.org/rdf/snv1#> .
 

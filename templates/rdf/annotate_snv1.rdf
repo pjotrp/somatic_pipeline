@@ -11,23 +11,6 @@
 #
 #   env INFILE=test/data/input/snv/example-varscan.snp.snv1 erb ./templates/rdf/annotate_snv1.rdf > ./test/data/regression/snv/example-varscan.snp.snv1.rdf
 #
-# Example output: 
-#
-#  :annotated_snv_1_10338145_G  :chr     "1" .
-#  :annotated_snv_1_10338145_G  :pos     10338145 .
-#  :annotated_snv_1_10338145_G  :snv     true .
-#  :annotated_snv_1_10338145_G  :ref     "A" .
-#  :annotated_snv_1_10338145_G  :var     "G" .
-#  :annotated_snv_1_10338145_G  :strand  1 .
-#  :annotated_snv_1_10338145_G  :gene_name  "KIF1B" .
-#  :annotated_snv_1_10338145_G  :snp_id  "novel" .
-#  :annotated_snv_1_10338145_G  :effect  :missense_variant .
-#  :annotated_snv_1_10338145_G  :gene_id        :ENSG00000054523 .
-#  :annotated_snv_1_10338145_G  :tid  :ENST00000377081 .
-#  :annotated_snv_1_10338145_G  :protein_id     :ENSP00000366284 .
-#  :annotated_snv_1_10338145_G  :polyphen  0.007 .
-#   :annotated_snv_1_10338145_G  :sift      1 .
-
 <%= File.read(File.dirname(__FILE__)+'/preamble.rdf')  %>
 
 <%
@@ -54,20 +37,32 @@
      breast_cancer = true if high_pop =~ /tumour_site:breast/
      ovarian_cancer = true if high_pop =~ /tumour_site:ovary/
      cancer = true if high_pop =~ /tumour/
+     snv_type = case fields[13]
+       when "missense_variant" then "missense"
+       when "stop_gained" then "stop_gain"
+       when "incomplete_terminal_codon_variant" then "stop_loss"
+       when "stop_lost" then "stop_loss"
+       when "splice_region_variant" then "splice_variant"
+       when "splice_donor_variant" then "splice_variant"
+       when "splice_acceptor_variant" then "splice_variant"
+       when "initiator_codon_variant" then "start_variant"
+       else
+         raise "Unknown snv_type #{fields[13]}"
+     end
 %>
     <% if id != prev_id %>
-    <%= id %>  :chr     "<%= chr %>" ;
-        :pos     <%= pos %> ;
-        :snv     true ;
-        :ref     "<%= ref %>" ;
-        :var     "<%= var %>" ;
-        <% if aaref %>:aa_ref  "<%= aaref %>" ;<% end %>
-        <% if aavar %>:aa_var  "<%= aavar %>" ;<% end %>
-        :strand  <%= fields[3] %> ;
-        :gene_name  "<%= fields[9] %>" ;
-        :snp_id  "<%= fields[12] %>" ;
-        :effect  :<%= fields[13] %> ;
-        :gene_id        :<%= fields[25] %> .
+    <%= id %>  seq:chr     "<%= chr %>" ;
+        seq:pos     <%= pos %> ;
+        db:id       db:snv1 ;
+        seq:ref     "<%= ref %>" ;
+        seq:alt     "<%= var %>" ;
+        <% if aaref %>seq:codon_ref  "<%= aaref %>" ;<% end %>
+        <% if aavar %>seq:codon_alt  "<%= aavar %>" ;<% end %>
+        seq:strand  <%= fields[3] %> ;
+        seq:gene_name  "<%= fields[9] %>" ;
+    <% if fields[12]!='novel' %>    dbsnp:id  "<%= fields[12] %>" ;<% end %>
+        snv:type  :<%= snv_type %> ;
+        ensembl:gene_id        ensembl:<%= fields[25] %> .
     <% if high_pop_freq %><%= id %>  :high_pop_freq  <%= high_pop_freq %> .
     <%= id %>  :high_pop  "<%= fields[24] %>" .
     <% if cancer %><%= id %>  :cancer :true .<% end %>
@@ -76,9 +71,9 @@
     <% end %>
     <% end %>
     <%= tid %>  :snv_id  <%= id %> .
-    <%= tid %>  :tid  :<%= fields[26] %> .
+    <%= tid %>  ensembl:tid  ensembl:<%= fields[26] %> .
   <% if fields[27] and aaref and fields[16] %>
-    <%= tid %>  :protein_id     :<%= fields[27] %> .
+    <%= tid %>  ensembl:protein_id     ensembl:<%= fields[27] %> .
     <%= tid %>  :polyphen  <%= fields[16] %> .
     <% if fields[18] %><%= tid %>  :sift      <%= fields[18] %> .
     <% end %>
