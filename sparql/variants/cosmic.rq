@@ -24,9 +24,9 @@ prefix : <http://biobeat.org/rdf/cosmic>
 
 # SELECT ?gene_name ?chr ?pos ?sample (count(?sample) as ?num) WHERE {
 <% if plot=="PLOT1" %>
-SELECT DISTINCT ?gene_name ?chr ?pos ?sample ?freq WHERE { 
+SELECT DISTINCT ?gene_name ?chr ?pos ?sample WHERE { 
 <% elsif plot=="COSMIC" %>
-SELECT DISTINCT ?gene_name ?chr ?pos ?cosmicid ?alt ?alt2 ?strand ?freq ?sample WHERE { 
+SELECT DISTINCT ?gene_name ?chr ?pos ?cosmicid ?alt ?alt2 ?strand ?freq ?db ?sample WHERE { 
 <% else %>
 SELECT DISTINCT ?chr ?pos ?ref ?alt ?ref2 ?alt2 ?dbsnp ?sample ?af ?gene_name ?cancer ?breast_cancer ?variant_type ?vt ?descr ?cosmicid WHERE {
 <% end %>
@@ -91,6 +91,7 @@ SELECT DISTINCT ?chr ?pos ?ref ?alt ?ref2 ?alt2 ?dbsnp ?sample ?af ?gene_name ?c
                   seq:pos ?pos ;
                   seq:alt ?alt2 ;
                   db:type db:population ; 
+                  # db:id   ?db ;
                   seq:freq ?freq .
     }.
     FILTER ( !bound(?freq) || ?freq <= <%= freq %> ) .
