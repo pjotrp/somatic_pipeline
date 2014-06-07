@@ -7,6 +7,7 @@
 
 <% 
    plot=ENV['PLOT']
+   freq=ENV['FREQ']
 %>
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
@@ -14,24 +15,32 @@ prefix : <http://biobeat.org/rdf/freebayes>
 
 # SELECT ?gene_name ?chr ?pos ?sample (count(?sample) as ?num) WHERE {
 <% if plot=="PLOT1" %>
-SELECT DISTINCT ?gene_name ?chr ?pos ?alt2 ?sample WHERE {
+SELECT DISTINCT ?gene_name ?chr ?pos ?alt ?sample WHERE {
 <% else %>
-SELECT DISTINCT ?chr ?pos ?ref ?alt ?ref2 ?alt2 ?dbsnp ?sample ?af ?gene_name ?cancer ?breast_cancer ?variant_type ?vt ?descr ?cosmicid WHERE {
+SELECT DISTINCT ?chr ?pos ?alt ?sample ?freq ?gene_name WHERE {
 <% end %>
   ?freebayes  seq:chr  ?chr ;
               seq:pos  ?pos ;
+              seq:alt  ?alt ;
               db:id    db:freebayes ;
               seq:variant_type freebayes:somatic ;
               mbc:sample ?sample .
-  # OPTIONAL { ?freebayes seq:ref  ?ref2 }
-  OPTIONAL { ?freebayes seq:alt  ?alt2 }
-  ?snvid      seq:chr  ?chr ;
+
+  ?snv1       seq:chr  ?chr ;
               seq:pos  ?pos ;
               db:id    db:snv1 ;
-              seq:gene_name  ?gene_name ;
-  # ?snpid seq:chr ?chr ;
-  #        seq:pos ?pos .
-  # MINUS { ?snpid  db:id   db:cosmic } .
+              seq:gene_name  ?gene_name .
+  <% if freq %>
+    OPTIONAL { 
+    ?population seq:chr ?chr ;
+                seq:pos ?pos ;
+                seq:alt ?alt ;
+                db:type db:population ; 
+                seq:freq ?freq 
+    }.
+    FILTER ( !bound(?freq) || ?freq <= <%= freq %> ) .
+  <% end %>
+
 }
 # GROUP BY ?chr ?pos
 # ORDER BY ?chr ?pos

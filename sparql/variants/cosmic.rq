@@ -86,10 +86,13 @@ SELECT DISTINCT ?chr ?pos ?ref ?alt ?ref2 ?alt2 ?dbsnp ?sample ?af ?gene_name ?c
          ))) .
   <% end %>
   <% if freq %>
-    ?population seq:chr ?chr ;
-                seq:pos ?pos ;
-                seq:alt ?alt2 .
-    OPTIONAL { ?population db:type db:population ; seq:freq ?freq }.
+    OPTIONAL { 
+      ?population seq:chr ?chr ;
+                  seq:pos ?pos ;
+                  seq:alt ?alt2 ;
+                  db:type db:population ; 
+                  seq:freq ?freq .
+    }.
     FILTER ( !bound(?freq) || ?freq <= <%= freq %> ) .
   <% end %>
 }
