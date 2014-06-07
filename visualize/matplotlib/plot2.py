@@ -3,8 +3,6 @@ from pylab import *
 import matplotlib.pyplot as plt
 import csv
 
-fig, ax = plt.subplots()
-
 # image = np.random.uniform(size=(10, 10))
 data = [[1,0,2],[0,2,2],[0,3,4]]
 # ax.set_title('Mutated genes')
@@ -31,10 +29,13 @@ data[data=='']='0'
 data=data.astype(int)
 print data
 # print data
+
+fig, ax = plt.subplots()
+
 ax.imshow(data, cmap=matplotlib.cm.Blues, interpolation='nearest')
 # Move left and bottom spines outward by 10 points
-ax.spines['left'].set_position(('outward', 3))
-ax.spines['bottom'].set_position(('outward', 3))
+# ax.spines['left'].set_position(('outward', 3))
+# ax.spines['bottom'].set_position(('outward', 3))
 # Hide the right and top spines
 # ax.spines['right'].set_visible(False)
 # ax.spines['top'].set_visible(False)
@@ -56,7 +57,13 @@ ax.set_yticklabels(rownames, minor=False)
 ax.set_xlabel('Samples')
 ax.set_ylabel('Genes')
 
+# ax.autoscale(tight=True)
+# ax.grid()
+
 # plt.show()
+# fig = matplotlib.pyplot.gcf()
+# fig.set_size_inches(14.5,2.5)
+plt.savefig('test2png.png',dpi=100)
 
 plt.pause(0.1) # <-------
 raw_input("<Hit Enter To Close>")
