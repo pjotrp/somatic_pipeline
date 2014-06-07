@@ -15,6 +15,8 @@
 <% list=1 ; list=ENV['LIST'] ; list = list.to_i 
    filter = true if ENV['FILTER'] 
    plot=ENV['PLOT']
+   freq=ENV['FREQ']
+   strand_filter=ENV['STRAND']
 %>
 
 <%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
@@ -22,36 +24,39 @@ prefix : <http://biobeat.org/rdf/cosmic>
 
 # SELECT ?gene_name ?chr ?pos ?sample (count(?sample) as ?num) WHERE {
 <% if plot=="PLOT1" %>
-SELECT DISTINCT ?gene_name ?chr ?pos ?alt2 ?sample WHERE {
+SELECT DISTINCT ?gene_name ?chr ?pos ?sample ?freq WHERE { 
+<% elsif plot=="COSMIC" %>
+SELECT DISTINCT ?gene_name ?chr ?pos ?cosmicid ?alt ?alt2 ?strand ?freq ?sample WHERE { 
 <% else %>
 SELECT DISTINCT ?chr ?pos ?ref ?alt ?ref2 ?alt2 ?dbsnp ?sample ?af ?gene_name ?cancer ?breast_cancer ?variant_type ?vt ?descr ?cosmicid WHERE {
 <% end %>
-  ?snpid seq:chr ?chr ;
-         seq:pos ?pos ;
-         seq:ref ?ref ;
-         seq:alt ?alt ;
-         seq:gene_name ?gene_name ;
-         db:id   db:cosmic ;
-         cosmic:id ?cosmicid .
-  OPTIONAL { ?snpid disease:descr ?descr }
-  OPTIONAL { ?snpid disease:descr ?descr }
-  OPTIONAL { ?snpid annotate:breast_cancer ?breast_cancer }
-  OPTIONAL { ?snpid annotate:cancer ?cancer }
+  ?cosmic seq:chr ?chr ;
+          seq:pos ?pos ;
+          seq:ref ?ref ;
+          seq:alt ?alt ;
+          seq:gene_name ?gene_name ;
+          db:id   db:cosmic ;
+          cosmic:id ?cosmicid .
+  OPTIONAL { ?cosmic disease:descr ?descr }
+  OPTIONAL { ?cosmic disease:descr ?descr }
+  OPTIONAL { ?cosmic annotate:breast_cancer ?breast_cancer }
+  OPTIONAL { ?cosmic annotate:cancer ?cancer }
+    
   <% if list == 1 %>
-    ?snpid annotate:breast_cancer true .
+    ?cosmic annotate:breast_cancer true .
   <% end %>
   <% if list == 2 %>
-    ?snpid annotate:cancer true .
+    ?cosmic annotate:cancer true .
   <% end %>
   <% if list == 3 %>
     ?annid annotate:gene ?gene_name ;
            annotate:tumor_suppressor true .
   <% end %>
   <% if list == 4 %>
-    ?snpid annotate:breast_cancer true .
+    ?cosmic annotate:breast_cancer true .
   <% end %>
   <% if list == 5 %>
-    ?snpid annotate:cancer true .
+    ?cosmic annotate:cancer true .
   <% end %>
   # <% if filter %>
   #   <% if list<4 %>
@@ -64,8 +69,29 @@ SELECT DISTINCT ?chr ?pos ?ref ?alt ?ref2 ?alt2 ?dbsnp ?sample ?af ?gene_name ?c
               seq:pos  ?pos ;
               db:id    db:freebayes ;
               mbc:sample ?sample .
-  OPTIONAL { ?freebayes seq:ref  ?ref2 }
   OPTIONAL { ?freebayes seq:alt  ?alt2 }
+  ?snv1       seq:chr ?chr ;
+              seq:pos ?pos ;
+              db:id   db:snv1 ;
+              seq:alt ?alt2 ; 
+              seq:strand ?strand .
+
+  <% if strand_filter %>
+  FILTER ( ((?strand = 1 || !bound(?strand)) && ?alt = ?alt2) ||
+           (?strand = -1 && (
+             (?alt = "A" && ?alt2 = "T" ) ||
+             (?alt = "T" && ?alt2 = "A" ) ||
+             (?alt = "C" && ?alt2 = "G" ) ||
+             (?alt = "G" && ?alt2 = "C" )
+         ))) .
+  <% end %>
+  <% if freq %>
+    ?population seq:chr ?chr ;
+                seq:pos ?pos ;
+                seq:alt ?alt2 .
+    OPTIONAL { ?population db:type db:population ; seq:freq ?freq }.
+    FILTER ( !bound(?freq) || ?freq <= <%= freq %> ) .
+  <% end %>
 }
 # GROUP BY ?chr ?pos
 # ORDER BY ?chr ?pos
