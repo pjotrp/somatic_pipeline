@@ -10,7 +10,7 @@
 # E.g.
 #
 # ~/opt/somatic_pipeline/scripts/make_paired_tumor_normal_list.rb `pwd`/bam_reduced/*bam > paired_tumor_normal_bamlist.txt
-#  ~/opt/somatic_pipeline/scripts/run.rb --config ../../run.json ~/opt/somatic_pipeline/scripts/freebayes.sh paired_tumor_normal_bamlist.txt
+#  ~/opt/somatic_pipeline/scripts/run.rb --config run.json ~/opt/somatic_pipeline/scripts/freebayes.sh paired_tumor_normal_bamlist.txt
 #
 
 # ---- PBS settings
@@ -45,9 +45,9 @@ done
 outfn=$normal-$tumor.freebayes.output
 options="-f $refgenome -C 3 -t $bed --pooled-discrete --genotype-qualities --min-coverage 5 --no-indels --no-mnps --no-complex"
 echo "$freebayes $options ../$normal ../$tumor > $outfn.vcf "|$onceonly --pfff --in ../$normal --in ../$tumor --out $outfn.vcf -v -d freebayes
-[ $? -ne 0 ] && exit 1
 
-samples=`~/izip/git/opensource/ruby/bioruby-vcf/bin/bio-vcf -q --eval-once 'header.samples.join(" ")' < freebayes/$outfn.vcf`
+samples=`$HOME/izip/git/opensource/ruby/bioruby-vcf/bin/bio-vcf -q --skip-header --eval-once 'header.samples.join(" ")' < freebayes/$outfn.vcf`
+# [ $? -ne 0 ] && exit 1  <-- note freebayes always generates an exit error
 
 echo "##### "$samples
 echo "$HOME/opt/vcflib/bin/vcfsamplediff VT $samples $outfn.vcf > $outfn.diff.vcf"|$onceonly --pfff --in $outfn.vcf --out $outfn.diff.vcf -v -d freebayes
