@@ -18,7 +18,7 @@ def match_pair(first,second)
   if first.size == second.size
     b1 = File.basename(first)
     b2 = File.basename(second)
-    # count 'T'
+    # count 'T' 
     c1 = b1.scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
     c2 = b2.scan(/\w/).inject(Hash.new(0)){|h, c| h[c] += 1; h}
     count_t = c2['T']-c1['T'] 
@@ -26,6 +26,7 @@ def match_pair(first,second)
       # Final comparison
       if b1.sub(/R/,'T') != b2 and b1.sub(/N/,'T') != b2
         $stderr.print "WARNING: check match of #{first} with #{second}!\n"
+        return nil
       end
       return [first,second]
     end

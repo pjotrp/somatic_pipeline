@@ -5,29 +5,18 @@
 #   freebayes.sh [--config env.sh] normalname tumorname normal.bam tumor.bam
 #
 # This script is normally run from a controller which creates env.sh. It can also 
-# be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
+# be submitted to PBS with, for example, 'qsub -P SAP42 -cwd'
 #
 # E.g.
 #
-#  ~/opt/somatic_pipeline/scripts/make_paired_tumor_normal_list.rb /home/cog/pprins/data/run5/bam_reduced/*p.bam > ../../../paired_tumor_normal_bamlist.txt
-#  ~/opt/somatic_pipeline/scripts/run.rb --config ../../run.json ~/opt/somatic_pipeline/scripts/freebayes.sh ../../paired_tumor_normal_bamlist.txt
+# ~/opt/somatic_pipeline/scripts/make_paired_tumor_normal_list.rb `pwd`/bam_reduced/*bam > paired_tumor_normal_bamlist.txt
+#  ~/opt/somatic_pipeline/scripts/run.rb --config ../../run.json ~/opt/somatic_pipeline/scripts/freebayes.sh paired_tumor_normal_bamlist.txt
 #
-#
-#
-
-# ---- Default settings
-REFSEQ=/data/GENOMES/human_GATK_GRCh37/GRCh37_gatk.fasta
-BED="$HOME/kinome_design_SS_V2_110811_nochr_annot_sorted.bed"
-
-SAMTOOLS=$HOME/opt/bin/samtools
-SAMBAMBA=$HOME/opt/bin/sambamba
-ONCEONLY="$HOME/izip/git/opensource/ruby/once-only/bin/once-only"
-FREEBAYES=$HOME/opt/freebayes/bin/freebayes
 
 # ---- PBS settings
 #$ -S /bin/bash
 #$ -o stdout
-PATH=$SGE_O_PATH:$PATH
+# PATH=$SGE_O_PATH:$PATH
 
 # ---- Fetch command line and environment
 if [ $1 == "--config" ]; then
@@ -41,12 +30,6 @@ normal=$3
 tumor=$4
 
 phred=30  # 1:1000
-onceonly=$ONCEONLY
-refgenome=$REFSEQ
-samtools=$SAMTOOLS
-sambamba=$SAMBAMBA
-freebayes=$FREEBAYES
-bed=$BED
 
 set
 
