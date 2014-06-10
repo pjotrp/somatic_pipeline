@@ -10,7 +10,7 @@
 <%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
 
 # SELECT ?gene_name ?chr ?pos (count(?sample) as ?num) WHERE {
-SELECT DISTINCT ?chr ?pos ?alt ?freq ?sample WHERE {
+SELECT DISTINCT ?chr ?pos ?alt ?sample WHERE {
   ?freebayes  seq:chr  ?chr ;
               seq:pos  ?pos ;
               seq:alt  ?alt ;
