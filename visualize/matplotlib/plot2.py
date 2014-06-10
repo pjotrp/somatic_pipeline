@@ -12,7 +12,7 @@ row_labels = ['p1','p2','p3']
 
 file_name = 'data/test.csv'
 # data = np.loadtxt(open(file_name), delimiter=',')
-reader = csv.reader(open('data/test.csv'), delimiter=',')
+reader = csv.reader(open('data/test.csv'),delimiter=',')
 x=list(reader)
 matrix = np.array(x)
 rownames = [row[0] for row in matrix[1:]]
