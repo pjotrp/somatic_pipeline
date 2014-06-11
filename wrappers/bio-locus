@@ -1,0 +1,5 @@
+#! /bin/sh
+# 
+# bio-vcf wrapper to the checked out git repository
+
+/hpc/local/CentOS6/cog_bioinf/CuppenResearch/bio-locus/bin/bio-locus $*
