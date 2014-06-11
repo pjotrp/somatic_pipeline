@@ -4,8 +4,7 @@
 #
 #   bamannotate.sh [--config env.sh] normaldescr tumordescr normal.bam tumor.bam
 #
-# This script is normally run from a controller which creates env.sh. It can also 
-# be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
+# This script is normally run from a controller which creates env.sh. 
 
 # Uncomment for testing:
 # CHR=17
