@@ -1,0 +1,5 @@
+#! /bin/sh
+# 
+# wrapper to the checked out git repository
+
+/hpc/local/CentOS6/cog_bioinf/CuppenResearch/once-only/bin/once-only $*
