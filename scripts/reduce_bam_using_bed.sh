@@ -6,7 +6,7 @@
 #
 #   reduce_bam_using_bed.sh bedfile [once-only opts] < list
 #
-# Create list with something like
+# Create list with something like (removing files with wf in the name)
 #
 #   find /data/mapping/cancer -name '*MBC*'|grep -v wf|grep bam$
 #
@@ -26,7 +26,8 @@ while read bam ; do
   echo Reducing $bam...
 
   outfn=$(basename $bam .bam).$design.bam
-  echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE > $outfn"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --pfff --out $outfn -d .
+  echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE|cat > $outfn"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --pbs '-q veryshort' --pfff --out $outfn -d .
+  # echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE|cat > $outfn"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --pfff --out $outfn -d .
 done
 
 

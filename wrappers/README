@@ -1,0 +1,24 @@
+This directory contains relevant master branches of 
+
+  https://github.com/CuppenResearch
+
+As these tools are shared, please do not update without notifying the
+cog_bioinf mailing list.
+
+To run a number of these tools you need a recent Ruby, e.g.,
+
+  /hpc/local/CentOS6/cog_bioinf/bin/ruby -v 
+
+    ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-linux]
+
+For bio-vcf and bio-locus wrappers exist that call this Ruby. You can
+call
+
+  /hpc/local/CentOS6/cog_bioinf/bin/bio-vcf --help
+  /hpc/local/CentOS6/cog_bioinf/bin/bio-locus --help
+  /hpc/local/CentOS6/cog_bioinf/bin/once-only --help
+  /hpc/local/CentOS6/cog_bioinf/bin/bio-table --help
+
+Documentation for these tools can be found on github.
+
+Pj.

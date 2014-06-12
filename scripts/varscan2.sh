@@ -18,9 +18,6 @@
 # If you want additional VCF output set varscan_vcf=1 in run.json.
 
 # ---- Default settings
-SAMTOOLS=$HOME/opt/bin/samtools
-SAMBAMBA=$HOME/opt/bin/sambamba
-ONCEONLY="$HOME/izip/git/opensource/ruby/once-only/bin/once-only"
 CHROMOSOMES="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X Y"
 
 # ---- PBS settings
@@ -40,9 +37,6 @@ normal=$3
 tumor=$4
 
 phred=30  # 1:1000
-onceonly=$ONCEONLY
-samtools=$SAMTOOLS
-sambamba=$SAMBAMBA
 
 set
 

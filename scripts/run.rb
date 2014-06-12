@@ -87,7 +87,7 @@ if config
   File.open(env_sh,'w') do | f |
     config.each do |k,v|
       print "config: ",k.to_s.upcase,"=\"",v,"\"\n"
-      f.print k.to_s.upcase,"=\"",v,"\"\n"
+      f.print k.to_s,"=\"",v,"\"\n"
     end
   end
 end
@@ -129,7 +129,7 @@ File.read(listfn).each_line do | line |
     p cmd
     jobname=tumorname
     jobname='mbc'+tumorname if jobname =~ /^\d/
-    print `echo \"#{cmd}\" | qsub -P SAP42 -N #{jobname} -cwd` if !options[:dry_run]
+    print `echo \"#{cmd}\" | qsub -q veryshort -N #{jobname} -cwd` if !options[:dry_run]
   else
     # ---- Run standalone
     p cmd
