@@ -2,6 +2,9 @@
 # 
 # wrapper to the checked out git repository
 
+echo "Problem with /dev/shm"
+exit 1
+
 unset a
 for arg; do
   temp=$arg
