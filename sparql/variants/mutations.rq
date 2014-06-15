@@ -17,14 +17,21 @@ prefix : <http://biobeat.org/rdf/freebayes>
 <% if plot=="PLOT1" %>
 SELECT DISTINCT ?gene_name ?chr ?pos ?alt ?sample WHERE {
 <% else %>
-SELECT DISTINCT ?chr ?pos ?alt ?sample ?freq ?gene_name WHERE {
+SELECT DISTINCT ?chr ?pos ?ref ?alt ?sample ?freq ?gene_name ?n_ro ?n_ao ?t_ro ?t_ao WHERE {
 <% end %>
   ?freebayes  seq:chr  ?chr ;
               seq:pos  ?pos ;
+              seq:ref  ?ref ;
               seq:alt  ?alt ;
               db:id    db:freebayes ;
               seq:variant_type freebayes:somatic ;
               mbc:sample ?sample .
+  OPTIONAL {
+    ?freebayes freebayes:t_ao ?t_ao;
+               freebayes:t_ro ?t_ro;
+               freebayes:n_ao ?n_ao;
+               freebayes:n_ro ?n_ro.
+  }
 
   ?snv1       seq:chr  ?chr ;
               seq:pos  ?pos ;
