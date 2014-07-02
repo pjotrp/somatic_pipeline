@@ -11,4 +11,4 @@ for arg; do
   a+=("$temp")
 done
 
-exec /hpc/local/CentOS6/cog_bioinf/CuppenResearch/bio-locus/bin/bio-locus "${a[@]}"
+exec /hpc/local/CentOS6/cog_bioinf/bin/ruby /hpc/local/CentOS6/cog_bioinf/CuppenResearch/bio-locus/bin/bio-locus "${a[@]}"

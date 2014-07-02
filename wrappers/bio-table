@@ -13,5 +13,5 @@ done
 # cmd='=====> /hpc/local/CentOS6/cog_bioinf/CuppenResearch/bioruby-table/bin/bio-table \"${a[@]}\"'
 # echo "$cmd" 1>&2; 
 
-exec /hpc/local/CentOS6/cog_bioinf/CuppenResearch/bioruby-table/bin/bio-table "${a[@]}"
+exec /hpc/local/CentOS6/cog_bioinf/bin/ruby /hpc/local/CentOS6/cog_bioinf/CuppenResearch/bioruby-table/bin/bio-table "${a[@]}"
 
