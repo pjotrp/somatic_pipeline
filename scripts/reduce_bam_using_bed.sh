@@ -31,6 +31,7 @@ while read bam ; do
   outfn=$(basename $bam .bam).$design.bam
   echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE|cat > $outfn"|$onceonly -v --pbs '-q veryshort' --pfff --out $outfn -d .
   # echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE|cat > $outfn"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --pfff --out $outfn -d .
+  # exit 1
 done
 
 
