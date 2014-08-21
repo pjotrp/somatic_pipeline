@@ -11,7 +11,7 @@
 # SELECT ?gene_name ?chr ?pos (count(?sample) as ?num) WHERE {
 SELECT DISTINCT ?chr ?pos ?alt ?sample ?freq WHERE {
   ?freebayes  seq:chr  ?chr ;
-              # seq:pos  100629569 ;
+              # seq:pos  108708516 ;
               seq:pos  ?pos ;
               seq:alt  ?alt ;
               seq:variant_type freebayes:germline ;
@@ -23,7 +23,7 @@ SELECT DISTINCT ?chr ?pos ?alt ?sample ?freq WHERE {
               seq:pos ?pos ;
               seq:alt ?alt ;
               db:type db:population ;
-              seq:freq ?freq
+              seq:freq ?freq .
   }.
   FILTER ( !bound(?freq) || ?freq <= 0.05 ) .
 }
