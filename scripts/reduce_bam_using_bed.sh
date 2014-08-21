@@ -13,21 +13,28 @@
 # e.g.
 #
 #   wgs01:~/data/run5/bam_reduced$ ~/opt/somatic_pipeline/scripts/reduce_bam_using_bed.sh ~/kinome_design_SS_V2_110811_nochr_annot_sorted.bed < /home/cog/pprins/current_mbc_bamlist.txt 
+# 
+# to submit to PBS add
 #
+#   --pbs '-q veryshort'
+#
+# Optionally a basedir to the data files can be passed in.
 
 BEDTOOLS=$HOME/opt/bedtools
+onceonly="once-only"
 BEDFILE=$1
+DATAPATH=$2
 design="$(basename $BEDFILE .bed)"
 
 BASEDIR="$( cd "$( dirname "$0" )" && pwd )"
 echo $BASEDIR
 
 while read bam ; do
+  bam="$DATAPATH/$bam"
   echo Reducing $bam...
-
   outfn=$(basename $bam .bam).$design.bam
-  echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE|cat > $outfn"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --pbs '-q veryshort' --pfff --out $outfn -d .
-  # echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE|cat > $outfn"|~/izip/git/opensource/ruby/once-only/bin/once-only -v --pfff --out $outfn -d .
+  echo "$BEDTOOLS/bin/intersectBed -abam $bam -b $BEDFILE|cat > $outfn"|$onceonly -v --pbs '-q veryshort' --pbs-type SGE --pfff --out $outfn -d .  
+  # exit 1
 done
 
 
