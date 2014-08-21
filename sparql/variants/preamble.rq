@@ -14,6 +14,5 @@ prefix dbsnp: <http://biobeat.org/rdf/dbsnp#>
 prefix freebayes: <http://biobeat.org/rdf/freebayes#> 
 prefix db: <http://biobeat.org/rdf/db#> 
 prefix seq: <http://biobeat.org/rdf/seq#> 
-prefix annotate: <http://biobeat.org/rdf/annotate#> 
 prefix disease: <http://biobeat.org/rdf/disease#> 
 
