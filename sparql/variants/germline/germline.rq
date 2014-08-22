@@ -5,11 +5,19 @@
 #
 #   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh germline.rq
 #
+<%
+  freq = 
+    if ENV['FREQ']
+      ENV['FREQ'].to_f
+    else
+      0.05
+    end
+%>
 
 <%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
 
 # SELECT ?gene_name ?chr ?pos (count(?sample) as ?num) WHERE {
-SELECT DISTINCT ?chr ?pos ?alt ?sample ?freq WHERE {
+SELECT DISTINCT ?gene_name ?chr ?pos ?alt ?sample ?freq ?dbsnp ?remark WHERE {
   ?freebayes  seq:chr  ?chr ;
               # seq:pos  108708516 ;
               seq:pos  ?pos ;
@@ -18,6 +26,21 @@ SELECT DISTINCT ?chr ?pos ?alt ?sample ?freq WHERE {
               db:id    db:freebayes ;
               mbc:sample "MBC085" ;
               mbc:sample ?sample .
+  OPTIONAL {
+  ?snv1       seq:chr  ?chr ;
+              seq:pos  ?pos ;
+              seq:alt  ?alt ;
+              db:id    db:snv1 ;
+              seq:gene_name ?gene_name .
+  }.
+  OPTIONAL {
+  ?snv1       dbsnp:id  ?dbsnp 
+  }
+  OPTIONAL {
+  ?snv1       snv1:high_pop ?remark
+  }
+
+
   OPTIONAL {
   ?population seq:chr ?chr ;
               seq:pos ?pos ;
