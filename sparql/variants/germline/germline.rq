@@ -18,7 +18,7 @@
 <%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
 
 # SELECT ?gene_name ?chr ?pos (count(?sample) as ?num) WHERE {
-SELECT DISTINCT ?gene_name ?chr ?pos ?alt ?sample ?freq ?dbsnp ?remark WHERE {
+SELECT DISTINCT ?gene_name ?chr ?pos ?alt ?sample ?is_cancer ?is_bc ?is_ova ?freq ?dbsnp ?remark ?info ?type WHERE {
   ?freebayes  seq:chr  ?chr ;
               # seq:pos  108708516 ;
               seq:pos  ?pos ;
@@ -34,14 +34,15 @@ SELECT DISTINCT ?gene_name ?chr ?pos ?alt ?sample ?freq ?dbsnp ?remark WHERE {
               seq:pos  ?pos ;
               seq:alt  ?alt ;
               db:id    db:snv1 ;
-              seq:gene_name ?gene_name .
+              seq:gene_name ?gene_name ;
+              snv:type ?type ;
+              snv:info ?info .
   }.
-  OPTIONAL {
-  ?snv1       dbsnp:id  ?dbsnp 
-  }
-  OPTIONAL {
-  ?snv1       snv1:high_pop ?remark
-  }
+  OPTIONAL { ?snv1       dbsnp:id  ?dbsnp }
+  OPTIONAL { ?snv1       snv1:cancer  ?is_cancer }
+  OPTIONAL { ?snv1       snv1:breast_cancer  ?is_bc }
+  OPTIONAL { ?snv1       snv1:ovarian_cancer  ?is_ova }
+  OPTIONAL { ?snv1       snv1:high_pop ?remark }
 
 
   OPTIONAL {
