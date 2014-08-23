@@ -5,6 +5,7 @@
 #
 #   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh germline.rq
 #
+# Note that multiple versions of the same result may be returned.
 <%
   freq = 
     if ENV['FREQ']
