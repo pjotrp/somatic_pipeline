@@ -1,0 +1,10 @@
+# Example:
+#
+
+<%= File.read(File.dirname(__FILE__)+'/preamble.rq')  %>
+
+SELECT DISTINCT ?sample WHERE {
+  ?freebayes  mbc:sample ?sample .
+}
+
+
