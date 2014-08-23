@@ -12,6 +12,7 @@
     else
       0.05
     end
+  sample = ENV['SAMPLE']
 %>
 
 <%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
@@ -24,7 +25,9 @@ SELECT DISTINCT ?gene_name ?chr ?pos ?alt ?sample ?freq ?dbsnp ?remark WHERE {
               seq:alt  ?alt ;
               seq:variant_type freebayes:germline ;
               db:id    db:freebayes ;
-              mbc:sample "MBC085" ;
+            <% if sample %>
+              mbc:sample "<%= sample %>" ;
+            <% end %>
               mbc:sample ?sample .
   OPTIONAL {
   ?snv1       seq:chr  ?chr ;
