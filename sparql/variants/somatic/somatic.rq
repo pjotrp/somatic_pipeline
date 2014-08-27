@@ -1,0 +1,57 @@
+# Fetch somatic variants for a number of known cancer genes. If 
+# the population freq is higher than 5% the variant is skipped.
+#
+# Example:
+#
+#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh somatic.rq
+#
+# Note that multiple versions of the same result may be returned.
+<%
+  freq = 
+    if ENV['FREQ']
+      ENV['FREQ'].to_f
+    else
+      0.05
+    end
+  sample = ENV['SAMPLE']
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
+
+SELECT DISTINCT ?gene_name ?chr ?pos ?alt ?sample ?is_cancer ?is_bc ?is_ova ?freq ?dbsnp ?cosmic ?remark ?info ?type WHERE {
+  ?freebayes  seq:chr  ?chr ;
+              # seq:pos  108708516 ;
+              seq:pos  ?pos ;
+              seq:alt  ?alt ;
+              seq:variant_type freebayes:somatic ;
+              db:id    db:freebayes ;
+            <% if sample %>
+              mbc:sample "<%= sample %>" ;
+            <% end %>
+              mbc:sample ?sample .
+  OPTIONAL {
+  ?snv1       seq:chr  ?chr ;
+              seq:pos  ?pos ;
+              seq:alt  ?alt ;
+              db:id    db:snv1 ;
+              seq:gene_name ?gene_name ;
+              snv:type ?type ;
+              snv:info ?info .
+  }.
+  OPTIONAL { ?snv1       dbsnp:id  ?dbsnp }
+  OPTIONAL { ?snv1       cosmic:id  ?cosmic }
+  OPTIONAL { ?snv1       snv1:cancer  ?is_cancer }
+  OPTIONAL { ?snv1       snv1:breast_cancer  ?is_bc }
+  OPTIONAL { ?snv1       snv1:ovarian_cancer  ?is_ova }
+  OPTIONAL { ?snv1       snv1:high_pop ?remark }
+
+
+  OPTIONAL {
+  ?population seq:chr ?chr ;
+              seq:pos ?pos ;
+              seq:alt ?alt ;
+              db:type db:population ;
+              seq:freq ?freq .
+  }.
+  # FILTER ( !bound(?freq) || ?freq <= 0.05 ) .
+}
