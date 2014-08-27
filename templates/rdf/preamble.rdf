@@ -8,6 +8,7 @@
 @prefix snv: <http://biobeat.org/rdf/snv#> .
 @prefix db: <http://biobeat.org/rdf/db#> .
 @prefix ensembl: <http://biobeat.org/rdf/ensembl#> .
+@prefix cosmic: <http://biobeat.org/rdf/cosmic/mutation#> .
 
 @prefix : <http://biobeat.org/rdf/snv1#> .
 

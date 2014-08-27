@@ -29,14 +29,21 @@
      tid = id+'_'+fields[26]
      # First pase info for hints of cancer involvement
      info = fields[30].strip
-     cancer = info =~ /cancer/i
-     breast_cancer = info =~ /breast cancer/i
-     ovarian_cancer = info =~ /ovarian cancer/i
+     cancer = (info =~ /(cancer|carcinoma|sarcoma)/i)
+     breast_cancer = info =~ /breast/i
+     ovarian_cancer = info =~ /ovar/i
      # Next the COSMIC data
+     cosmicid = []
+     dbsnpid = []
+     fields[12].split(/,/).each do | id |
+       dbsnpid << id if id =~ /^rs/i
+       cosmicid << id if id =~ /^cosm/i
+     end
+
      high_pop = fields[24]
      breast_cancer = true if high_pop =~ /tumour_site:breast/
      ovarian_cancer = true if high_pop =~ /tumour_site:ovary/
-     cancer = true if high_pop =~ /tumour/
+     cancer = true if high_pop =~ /(tumour|cosmic)/i
      snv_type = case fields[13]
        when "missense_variant" then "missense"
        when "stop_gained" then "stop_gain"
@@ -60,16 +67,17 @@
         <% if aavar %>seq:codon_alt  "<%= aavar %>" ;<% end %>
         seq:strand  <%= fields[3] %> ;
         seq:gene_name  "<%= fields[9] %>" ;
-    <% if fields[12]!='novel' %>    dbsnp:id  "<%= fields[12] %>" ;<% end %>
         snv:type  :<%= snv_type %> ;
         snv:info  "<%= info %>" ;
         ensembl:gene_id        ensembl:<%= fields[25] %> .
     <% if high_pop_freq %><%= id %>  :high_pop_freq  <%= high_pop_freq %> .
     <%= id %>  :high_pop  "<%= fields[24] %>" .
+    <% end %>
+    <% if cosmicid.size>0 %><%= id %>  cosmic:id "<%= cosmicid.join(',') %>" .<% end %>
+    <% if dbsnpid.size>0 %><%= id %>  dbsnp:id "<%= dbsnpid.join(',') %>" .<% end %>
     <% if cancer %><%= id %>  :cancer true .<% end %>
     <% if breast_cancer %><%= id %>  :breast_cancer true .<% end %>
     <% if ovarian_cancer %><%= id %>  :ovarian_cancer true .<% end %>
-    <% end %>
     <% end %>
     <%= tid %>  :snv_id  <%= id %> .
     <%= tid %>  ensembl:tid  ensembl:<%= fields[26] %> .
