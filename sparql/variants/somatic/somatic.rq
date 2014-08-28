@@ -18,10 +18,11 @@
 
 <%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
 
-SELECT DISTINCT ?gene_name ?chr ?pos ?alt ?sample ?is_cancer ?is_bc ?is_ova ?freq ?dbsnp ?cosmic ?remark ?info ?type WHERE {
+SELECT DISTINCT ?gene_name ?chr ?pos ?ref ?alt ?sample ?is_cancer ?is_bc ?is_ova ?freq ?dbsnp ?cosmic ?remark ?info ?type WHERE {
   ?freebayes  seq:chr  ?chr ;
               # seq:pos  108708516 ;
               seq:pos  ?pos ;
+              seq:ref  ?ref ;
               seq:alt  ?alt ;
               seq:variant_type freebayes:somatic ;
               db:id    db:freebayes ;

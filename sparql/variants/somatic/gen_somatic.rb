@@ -3,7 +3,8 @@
 require 'csv'
 require 'solid_assert'
 
-FREQ=8
+HEAD="gene_name,chr,pos,ref,alt,sample,is_cancer,is_bc,is_ova,freq,dbsnp,cosmic,remark,info,type".split(/,/)
+FREQ=9
 
 SolidAssert.enable_assertions
 h=ARGV.map{ |s| s.split('=') }.to_h
@@ -29,17 +30,20 @@ p samples
 Dir.mkdir("output") if not File.exist?("output")
 
 count = {}
-ref   = {}
+all_ref = {}
+
 samples.each do | s |
   File.open("output/"+s+'.tsv','w') do | f |
     res = no_parse.call("somatic.rq","SAMPLE=#{s}")
     table = CSV::parse(res).drop(1)
     t_has = {}
-    f.print "gene_name,chr,pos,alt,sample,is_cancer,is_bc,is_ova,freq,dbsnp,cosmic,remark,info,type".split(/,/).join("\t"),"\n"
+    ref   = {}
+    f.print HEAD.join("\t"),"\n"
     table.each do | row |
       obj = row[0..3]
       cfreq = row[FREQ].to_f
       if not t_has[obj]
+        $stderr.print "FIRST #{obj}\n"
         t_has[obj] = true
         count[obj] = 0 if !count[obj]
         count[obj] += 1
@@ -47,6 +51,7 @@ samples.each do | s |
       else
         # plug the largest frequency
         freq = ref[obj][FREQ].to_f
+        $stderr.print "DUPLICATE #{obj} with #{freq}\n"
         ref[obj][FREQ] = cfreq if freq == nil or freq<cfreq
       end
     end
@@ -56,16 +61,17 @@ samples.each do | s |
         f.print row.join("\t"),"\n"
       end
     end
+    all_ref.merge!(ref)
     # f.print res
   end
 end
 
 File.open("output/somatic.tsv",'w') do | f |
-  f.print "num,gene,chr,pos,alt,sample,is_cancer,breast,ovarian,freq,dbsnp,cosmic,remark,info,type".split(/,/).join("\t"),"\n"
+  f.print "#\t",HEAD.join("\t"),"\n"
   count.sort_by{|k,v| v}.reverse.each { | k,v | 
-    freq = ref[k][FREQ].to_f
+    freq = all_ref[k][FREQ].to_f
     if freq and freq <= 0.10
-      f.print v,"\t",ref[k].join("\t"),"\n" if v > 1
+      f.print v,"\t",all_ref[k].join("\t"),"\n" if v > 1
     end
   }
 end
