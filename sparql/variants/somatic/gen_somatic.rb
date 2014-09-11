@@ -3,6 +3,9 @@
 require 'csv'
 require 'solid_assert'
 
+type=ARGV.shift
+type='somatic' if type == nil
+
 HEAD="gene_name,chr,pos,ref,alt,sample,is_cancer,is_bc,is_ova,freq,dbsnp,cosmic,remark,info,type".split(/,/)
 FREQ=9
 
@@ -34,7 +37,7 @@ all_ref = {}
 
 samples.each do | s |
   File.open("output/"+s+'.tsv','w') do | f |
-    res = no_parse.call("somatic.rq","SAMPLE=#{s}")
+    res = no_parse.call(type+".rq","SAMPLE=#{s}")
     table = CSV::parse(res).drop(1)
     t_has = {}
     ref   = {}
@@ -66,7 +69,7 @@ samples.each do | s |
   end
 end
 
-File.open("output/somatic.tsv",'w') do | f |
+File.open("output/#{type}.tsv",'w') do | f |
   f.print "#\t",HEAD.join("\t"),"\n"
   count.sort_by{|k,v| v}.reverse.each { | k,v | 
     freq = all_ref[k][FREQ].to_f
