@@ -13,26 +13,30 @@
     else
       0.05
     end
-  sample = ENV['SAMPLE']
+  pnr = ENV['PNR'].to_f/100.0
 %>
 
 <%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
 
-SELECT DISTINCT ?sample ?gene_name ?chr ?pos ?ref ?alt WHERE {
+SELECT DISTINCT ?sample ?gene_name ?chr ?pos ?ref ?alt ?n_dp ?n_ao ?t_dp ?t_ao WHERE {
   ?freebayes  seq:chr  ?chr ;
               seq:pos  ?pos ;
               seq:ref  ?ref ;
               seq:alt  ?alt ;
               seq:variant_type freebayes:somatic ;
+              freebayes:n_dp ?n_dp ;
+              freebayes:n_ao ?n_ao ;
+              freebayes:t_dp ?t_dp ;
+              freebayes:t_ao ?t_ao ;
               mbc:sample ?sample .
-  OPTIONAL {
+  OPTIONAL { # Use SNV1 to pick up the gene name
   ?snv1       seq:chr  ?chr ;
               seq:pos  ?pos ;
               seq:alt  ?alt ;
               db:id    db:snv1 ;
               seq:gene_name ?gene_name ;
-              snv:type ?type ;
-              snv:info ?info .
+              # snv:type ?type ;
+              # snv:info ?info .
   }.
   OPTIONAL {
   ?population seq:chr ?chr ;
@@ -42,4 +46,7 @@ SELECT DISTINCT ?sample ?gene_name ?chr ?pos ?ref ?alt WHERE {
               seq:freq ?freq .
   }.
   FILTER ( !bound(?freq) || ?freq <= 0.05 ) .
+  <% if pnr %>
+    FILTER ( ?t_ao/?t_dp > <%= pnr %> ) .
+  <% end %>
 }
