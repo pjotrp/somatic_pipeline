@@ -1,0 +1,57 @@
+# Fetch germline variants for a number of known cancer genes. If 
+# the population freq is higher than 5% the variant is skipped.
+#
+# Example:
+#
+#   ~/izip/git/opensource/ruby/bioruby-rdf/scripts/sparql.sh germline.rq
+#
+# Note that multiple versions of the same result may be returned.
+<%
+  freq = 
+    if ENV['FREQ']
+      ENV['FREQ'].to_f
+    else
+      0.05
+    end
+%>
+
+<%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
+
+SELECT DISTINCT ?sample ?chr ?pos ?cosmic_id WHERE {
+  ?cosmic     seq:chr  ?chr ;
+              seq:pos  ?pos ;
+              db:id    db:cosmic .
+  # ?cosmic     annotate:ovarian_cancer  true .
+  ?cosmic     annotate:breast_cancer  true .
+  ?cosmic     cosmic:id  ?cosmic_id .
+  ?freebayes  seq:chr  ?chr ;
+              # seq:chr  "22" ;
+              # seq:pos  29091840 ;
+              seq:pos  ?pos ;
+              seq:ref  ?ref ;
+              seq:alt  ?alt ;
+              db:id    db:freebayes ;
+              mbc:sample ?sample .
+#  OPTIONAL { ?cosmic      annotate:breast_cancer  ?cosm_bc .  }
+#  OPTIONAL { ?cosmic      annotate:ovarian_cancer  ?cosm_ova .  }
+#  OPTIONAL {
+#  ?snv1       seq:chr  ?chr ;
+#              seq:pos  ?pos ;
+#              seq:alt  ?alt ;
+#              db:id    db:snv1 ;
+#              seq:gene_name ?gene_name ;
+#  }.
+#  OPTIONAL { ?snv1       dbsnp:id  ?dbsnp }
+#  OPTIONAL { ?snv1       cosmic:id  ?snv_cosmic }
+#  OPTIONAL { ?snv1       snv1:cancer  ?snv_is_cancer }
+#  OPTIONAL { ?snv1       snv1:breast_cancer  ?snv_is_bc }
+#  OPTIONAL { ?snv1       snv1:ovarian_cancer  ?snv_is_ova }
+#  OPTIONAL {
+#  ?population seq:chr ?chr ;
+#              seq:pos ?pos ;
+#              seq:alt ?alt ;
+#              db:type db:population ;
+#              seq:freq ?freq .
+#  }.
+  # FILTER ( !bound(?freq) || ?freq <= 0.05 ) .
+}
