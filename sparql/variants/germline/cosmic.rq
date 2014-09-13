@@ -17,12 +17,16 @@
 
 <%= File.read(File.dirname(__FILE__)+'/../preamble.rq')  %>
 
-SELECT DISTINCT ?sample ?chr ?pos ?cosmic_id WHERE {
+SELECT DISTINCT ?sample ?chr ?pos ?gene_name ?freq ?cosmic_id WHERE {
   ?cosmic     seq:chr  ?chr ;
               seq:pos  ?pos ;
+              seq:gene_name ?gene_name ;
+              disease:descr      "liver cancer" ;
               db:id    db:cosmic .
-  MINUS { ?cosmic     annotate:ovarian_cancer  true . }
-  MINUS { ?cosmic     annotate:breast_cancer  true . }
+
+  MINUS { ?cosmic  seq:gene_name "CDC27" } .
+  MINUS { ?cosmic     annotate:ovarian_cancer  true } . 
+  MINUS { ?cosmic     annotate:breast_cancer  true } . 
   ?cosmic     cosmic:id  ?cosmic_id .
   ?freebayes  seq:chr  ?chr ;
               # seq:chr  "22" ;
@@ -46,12 +50,12 @@ SELECT DISTINCT ?sample ?chr ?pos ?cosmic_id WHERE {
 #  OPTIONAL { ?snv1       snv1:cancer  ?snv_is_cancer }
 #  OPTIONAL { ?snv1       snv1:breast_cancer  ?snv_is_bc }
 #  OPTIONAL { ?snv1       snv1:ovarian_cancer  ?snv_is_ova }
-#  OPTIONAL {
-#  ?population seq:chr ?chr ;
-#              seq:pos ?pos ;
-#              seq:alt ?alt ;
-#              db:type db:population ;
-#              seq:freq ?freq .
-#  }.
-  # FILTER ( !bound(?freq) || ?freq <= 0.05 ) .
+  OPTIONAL {
+  ?population seq:chr ?chr ;
+              seq:pos ?pos ;
+              seq:alt ?alt ;
+              db:type db:population ;
+              seq:freq ?freq .
+  }.
+  FILTER ( !bound(?freq) || ?freq <= 0.05 ) .
 }
