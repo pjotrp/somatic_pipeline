@@ -21,8 +21,8 @@ SELECT DISTINCT ?sample ?chr ?pos ?cosmic_id WHERE {
   ?cosmic     seq:chr  ?chr ;
               seq:pos  ?pos ;
               db:id    db:cosmic .
-  # ?cosmic     annotate:ovarian_cancer  true .
-  ?cosmic     annotate:breast_cancer  true .
+  MINUS { ?cosmic     annotate:ovarian_cancer  true . }
+  MINUS { ?cosmic     annotate:breast_cancer  true . }
   ?cosmic     cosmic:id  ?cosmic_id .
   ?freebayes  seq:chr  ?chr ;
               # seq:chr  "22" ;
