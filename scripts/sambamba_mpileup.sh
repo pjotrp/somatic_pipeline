@@ -1,12 +1,12 @@
 #! /bin/bash
 # 
-# Simple samtools index loop
+# Simple sambamba index loop
 #
 #   ./index.sh < bamlist
 #
 # Example
 #
-#   pprins@wgs01:~/data/run5/bam_reduced/mpileup$ ls -1 --color=never ../*rmdup.bam |~/opt/somatic_pipeline/scripts/samtools_mpileup.sh
+#   pprins@wgs01:~/data/run5/bam_reduced/mpileup$ ls -1 --color=never ../*rmdup.bam |~/opt/somatic_pipeline/scripts/sambamba_mpileup.sh
 
 # ---- Fetch command line and environment
 if [ $1 == "--config" ]; then
@@ -15,7 +15,8 @@ if [ $1 == "--config" ]; then
   . $config
 fi
 
-samtools=samtools-1.1
+sambamba=sambamba-1.1
+samtools=samtools
 onceonly=$HOME/local/bin/once-only
 
 phred=10  # 1:10
@@ -27,16 +28,16 @@ set
 
 echo "==== Index fasta with samtools ..."
 
-cp -vau $orig_refgenome $refgenome
+ln -s $orig_refgenome $refgenome
 echo "$samtools faidx $refgenome"|$onceonly --pfff -d . -v
 [ $? -ne 0 ] && exit 1
 
 while read bam ; do
-  echo ==== $samtools mpileup $bam...
+  echo ==== $sambamba mpileup $bam...
   outfn=$(basename $bam .bam).mpileup
   # Optimized for FFPE after rmdup, settings comparable with bcbio-next
   #
   # Using -E instead of BAQ (no -B)
-  echo "$samtools mpileup -E -m 3 -q $phred -l $bed -f $refgenome $bam > $outfn"|$onceonly --pfff -v -d . --out $outfn
+  echo "$sambamba mpileup $bam --samtools -E -m 3 -q $phred -l $bed -f $refgenome  > $outfn"|$onceonly --pfff -v -d . --out $outfn
   [ $? -ne 0 ] && exit 1
 done
