@@ -15,7 +15,7 @@ if [ $1 == "--config" ]; then
   . $config
 fi
 
-sambamba=sambamba-1.1
+sambamba=sambamba_latest-0.5.0-dev
 samtools=samtools
 onceonly=$HOME/local/bin/once-only
 

@@ -4,14 +4,16 @@
 #
 #   varscan2.sh [--config env.sh] normalname tumorname normal.mpileup tumor.mpileup
 #
+# First create pileups, e.g.
+#
+#   echo merged_nochr_annot_sorted_rmdup.bam|samtools_mpileup.sh 
+#
 # This script is normally run from a controller which creates env.sh. It can also 
 # be submittend to PBS with, for example, 'qsub -P SAP42 -cwd'
 #
 # E.g.
 #
 #  ./make_paired_tumor_normal_list.rb ~/data/run5/bam_reduced/mpileup/*.mpileup > ~/data/run5/paired_tumor_normal_list.txt
-#
-#
 #
 #   ~/opt/somatic_pipeline/scripts/run.rb --pbs --config run.json ~/opt/somatic_pipeline/scripts/varscan2.sh paired_tumor_normal_bamlist.txt
 #
@@ -35,12 +37,12 @@ tumorname=$2  # unused
 normal=$3
 tumor=$4
 varscan2=$HOME/opt/lib/VarScan.v2.3.7.jar
+onceonly=once-only
+varscan_vcf=1
 
 phred=30  # 1:1000
 
 set
-
-exit 1
 
 mkdir -p varscan2
 

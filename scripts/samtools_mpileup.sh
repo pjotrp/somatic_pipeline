@@ -37,6 +37,6 @@ while read bam ; do
   # Optimized for FFPE after rmdup, settings comparable with bcbio-next
   #
   # Using -E instead of BAQ (no -B)
-  echo "$samtools mpileup -E -m 3 -q $phred -l $bed -f $refgenome $bam > $outfn"|$onceonly --pfff -v -d . --out $outfn
+  echo "$samtools mpileup -E -m 3 -q $phred -l $bed -f $refgenome $bam > $outfn"|$onceonly --pfff --pbs '-q veryshort' --pbs-type SGE -v -d . --out $outfn
   [ $? -ne 0 ] && exit 1
 done
