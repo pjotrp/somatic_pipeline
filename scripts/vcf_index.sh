@@ -1,6 +1,6 @@
 #! /bin/bash
 # 
-# Simple vcf sort using tabix
+# Simple (human) vcf sort and index using egrep, bgzip and tabix
 #
 # e.g.,
 #
